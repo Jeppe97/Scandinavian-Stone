@@ -1,4 +1,3 @@
 
-hej
-efvdsvfbgt
-fwegvger
+
+console.log("Hello World!");
