@@ -1,5 +1,5 @@
 import React from 'react'
-import MainMenu from './MainMenu'
+import MainMenu from './MainMenu.js'
 
 function MainContent() {
     return (
