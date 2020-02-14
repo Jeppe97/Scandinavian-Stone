@@ -1,11 +1,23 @@
 import React from 'react';
 
-const mainMenu = () => {
+const MainMenu = () => {
     return(
-        <div>
-            <h1>Test</h1>
+        <div className="MainMenu">
+            <ul>
+                <li>
+                <button>Arbeta</button>
+                </li>
+                <li>
+                <button>Statistik</button>
+
+                </li>
+                <li>
+                <button>Logga ut</button>
+                </li>
+            </ul>
+            
         </div>
     );
 }
 
-export default mainMenu;
+export default MainMenu;
