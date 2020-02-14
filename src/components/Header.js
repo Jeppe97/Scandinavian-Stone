@@ -6,6 +6,9 @@ function Header() {
             <div className="CompanyName">
                 Scandinavian Stone
             </div>
+            <div className="QuarryName">
+                Bjärlöv
+            </div>
         </div>
     )
 }
