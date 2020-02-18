@@ -7,8 +7,16 @@ CREATE TABLE LogIn (
     PRIMARY KEY (UserId)
 );
 
-INSERT INTO LogIn (UserName, Password) VALUE ('Kulla', 'stone1234');
-
+INSERT INTO LogIn (UserName, Password) VALUES
+    ('Kulla', 'stone1234'),
+    ('Bjarlov', 'stone1'),
+    ('Lonnsboda', 'sten');
 SELECT * FROM LogIn;
 
-INSERT INTO LogIn (UserName, Password) VALUES ('Bjarlov', 'stone1'),('Lonnsboda', 'sten');
+DROP TABLE IF EXISTS Places;
+CREATE TABLE Places (Location VARCHAR (20), UserId INT, PRIMARY KEY (Location, UserId), FOREIGN KEY (UserId) REFERENCES LogIn(UserId));
+INSERT INTO Places (Location, UserId) VALUES ('Skane', 1),('Blekinge', 2),('Blekinge', 3);
+SELECT * FROM Places JOIN LogIn LI on Places.UserId = LI.UserId;
+
+#CREATE FUNCTION filter (x VARCHAR());
+
