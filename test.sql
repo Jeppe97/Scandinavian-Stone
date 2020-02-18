@@ -10,3 +10,5 @@ CREATE TABLE LogIn (
 INSERT INTO LogIn (UserName, Password) VALUE ('Kulla', 'stone1234');
 
 SELECT * FROM LogIn;
+
+INSERT INTO LogIn (UserName, Password) VALUES ('Bjarlov', 'stone1'),('Lonnsboda', 'sten');
