@@ -64,9 +64,13 @@ body{
   grid-auto-rows: minmax(100px, auto);
   justify-items: center;
   padding-top: 10rem;
+  position: absolute;
+  left: 0;
+  right: 0;
   
   a{
     text-decoration: none;
+    
     button {
       width: 10em;
       max-width: 100%;
@@ -77,6 +81,7 @@ body{
       font-weight: bolder;
       border-radius: 50%;
       height: 100%;
+      
     }
   }
 
@@ -87,6 +92,23 @@ body{
   width: 100%;
   background-color: crimson;
 }
+
+.fade-appear, .fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear-active, .fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
 
 /*iPad Air 2 adjusted content*/
 @media screen and (max-width: 1600px) {
