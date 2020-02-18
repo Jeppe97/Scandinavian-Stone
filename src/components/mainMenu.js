@@ -7,7 +7,7 @@ const MainMenu = () => {
             <Link to="/workmethods">
            <button>RÄKNA</button>
            </Link>
-           <Link to="/workmethods">
+           <Link to="/statistics">
            <button>STATISTIK</button>
            </Link>
            <Link to="/workmethods">
