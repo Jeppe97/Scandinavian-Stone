@@ -1,9 +1,12 @@
-DROP TABLE IF EXISTS hello;
+DROP TABLE IF EXISTS LogIn;
 
-CREATE TABLE hello (
-   lista VARCHAR(30)
+CREATE TABLE LogIn (
+    UserId INT NOT NULL AUTO_INCREMENT,
+    UserName VARCHAR(30),
+    Password VARCHAR(35),
+    PRIMARY KEY (UserId)
 );
 
-INSERT INTO hello (lista) VALUES ('Hello World!');
+INSERT INTO LogIn (UserName, Password) VALUE ('Kulla', 'stone1234');
 
-SELECT * FROM hello;
+SELECT * FROM LogIn;
