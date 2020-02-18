@@ -19,8 +19,7 @@ body{
 }
 
 a {
-color: #333;
-text-decoration: none;
+  
 }
 
 .App{
@@ -68,25 +67,66 @@ text-decoration: none;
 .MainMenu {
   text-align: center;
   display: grid;
-  grid-gap: 4em;
+  grid-gap: 3em;
   grid-auto-rows: minmax(100px, auto);
   justify-items: center;
   padding-top: 10rem;
   
-  button {
-    width: 10em;
-    max-width: 100%;
-    color: black;
-    background-color: lightblue;
-    border: none;
-    font-size: 2em;
-    font-weight: bolder;
-    border-radius: 50%;
+  a{
+    text-decoration: none;
+    button {
+      width: 10em;
+      max-width: 100%;
+      color: black;
+      background-color: lightblue;
+      border: none;
+      font-size: 2em;
+      font-weight: bolder;
+      border-radius: 50%;
+      height: 100%;
+    }
   }
+
 }
 
 .Footer {
   height: 2em;
   width: 100%;
   background-color: crimson;
+}
+
+/*iPad Air 2 adjusted content*/
+@media screen and (max-width: 1600px) {
+  .MainMenu{
+    grid-auto-rows: minmax(200px, auto);
+    
+    a{
+      text-decoration: none;
+      button {
+        width: 10em;
+        max-width: 100%;
+        color: black;
+        background-color: lightblue;
+        border: none;
+        font-size: 4em;
+        font-weight: bolder;
+        border-radius: 50%;
+        height: 100%;
+      }
+    }
+  }
+
+  .Header{
+    
+    .CompanyName{
+      font-size: 3em;
+      padding-top: 2rem;
+    }
+    .QuarryName{
+      font-size: 4em;
+    }
+
+  }
+
+
 }
