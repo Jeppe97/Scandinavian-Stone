@@ -1,3 +1,7 @@
+
+
+
+/*footer styles*/
 footer {
     background-color: #222;
     color: #fff;
@@ -8,17 +12,18 @@ footer {
     right: 0;
     text-align: center;
     z-index: 999;
-}
 
-footer p {
-    margin: 10px 0;
-}
+    p{
+        margin: 10px 0;
 
-footer i {
-    color: red;
-}
+    }
+    i{
+        color: red;
 
-footer a {
-    color: #3c97bf;
+    }
+    a{
+        color: #3c97bf;
     text-decoration: none;
+    }
+
 }

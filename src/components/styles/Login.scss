@@ -34,10 +34,6 @@ a {
 	border-bottom: solid #222;
 }
 
-a.btn1{
-	border-bottom: none;
-}
-
 button {
 	border-radius: 20px;
 	border: 1px solid #fdff00;
@@ -230,6 +226,8 @@ input {
 	height: 40px;
 	width: 40px;
 }
+
+
 @media screen and (min-height:1500px){
     .container {
 		width: 40em;
