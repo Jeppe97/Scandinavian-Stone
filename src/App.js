@@ -10,7 +10,7 @@ import MainMenu from './components/MainMenu';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-container">
     <CSSTransition in={true} appear={true} timeout={800} classNames="fade">
       <Header />
       </CSSTransition>
