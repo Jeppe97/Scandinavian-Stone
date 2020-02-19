@@ -1,16 +1,21 @@
 import React from 'react';
-// import './sass/_loginSty.scss';
 import "./login/style.css";
 import Login from "./login/Login";
 import Footer from "./login/Footer";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import MainMenu from './login/MainMenu';
 
 function App() {
   return (
+    <Router>
     <div className="app-container">
-     <Login />
+    <Switch>
+     <Route path="/" exact component={Login} />
+     <Route path="/mainmenu" component={MainMenu} />
+     </Switch>
      <Footer />
     </div>
+    </Router>
   );
 }
-
 export default App;

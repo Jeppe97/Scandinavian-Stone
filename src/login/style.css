@@ -51,6 +51,10 @@ a {
 	border-bottom: solid #222;
 }
 
+a.btn1{
+	border-bottom: none;
+}
+
 button {
 	border-radius: 20px;
 	border: 1px solid #fdff00;
