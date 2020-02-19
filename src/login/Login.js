@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 
 window.onload=function(){
     const adminLoginButton = document.getElementById('admin');
@@ -25,7 +26,9 @@ export class Login extends Component {
                             <input type="email" placeholder="Användarnamn" />
                             <input type="password" placeholder="Lösenord" />
                             <a href="#">Glömt ditt lösenord?</a>
-                            <button>Logga In</button>
+
+                            <button onClick={<Link to="/test"></Link>}>Logga In</button>
+
                         </form>
             </div>
 
