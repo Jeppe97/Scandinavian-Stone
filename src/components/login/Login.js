@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "../styles/Login.scss";
+
 
 window.onload=function(){
     const adminLoginButton = document.getElementById('admin');
