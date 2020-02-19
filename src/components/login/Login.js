@@ -1,20 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Login.scss";
-
-
-window.onload=function(){
-    const adminLoginButton = document.getElementById('admin');
-    const userLoginButton = document.getElementById('user');
-    const container = document.getElementById('container');
-
-    adminLoginButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-    });
-    
-    userLoginButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-    });
-}
+import { Link } from "react-router-dom";
 
 export class Login extends Component {    
     render(){
@@ -27,18 +13,22 @@ export class Login extends Component {
                             <input type="email" placeholder="Användarnamn" />
                             <input type="password" placeholder="Lösenord" />
                             <a href="#">Glömt ditt lösenord?</a>
+                            <Link to="/mainmenu" className="btn1">
                             <button>Logga In</button>
+                            </Link>
                         </form>
             </div>
 
             <div className="form-container sign-in-container">
-                <form action="#">
-                    <h1>Användare</h1>
-                    <input type="email" placeholder="Användarnamn" />
-                    <input type="password" placeholder="Lösenord" />
-                    <a href="#">Glömt ditt lösenord?</a>
-                    <button>Logga In</button>
-                </form>
+                            <form action="#">
+                                <h1>Användare</h1>
+                                <input type="email" placeholder="Användarnamn" />
+                                <input type="password" placeholder="Lösenord" />
+                                <a href="#">Glömt ditt lösenord?</a>
+                                <Link to="/mainmenu" className="btn1">
+                                <button>Logga In</button>
+                                </Link>
+                            </form>
             </div>
             
             <div className="overlay-container">
@@ -59,6 +49,19 @@ export class Login extends Component {
     </div>
         );
     }
+}
+window.onload=function(){
+    const adminLoginButton = document.getElementById('admin');
+    const userLoginButton = document.getElementById('user');
+    const container = document.getElementById('container');
+
+    adminLoginButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    userLoginButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
 }
 export default Login;
 
