@@ -5,7 +5,6 @@ export class Login extends Component {
     render(){
         return(
     <div className ="container" id="container">
-
              <div className="form-container admin-container">
                         <form>
                             <h1>Admin</h1>

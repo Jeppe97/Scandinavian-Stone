@@ -1,5 +1,5 @@
 import React from 'react';
-import "./login/style.css";
+import "./login/Login.scss";
 import Login from "./login/Login";
 import Footer from "./login/Footer";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
