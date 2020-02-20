@@ -67,6 +67,9 @@ button.ghost {
 	background-color: #222;
 	border-color:#fdff00;
 }
+button.form-buttons-primary {
+	width: 100%;
+}
 
 form {
 	background-color: #FFFFFF;
@@ -100,9 +103,13 @@ input {
     height: 15em;
     display: flex;
     justify-content: center;
-    margin: auto;
+	margin: auto;
 }
-
+.container-form {
+	width: inherit;
+	height: inherit;
+	display: block;
+}
 .form-container {
 	position: absolute;
 	top: 0;
@@ -238,11 +245,20 @@ input {
 		width: 40em;
 		height: 20em;
 	}
+	.container-form {
+		width: inherit;
+		height: inherit;
+		display: block;
+	}
 	input {
 		font-size: 0.8em;
 	}
 	button {
 		font-size: 1.5em;
+	}
+	button.form-buttons-primary {
+		font-size: 0.7em;
+		width: 50%;
 	}
 	a {
 		font-size: 0.8em;
