@@ -92,51 +92,47 @@ handleChange0(event){
       return(
  
 
-<main className="navbarMainContent">
-  
+<main className="">
+  <div className=""></div>
 
   <div>
   <form >
     Höjd:   <input type="text" placeholder="Höjd" onChange={this.handleChange0}/>
-    
+   
     
 
-
+  
     Bredd: <input type="text" placeholder="Bredd" onChange={this.handleChange1}/>
-   
-   
+ 
 
-
+  
    Längd:<input type="text" placeholder="Längd" onChange={this.handleChange2}/>
    
-   
 
-
+  
    Kvalité:<input type="text" placeholder="Kvalité" onChange={this.handleChange3}/>
-    
-    
+  
 
-
+   
    Plats:     <input type="text" placeholder="Plats" onChange={this.handleChange4}/>
     
+
     
-
-
    Datum:     <input type="text" placeholder="Datum(dd/mm/år)" onChange={this.handleChange5}/>
     
-    
 
-Övriga Info: <input type="text" placeholder="" onChange={this.handleChange6}/>
-</form>
+    Övriga Info: <input type="text" placeholder="" onChange={this.handleChange6}/>
+    </form>
+    
     </div>
 
-<Link to ="/mainmenu">
-<button className ="button"onClick={this.handleClick0}>
+<Link to ="/mainmenu" className ="btn1">
+<button onClick={this.handleClick0}>
         {this.state.isToggleOn ? "Spara": "Sparat"}</button>
 </Link>
         
-<Link to ="/workmethods">
-      <button className ="button" onClick={this.handleClick}>{this.state.isToggleOn="Avbryt"}
+<Link to ="/workmethods" className ="btn1">
+      <button onClick={this.handleClick}>{this.state.isToggleOn="Avbryt"}
       </button>
 
 </Link>
