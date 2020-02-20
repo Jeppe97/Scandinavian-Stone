@@ -23,6 +23,3 @@ export default class WorkMethods extends Component {
         )
     }
 }
-function refreshPage() {
-    window.location.assign("/");
-}

@@ -26,8 +26,12 @@ body {
   margin: 0;
   align-items: center;
   justify-content: center;
-  font-size: 2.7em;
-
+  font-size: 2em;
+}
+@media screen and (min-height: 1500px) {
+  body {
+    font-size: 3em;
+  }
 }
 .fade-appear,
 .fade-enter {
