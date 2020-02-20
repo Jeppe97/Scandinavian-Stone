@@ -4,10 +4,10 @@ import '../components/styles/Header.scss';
 function Header() {
     return (
         <div className="Header">
-            <div className="CompanyName">
+            <div className="CompanyName" >
                 Scandinavian Stone
             </div>
-            <div className="QuarryName">
+            <div className="QuarryName" >
                 Bjärlöv
             </div>
         </div>

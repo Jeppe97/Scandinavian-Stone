@@ -7,7 +7,7 @@ export default class Statistics extends Component {
             <div>
                 <div className="MainMenu">
 
-                    <h1>STATS BRO</h1>
+                    <h1>STATS</h1>
 
                     <Link to="/mainmenu"className="btn1">
                         <button>Tillbaka</button>
