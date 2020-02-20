@@ -93,42 +93,41 @@ handleChange0(event){
  
 
 <main className="navbarMainContent">
-  <div className="avstånd"></div>
+  
 
   <div>
   <form >
     Höjd:   <input type="text" placeholder="Höjd" onChange={this.handleChange0}/>
-    </form>
-    <br />
-
-    <form>
-    Bredd: <input type="text" placeholder="Bredd" onChange={this.handleChange1}/>
-   </form>
-   <br />
-
-   <form>
-   Längd:<input type="text" placeholder="Längd" onChange={this.handleChange2}/>
-   </form>
-   <br />
-
-   <form>
-   Kvalité:<input type="text" placeholder="Kvalité" onChange={this.handleChange3}/>
-    </form>
-    <br />
-
-    <form>
-   Plats:     <input type="text" placeholder="Plats" onChange={this.handleChange4}/>
-    </form>
-    <br />
-
-    <form>
-   Datum:     <input type="text" placeholder="Datum(dd/mm/år)" onChange={this.handleChange5}/>
-    </form>
-    <br />
-
-    <p>Övriga Info: <input type="text" placeholder="" onChange={this.handleChange6}/>
-    </p>
     
+    
+
+
+    Bredd: <input type="text" placeholder="Bredd" onChange={this.handleChange1}/>
+   
+   
+
+
+   Längd:<input type="text" placeholder="Längd" onChange={this.handleChange2}/>
+   
+   
+
+
+   Kvalité:<input type="text" placeholder="Kvalité" onChange={this.handleChange3}/>
+    
+    
+
+
+   Plats:     <input type="text" placeholder="Plats" onChange={this.handleChange4}/>
+    
+    
+
+
+   Datum:     <input type="text" placeholder="Datum(dd/mm/år)" onChange={this.handleChange5}/>
+    
+    
+
+Övriga Info: <input type="text" placeholder="" onChange={this.handleChange6}/>
+</form>
     </div>
 
 <Link to ="/mainmenu">
