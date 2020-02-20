@@ -1,7 +1,8 @@
 
-import './style.css';
+//import './style.css';
 import React, {Component} from "react"
 import {Link} from "react-router-dom" 
+
 
 
 class MainContent extends Component {
@@ -130,12 +131,12 @@ handleChange0(event){
     
     </div>
 
-<Link to ="/">
+<Link to ="/mainmenu">
 <button className ="button"onClick={this.handleClick0}>
         {this.state.isToggleOn ? "Spara": "Sparat"}</button>
 </Link>
         
-<Link to ="/">
+<Link to ="/workmethods">
       <button className ="button" onClick={this.handleClick}>{this.state.isToggleOn="Avbryt"}
       </button>
 
