@@ -6,20 +6,23 @@ export default class WorkMethods extends Component {
         return (
             <div>
                 <div className="MainMenu">
-                    <Link to="/workmethods">
+                    <Link to="/workmethods" className="btn1">
                         <button>Primärblock</button>
                     </Link>
-                    <Link to="/workmethods">
+                    <Link to="/workmethods" className="btn1">
                         <button>Skiva</button>
                     </Link>
-                    <Link to="/workmethods">
+                    <Link to="/workmethods" className="btn1">
                         <button>Block</button>
                     </Link>
-                    <Link to="/">
-                        <button>Tillbaka</button>
+                    <Link className="btn1">
+                        <button onClick={ refreshPage }>Tillbaka</button>
                     </Link>
                 </div>
             </div>
         )
     }
+}
+function refreshPage() {
+    window.location.assign("/");
 }

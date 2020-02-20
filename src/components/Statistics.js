@@ -9,11 +9,14 @@ export default class Statistics extends Component {
 
                     <h1>STATS BRO</h1>
 
-                    <Link to="/">
-                        <button>Tillbaka</button>
+                    <Link className="btn1">
+                        <button onClick={ refreshPage }>Tillbaka</button>
                     </Link>
                 </div>
             </div>
         )
     }
+}
+function refreshPage() {
+    window.location.assign("/");
 }

@@ -12,7 +12,7 @@ export class Login extends Component {
                             <h1>Admin</h1>
                             <input type="email" placeholder="Användarnamn" />
                             <input type="password" placeholder="Lösenord" />
-                            <a href="#">Glömt ditt lösenord?</a>
+                            <a href="#" className="forgot-password">Glömt ditt lösenord?</a>
                             <Link to="/mainmenu" className="btn1">
                             <button>Logga In</button>
                             </Link>
@@ -24,7 +24,7 @@ export class Login extends Component {
                                 <h1>Användare</h1>
                                 <input type="email" placeholder="Användarnamn" />
                                 <input type="password" placeholder="Lösenord" />
-                                <a href="#">Glömt ditt lösenord?</a>
+                                <a href="#" className="forgot-password">Glömt ditt lösenord?</a>
                                 <Link to="/mainmenu" className="btn1">
                                 <button>Logga In</button>
                                 </Link>
