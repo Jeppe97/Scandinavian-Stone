@@ -9,8 +9,8 @@ export default class Statistics extends Component {
 
                     <h1>STATS BRO</h1>
 
-                    <Link className="btn1">
-                        <button onClick={ refreshPage }>Tillbaka</button>
+                    <Link to="/mainmenu"className="btn1">
+                        <button>Tillbaka</button>
                     </Link>
                 </div>
             </div>

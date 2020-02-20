@@ -15,8 +15,8 @@ export default class WorkMethods extends Component {
                     <Link to="/workmethods" className="btn1">
                         <button>Block</button>
                     </Link>
-                    <Link className="btn1">
-                        <button onClick={ refreshPage }>Tillbaka</button>
+                    <Link to="/mainmenu" className="btn1">
+                        <button>Tillbaka</button>
                     </Link>
                 </div>
             </div>
