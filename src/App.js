@@ -11,10 +11,11 @@ import MainContent from './components/MainContent';
 
 function App() {
   return (
+    
     <div className="app-container">
       
        
-        <Header />
+       <Header />
           <Router>
                   <Switch >
                     <Route path="/" exact component={Login} />
