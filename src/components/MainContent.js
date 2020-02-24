@@ -115,7 +115,7 @@ class MainContent extends Component {
         </Link>
         <Link to="/workmethods" className="btn1">
           <button onClick={this.handleClick} className="form-buttons-primary">
-          {this.state.isToggleOn = "Avbryt"}</button>
+          {this.setState.isToggleOn = "Avbryt"}</button>
         </Link>
       </div>
     )
