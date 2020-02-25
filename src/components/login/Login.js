@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Login.scss";
-import { BrowserRouter, Route, Link, Redirect, withRouter } from "react-router-dom";
-
-const Public = () => <h3> Public Content </h3>
-const Protected = () => <h3> Protected Content </h3>
+import { Link } from "react-router-dom";
+import auth from './auth';
 
 export class Login extends Component {    
 
@@ -32,9 +30,15 @@ export class Login extends Component {
                             <input type="email" placeholder="Användarnamn" />
                             <input type="password" placeholder="Lösenord" />
                             <a href="#" className="forgot-password">Glömt ditt lösenord?</a>
-                            <Link to="/mainmenu" className="btn1">
-                            <button>Logga In</button>
-                            </Link>
+                            {/* <Link to="/mainmenu" className="btn1"> */}
+                            <button onClick={
+                                () => {
+                                    auth.login(() => {
+                                        this.props.history.push("/mainmenu");
+                                    });
+                                }
+                            }>Logga In</button>
+                            {/* </Link> */}
                         </form>
             </div>
 
@@ -44,9 +48,15 @@ export class Login extends Component {
                                 <input type="email" placeholder="Användarnamn" />
                                 <input type="password" placeholder="Lösenord" />
                                 <a href="#" className="forgot-password">Glömt ditt lösenord?</a>
-                                <Link to="/mainmenu" className="btn1">
-                                <button>Logga In</button>
-                                </Link>
+                                {/* <Link to="/mainmenu" className="btn1"> */}
+                                <button onClick={
+                                () => {
+                                    auth.login(() => {
+                                        this.props.history.push("/mainmenu");
+                                    });
+                                }
+                            }>Logga In</button>
+                                {/* </Link> */}
                             </form>
             </div>
             

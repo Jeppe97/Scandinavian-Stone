@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactStopwatch from 'react-stopwatch';
 import { Link } from "react-router-dom"
 
 
