@@ -6,7 +6,8 @@ import WorkMethods from './components/WorkMethods';
 import Statistics from './components/Statistics';
 import MainMenu from './components/MainMenu';
 import Login from "./components/login/Login";
-import Footer from "./components/login/Footer";
+import Stopwatch from "./timer"
+
 import MainContent from './components/MainContent';
 
 function App() {
@@ -21,8 +22,10 @@ function App() {
                     <Route path="/" exact component={Login} />
                     <Route path="/mainmenu" exact component={MainMenu} />
                     <Route path="/workmethods" exact component={WorkMethods} />
-                    <Route path="/workmethods/primary" exact component={MainContent} />
                     <Route path="/statistics" component={Statistics} />
+                    <Route path="/workmethods/timer" component={Stopwatch} />
+                   
+
                   </Switch>
         </Router>
     </div>
