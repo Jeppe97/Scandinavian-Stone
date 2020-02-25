@@ -29,16 +29,14 @@ export class Login extends Component {
                             <h1>Admin</h1>
                             <input type="email" placeholder="Användarnamn" />
                             <input type="password" placeholder="Lösenord" />
-                            <a href="#" className="forgot-password">Glömt ditt lösenord?</a>
-                            {/* <Link to="/mainmenu" className="btn1"> */}
+                            <a href="/jebaited" className="forgot-password">Glömt ditt lösenord?</a>
                             <button onClick={
                                 () => {
-                                    auth.login(() => {
+                                    auth.adminLogin(() => {
                                         this.props.history.push("/mainmenu");
                                     });
                                 }
                             }>Logga In</button>
-                            {/* </Link> */}
                         </form>
             </div>
 
@@ -47,8 +45,7 @@ export class Login extends Component {
                                 <h1>Användare</h1>
                                 <input type="email" placeholder="Användarnamn" />
                                 <input type="password" placeholder="Lösenord" />
-                                <a href="#" className="forgot-password">Glömt ditt lösenord?</a>
-                                {/* <Link to="/mainmenu" className="btn1"> */}
+                                <a href="/jebaited" className="forgot-password">Glömt ditt lösenord?</a>
                                 <button onClick={
                                 () => {
                                     auth.login(() => {
@@ -56,7 +53,6 @@ export class Login extends Component {
                                     });
                                 }
                             }>Logga In</button>
-                                {/* </Link> */}
                             </form>
             </div>
             
