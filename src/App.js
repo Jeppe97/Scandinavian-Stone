@@ -6,8 +6,9 @@ import WorkMethods from './components/WorkMethods';
 import Statistics from './components/Statistics';
 import MainMenu from './components/MainMenu';
 import Login from "./components/login/Login";
-import Footer from "./components/login/Footer";
 import MainContent from './components/MainContent';
+import Blank from './components/Blank';
+import Dimensions from './components/Dimensions';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
                     <Route path="/" exact component={Login} />
                     <Route path="/mainmenu" exact component={MainMenu} />
                     <Route path="/workmethods" exact component={WorkMethods} />
-                    <Route path="/workmethods/primary" exact component={MainContent} />
+                    <Route path="/workmethods/primary" exact component={Blank} />
+                    <Route path="/workmethods/primary/dimensions" exact component={Dimensions} />
                     <Route path="/statistics" component={Statistics} />
                   </Switch>
         </Router>

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../styles/Login.scss";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Redirect, withRouter } from "react-router-dom";
+
+const Public = () => <h3> Public Content </h3>
+const Protected = () => <h3> Protected Content </h3>
 
 export class Login extends Component {    
     render(){
