@@ -6,7 +6,7 @@ export default class WorkMethods extends Component {
         return (
             <div>
                 <div className="MainMenu">
-                    <Link to="/workmethods/primary" className="btn1">
+                    <Link to="/workmethods/timer" className="btn1">
                         <button>Primärblock</button>
                     </Link>
                     <Link to="/workmethods" className="btn1">

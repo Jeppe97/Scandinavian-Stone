@@ -6,7 +6,7 @@ import WorkMethods from './components/WorkMethods';
 import Statistics from './components/Statistics';
 import MainMenu from './components/MainMenu';
 import Login from "./components/login/Login";
-import MainContent from './components/MainContent';
+import Stopwatch from "./timer"
 import Blank from './components/Blank';
 import Dimensions from './components/Dimensions';
 
@@ -25,6 +25,9 @@ function App() {
                     <Route path="/workmethods/primary" exact component={Blank} />
                     <Route path="/workmethods/primary/dimensions" exact component={Dimensions} />
                     <Route path="/statistics" component={Statistics} />
+                    <Route path="/workmethods/timer" component={Stopwatch} />
+                   
+
                   </Switch>
         </Router>
     </div>
