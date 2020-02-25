@@ -6,6 +6,22 @@ const Public = () => <h3> Public Content </h3>
 const Protected = () => <h3> Protected Content </h3>
 
 export class Login extends Component {    
+
+    componentDidMount() {
+    const adminLoginButton = document.getElementById('admin');
+    const userLoginButton = document.getElementById('user');
+    const container = document.getElementById('container');
+
+    adminLoginButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    userLoginButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+    }
+
+
     render(){
         return(
     <div className ="container" id="container">
@@ -52,19 +68,6 @@ export class Login extends Component {
     </div>
         );
     }
-}
-window.onload=function(){
-    const adminLoginButton = document.getElementById('admin');
-    const userLoginButton = document.getElementById('user');
-    const container = document.getElementById('container');
-
-    adminLoginButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-    });
-    
-    userLoginButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-    });
 }
 export default Login;
 
