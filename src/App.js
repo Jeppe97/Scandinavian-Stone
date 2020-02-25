@@ -6,9 +6,9 @@ import WorkMethods from './components/WorkMethods';
 import Statistics from './components/Statistics';
 import MainMenu from './components/MainMenu';
 import Login from "./components/login/Login";
-import Stopwatch from "./timer"
 import Blank from './components/Blank';
 import Dimensions from './components/Dimensions';
+import Timer from './components/Timer';
 
 function App() {
   return (
@@ -22,10 +22,9 @@ function App() {
                     <Route path="/" exact component={Login} />
                     <Route path="/mainmenu" exact component={MainMenu} />
                     <Route path="/workmethods" exact component={WorkMethods} />
-                    <Route path="/workmethods/primary" exact component={Blank} />
+                    <Route path="/workmethods/primary" exact component={Timer} />
                     <Route path="/workmethods/primary/dimensions" exact component={Dimensions} />
                     <Route path="/statistics" component={Statistics} />
-                    <Route path="/workmethods/timer" component={Stopwatch} />
                    
 
                   </Switch>

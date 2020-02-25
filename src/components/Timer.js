@@ -3,7 +3,7 @@ import ReactStopwatch from 'react-stopwatch';
 import { Link } from "react-router-dom"
 
 
-class Stopwatch extends Component {
+class Timer extends Component {
 
   constructor(){
     super();
@@ -126,7 +126,7 @@ class Stopwatch extends Component {
           
 
 <div>
-<Link to="/workmethods" className="btn1">
+<Link to="/workmethods/primary/dimensions" className="btn1">
 <button>Spara</button>
 </Link>
 <Link to="/workmethods" className="btn1">
@@ -138,4 +138,4 @@ class Stopwatch extends Component {
       );
     }
   }
-  export default Stopwatch;
+  export default Timer;
