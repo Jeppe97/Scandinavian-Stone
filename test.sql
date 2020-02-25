@@ -4,19 +4,33 @@ CREATE TABLE LogIn (
     UserId INT NOT NULL AUTO_INCREMENT,
     UserName VARCHAR(30),
     Password VARCHAR(35),
+    Access VARCHAR(15),
     PRIMARY KEY (UserId)
 );
 
-INSERT INTO LogIn (UserName, Password) VALUES
-    ('Kulla', 'stone1234'),
-    ('Bjarlov', 'stone1'),
-    ('Lonnsboda', 'sten');
+INSERT INTO LogIn (UserName, Password, Access) VALUES
+    ('Kalle', 'KalleSten', 'arbetare'),
+    ('Rickard', 'RickardSten', 'arbetare'),
+    ('Maria', 'MariaSten', 'admin');
 SELECT * FROM LogIn;
 
 DROP TABLE IF EXISTS Places;
-CREATE TABLE Places (Location VARCHAR (20), UserId INT, PRIMARY KEY (Location, UserId), FOREIGN KEY (UserId) REFERENCES LogIn(UserId));
-INSERT INTO Places (Location, UserId) VALUES ('Skane', 1),('Blekinge', 2),('Blekinge', 3);
-SELECT * FROM Places JOIN LogIn LI on Places.UserId = LI.UserId;
+CREATE TABLE Places (Location VARCHAR (20) PRIMARY KEY);
+INSERT INTO Places (Location) VALUES
+    ('Biskopsgården'),
+    ('Bjärlöv'),
+    ('Brännhult'),
+    ('Bårarp'),
+    ('Duvhult'),
+    ('Ekeröd'),
+    ('Flivik'),
+    ('Gylsboda'),
+    ('Hjortsjö'),
+    ('Hägghult'),
+    ('Iddefjord'),
+    ('Kulla'),
+    ('Vånga');
 
-#CREATE FUNCTION filter (x VARCHAR());
+SELECT * FROM Places;
 
+# Sten typer: Swedish black, Dark stone, Red stone, Gneiss, Grey stone
