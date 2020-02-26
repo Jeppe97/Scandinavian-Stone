@@ -18,7 +18,7 @@ export class Dimensions extends Component {
     showMenu(event) {
         event.preventDefault();
 
-        this.setState({showMenu: true }, () => {
+        this.setState({ showMenu: true }, () => {
             document.addEventListener('click', this.closeMenu);
         });
     }
@@ -47,18 +47,18 @@ export class Dimensions extends Component {
 
                     {
                         this.state.showMenu
-                        ? (
-                            <div className="menu-active">
-                            <Link to="/">
-                            <button> Sågning </button>
-                            <button> Sprängning </button>
-                            <button> Borrning </button>
-                            </Link>
-                        </div>
-                        )
-                        : (
-                            null
-                        )
+                            ? (
+                                <div className="menu-active">
+                                    <Link to="/">
+                                        <button> Sågning </button>
+                                        <button> Sprängning </button>
+                                        <button> Borrning </button>
+                                    </Link>
+                                </div>
+                            )
+                            : (
+                                null
+                            )
                     }
                 </form>
             </div>

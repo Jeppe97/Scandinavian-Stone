@@ -1,14 +1,13 @@
 $thumbSize: 1em;
 
-
 @keyframes slideDown {
   0% {
     transform: translateY(100%);
     //transform: translateX(-100%)
   }
-  100%{
+  100% {
     transform: translateY(0);
-   // transform: translateX(0);
+    // transform: translateX(0);
   }
 }
 .makeStyles-root-1 {
@@ -52,18 +51,18 @@ button {
   }
 }
 form {
-    padding-bottom: 1em;
-    padding-top: 1em;
-    .menu-active{
-      position: absolute;
-      top:74em;
-      padding-top: 0.5em;
-      font-size: 0.2em;
-      animation: 0.5s ease-out 0s 1 slideDown;
-      button:hover {
-        background-color: green;
-      }
+  padding-bottom: 1em;
+  padding-top: 1em;
+  .menu-active {
+    position: absolute;
+    top: 74em;
+    padding-top: 0.5em;
+    font-size: 0.2em;
+    animation: 0.5s ease-out 0s 1 slideDown;
+    button:hover {
+      background-color: green;
     }
+  }
 }
 @media screen and (min-height: 1500px) {
   .dimbtn1 {

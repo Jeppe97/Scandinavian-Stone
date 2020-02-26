@@ -9,7 +9,7 @@ export default class Statistics extends Component {
 
                     <h1>STATS</h1>
 
-                    <Link to="/mainmenu"className="btn1">
+                    <Link to="/mainmenu" className="btn1">
                         <button>Tillbaka</button>
                     </Link>
                 </div>
