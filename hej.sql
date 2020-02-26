@@ -1,12 +1,54 @@
-DROP TABLE IF EXISTS A;
-
-CREATE TABLE A (
-    UserName VARCHAR(30),
-    Password VARCHAR(35)
+CREATE TABLE User
+(
+  UserName VARCHAR(20) NOT NULL,
+  Password VARCHAR(30) NOT NULL,
+  Access VARCHAR(10) NOT NULL,
+  UserID INT NOT NULL,
+  PRIMARY KEY (UserID)
 );
 
-INSERT INTO A (UserName, Password) VALUES
-    ('Kulla', 'stone1234'),
-    ('Bjarlov', 'stone1'),
-    ('Lonnsboda', 'sten');
-SELECT * FROM A;
+CREATE TABLE Stone
+(
+  ProductId INT NOT NULL,
+  Location INT NOT NULL,
+  Comments INT,
+  Type INT NOT NULL,
+  Size INT NOT NULL,
+  PRIMARY KEY (ProductId)
+);
+
+CREATE TABLE SecondaryMethod
+(
+  Kilning INT NOT NULL,
+  Sågning INT NOT NULL,
+  ProductId INT NOT NULL,
+  FOREIGN KEY (ProductId) REFERENCES Stone(ProductId)
+);
+
+CREATE TABLE ProcessedStone
+(
+  NewProductId INT NOT NULL,
+  ProductId INT NOT NULL,
+  Comments VARCHAR,
+  Size INT NOT NULL,
+  ProductId INT NOT NULL,
+  PRIMARY KEY (NewProductId),
+  FOREIGN KEY (ProductId) REFERENCES Stone(ProductId)
+);
+
+CREATE TABLE Size
+(
+  Depth INT NOT NULL,
+  Width INT NOT NULL,
+  Height INT NOT NULL,
+  Weight INT NOT NULL
+);
+
+CREATE TABLE PrimaryMethod
+(
+  Sågning INT NOT NULL,
+  Sprängning INT NOT NULL,
+  Amount INT NOT NULL,
+  ProductId INT NOT NULL,
+  FOREIGN KEY (ProductId) REFERENCES Stone(ProductId)
+);
