@@ -106,32 +106,28 @@ class Timer extends Component {
 
         <p className="watchText">Sida 1:</p>
         <div className="test">{(Math.round(runningTime0) / 1000 / 60) << 0}:{Math.round((runningTime0 / 1000) % 60)}</div>
-        <button className="btn1" onClick={this.handleClick0}>{status0 ? 'Stop' : 'Start'}</button>
-        <button className="btn1" onClick={this.handleReset0}>Reset</button>
+        <button className="timerbtn" id="start" onClick={this.handleClick0}>{status0 ? 'Stop' : 'Start'}</button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset0}>Reset</button>
 
 
         <p className="watchText">Sida 2:</p>
         <div className="test">{(Math.round(runningTime1) / 1000 / 60) << 0}:{Math.round((runningTime1 / 1000) % 60)}</div>
-        <button className="btn1" onClick={this.handleClick1}>{status1 ? 'Stop' : 'Start'}</button>
-        <button className="btn1" onClick={this.handleReset1}>Reset</button>
+        <button className="timerbtn" id="start" onClick={this.handleClick1}>{status1 ? 'Stop' : 'Start'}</button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset1}>Reset</button>
 
 
 
         <p className="watchText">Sida 3:</p>
         <div className="test">{(Math.round(runningTime2) / 1000 / 60) << 0}:{Math.round((runningTime2 / 1000) % 60)}</div>
-        <button className="btn1" onClick={this.handleClick2}>{status2 ? 'Stop' : 'Start'}</button>
-        <button className="btn1" onClick={this.handleReset2}>Reset</button>
+        <button className="timerbtn" id="start" onClick={this.handleClick2}>{status2 ? 'Stop' : 'Start'}</button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset2}>Reset</button>
 
-
-
-        <div>
           <Link to="/workmethods/primary/dimensions" className="btn1">
             <button>Spara</button>
           </Link>
           <Link to="/workmethods" className="btn1">
             <button>Avbryt</button>
           </Link>
-        </div>
       </div>
 
     );

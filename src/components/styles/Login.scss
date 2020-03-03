@@ -16,7 +16,6 @@ h2 {
 p {
   font-size: 14px;
   font-weight: 100;
-  line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
 }
@@ -109,6 +108,40 @@ input {
   display: flex;
   justify-content: center;
   margin: auto;
+}
+.container.container-form{
+  width: inherit;
+  height: inherit;
+  display: grid;
+  font-size: 1em;
+  padding: 1em;
+  a {
+    display:inherit;
+  }
+  button {
+    margin: 15px;
+  }
+  .watchText {
+    font-size: 1.7em;
+    margin: auto;
+  }
+  .test {
+    font-size: 1.5em;
+    margin: auto;
+  }
+  .timerbtn{
+    font-size: 0.7em;
+  }
+  .timerbtn#start{
+    background: green;
+    border: solid;
+    border-color: black;
+  }
+  .timerbtn#reset {
+    background: #710c0c;
+    border: solid;
+    border-color: black;
+  }
 }
 .container-form {
   width: inherit;
