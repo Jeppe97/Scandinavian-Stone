@@ -51,6 +51,14 @@ button {
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   font-family: "Montserrat", sans-serif;
+  .btn1 {
+    color: #333;
+    font-size: 0.8em;
+    text-decoration: none;
+    margin: 15px 0;
+    border-bottom: solid #222;
+    border-bottom: none;
+  }
 }
 
 button:active {

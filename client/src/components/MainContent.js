@@ -14,8 +14,8 @@ class MainContent extends Component {
       Höjd: "",
       Bredd: "",
       Längd: "",
-  
-     
+
+
 
     }
     this.state = { isToggleOn: true };
@@ -78,7 +78,7 @@ class MainContent extends Component {
         </Link>
         <Link to="/workmethods" className="btn1">
           <button onClick={this.handleClick} className="form-buttons-primary">
-          {this.setState.isToggleOn = "Avbryt"}</button>
+            {this.setState.isToggleOn = "Avbryt"}</button>
         </Link>
       </div>
     )

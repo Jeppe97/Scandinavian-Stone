@@ -27,7 +27,7 @@ export default function RangeSlider() {
   return (
     <div className={classes.root}>
       <Typography id="range-slider" gutterBottom>
-        
+
       </Typography>
       <Slider
         min={100}

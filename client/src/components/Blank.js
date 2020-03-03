@@ -6,8 +6,8 @@ export class Blank extends Component {
         return (
             <div>
                 <Link to="/workmethods/primary/dimensions" className="btn1">
-                <button>
-                    Ta mig vidare
+                    <button>
+                        Ta mig vidare
                 </button>
                 </Link>
             </div>

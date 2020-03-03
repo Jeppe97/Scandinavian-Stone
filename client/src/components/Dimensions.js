@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
+import { Link } from "react-router-dom";
 
 export class Dimensions extends Component {
 
@@ -17,12 +18,11 @@ export class Dimensions extends Component {
     showMenu(event) {
         event.preventDefault();
 
-        this.setState({showMenu: true }, () => {
+        this.setState({ showMenu: true }, () => {
             document.addEventListener('click', this.closeMenu);
         });
     }
     closeMenu() {
-
         this.setState({ showMenu: false }, () => {
             document.removeEventListener('click', this.closeMenu);
         });
@@ -34,6 +34,7 @@ export class Dimensions extends Component {
     render() {
         return (
             <div>
+                Sida 1
                 <form className="dimension-form">
                     Höjd: (cm)
                 <Slider />
@@ -46,16 +47,18 @@ export class Dimensions extends Component {
 
                     {
                         this.state.showMenu
-                        ? (
-                            <div className="menu-active">
-                            <button> Sågning </button>
-                            <button> Sprängning </button>
-                            <button> Borrning </button>
-                        </div>
-                        )
-                        : (
-                            null
-                        )
+                            ? (
+                                <div className="menu-active">
+                                    <Link to="/">
+                                        <button> Sågning </button>
+                                        <button> Sprängning </button>
+                                        <button> Borrning </button>
+                                    </Link>
+                                </div>
+                            )
+                            : (
+                                null
+                            )
                     }
                 </form>
             </div>
