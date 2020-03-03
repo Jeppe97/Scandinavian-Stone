@@ -29,7 +29,7 @@ CREATE TABLE ProcessedStone
 (
   NewProductId INT NOT NULL,
   ProductId INT NOT NULL,
-  Comments VARCHAR,
+  Comments VARCHAR( 20),
   Size INT NOT NULL,
   ProductId INT NOT NULL,
   PRIMARY KEY (NewProductId),
