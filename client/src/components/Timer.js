@@ -126,7 +126,7 @@ class Timer extends Component {
 
           <p className="watchText">Botten</p>
           <div className="test">{(Math.round(runningTime2) / 1000 / 60) << 0}:{Math.round((runningTime2 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick2}>{status3 ? 'Paus' : 'Start'}</button>
+          <button className="timerbtn" id="start" onClick={this.handleClick2}>{status2 ? 'Paus' : 'Start'}</button>
           <button className="timerbtn" id="reset" onClick={this.handleReset2}>Reset</button>
         </div>
         <div className="timer-grid2">
