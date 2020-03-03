@@ -16,7 +16,6 @@ h2 {
 p {
   font-size: 14px;
   font-weight: 100;
-  line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
 }
@@ -107,8 +106,52 @@ input {
   max-width: 100%;
   height: 15em;
   display: flex;
-  justify-content: center;
+  //justify-content: center;
   margin: auto;
+}
+.container.container-form{
+  
+  display: grid;
+  font-size: 1em;
+  padding: 1em;
+  width: 30em;
+  
+  .timer-grid1{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+  .timer-grid2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  a {
+    display:inherit;
+  }
+  button {
+    margin: 15px;
+  }
+  .watchText {
+    font-size: 1.7em;
+    margin: auto;
+  }
+  .test {
+    font-size: 1.5em;
+    margin: auto;
+  }
+  .timerbtn{
+    font-size: 0.7em;
+  }
+  .timerbtn#start{
+    background: green;
+    border: solid;
+    border-color: black;
+  }
+  .timerbtn#reset {
+    background: #710c0c;
+    border: solid;
+    border-color: black;
+  }
 }
 .container-form {
   width: inherit;

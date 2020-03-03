@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../components/styles/MainMenu.scss';
+import './styles/MainMenu.scss';
 import auth from './login/auth';
 
 export const MainMenu = (props) => {

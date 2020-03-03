@@ -1,5 +1,5 @@
 {
-  "name": "scandinavian-stone-1",
+  "name": "scandinavian-stone",
   "version": "1.0.0",
   "description": "express backend for SCS",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jeppe97/scandinavian-stone.git"
+    "url": "git+https://github.com/Jeppe97/Scandinavian-Stone.git"
   },
   "author": "Visitrix",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jeppe97/scandinavian-stone/issues"
+    "url": "https://github.com/Jeppe97/Scandinavian-Stone/issues"
   },
-  "homepage": "https://github.com/Jeppe97/scandinavian-stone#readme",
+  "homepage": "https://github.com/Jeppe97/Scandinavian-Stone#readme",
   "dependencies": {
     "concurrently": "^5.1.0",
     "express": "^4.17.1"
