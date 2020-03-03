@@ -1,0 +1,30 @@
+{
+  "name": "scandinavian-stone",
+  "version": "1.0.0",
+  "description": "express backend for SCS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeppe97/Scandinavian-Stone.git"
+  },
+  "author": "Visitrix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeppe97/Scandinavian-Stone/issues"
+  },
+  "homepage": "https://github.com/Jeppe97/Scandinavian-Stone#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
