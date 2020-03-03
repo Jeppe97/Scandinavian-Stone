@@ -3,8 +3,7 @@ import ReactStopwatch from 'react-stopwatch';
 import { Link } from "react-router-dom"
 
 
-
-class Timer extends Component {
+class Stopwatch extends Component {
 
   constructor(){
     super();
@@ -13,18 +12,17 @@ class Timer extends Component {
       status: false,
       runningTime0: 0,
       runningTime1: 0,
-      runningTime2: 0,
-      runningTime3: 0
+      runningTime2: 0
     };
     
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
-    this.handleClick3 = this.handleClick3.bind(this);
+
     this.handleReset0= this.handleReset0.bind(this);
     this.handleReset1= this.handleReset1.bind(this);
     this.handleReset2= this.handleReset2.bind(this);
-    this.handleReset3= this.handleReset3.bind(this);
+
   }
   
 
@@ -72,20 +70,6 @@ class Timer extends Component {
         return { status2: !state.status2 };
       });
     };
-
-    handleClick3 = () => {
-      this.setState(state => {
-        if (state.status3) {
-          clearInterval(this.timer3);
-        } else {
-          const startTime3 = Date.now() - this.state.runningTime3;
-          this.timer3 = setInterval(() => {
-            this.setState({ runningTime3: Date.now() - startTime3 });
-          });
-        }
-        return { status3: !state.status3 };
-      });
-    };
     
     
 
@@ -105,12 +89,6 @@ class Timer extends Component {
       this.setState({ runningTime2: 0, status2: false });
     };
 
-    handleReset3 = () => {
-      clearInterval(this.timer3); 
-      this.setState({ runningTime3: 0, status3: false });
-    };
-
-
 
 
     componentWillUnmount() {
@@ -122,43 +100,34 @@ class Timer extends Component {
     componentWillUnmount() {
       clearInterval(this.timer2);
     }
-
-    componentWillUnmount() {
-      clearInterval(this.timer3);
-    }
   
     render() {
-      const { status0, status1, status2, status3, runningTime0, runningTime1, runningTime2, runningTime3 } = this.state;
+      const { status0, status1, status2, runningTime0, runningTime1, runningTime2 } = this.state;
       return (
-        <div className="container container-form">
+        <div className="container container-form-stopWatch">
 
-        
         <p className="watchText">Sida 1:</p>
-        <div>{(Math.round(runningTime0)/1000/60) << 0}:{Math.round((runningTime0/1000)% 60)}</div>
+        <div className="test">{(Math.round(runningTime0)/1000/60) << 0}:{Math.round((runningTime0/1000)% 60)}</div>
         <button className="btn1" onClick={this.handleClick0}>{status0 ? 'Stop' : 'Start'}</button>
         <button className="btn1" onClick={this.handleReset0}>Reset</button>
-        
-       
+         
+         
         <p className="watchText">Sida 2:</p>
-        <div>{(Math.round(runningTime1)/1000/60) << 0}:{Math.round((runningTime1/1000)% 60)}</div>
+        <div className="test">{(Math.round(runningTime1)/1000/60) << 0}:{Math.round((runningTime1/1000)% 60)}</div>
         <button className="btn1" onClick={this.handleClick1}>{status1 ? 'Stop' : 'Start'}</button>
         <button className="btn1" onClick={this.handleReset1}>Reset</button>
-       
-       
+         
+         
+         
         <p className="watchText">Sida 3:</p>
-        <div>{(Math.round(runningTime2)/1000/60) << 0}:{Math.round((runningTime2/1000)% 60)}</div>
+        <div className="test">{(Math.round(runningTime2)/1000/60) << 0}:{Math.round((runningTime2/1000)% 60)}</div>
         <button className="btn1" onClick={this.handleClick2}>{status2 ? 'Stop' : 'Start'}</button>
         <button className="btn1" onClick={this.handleReset2}>Reset</button>
+          
+          
 
-
-        <p className="watchText">Botten:</p>
-        <div>{(Math.round(runningTime3)/1000/60) << 0}:{Math.round((runningTime3/1000)% 60)}</div>
-        <button className="btn1" onClick={this.handleClick3}>{status3 ? 'Stop' : 'Start'}</button>
-        <button className="btn1" onClick={this.handleReset3}>Reset</button>
-    
-
-<div className="timerBtn">
-<Link to="/workmethods/primary/dimensions" className="btn1">
+<div>
+<Link to="/workmethods" className="btn1">
 <button>Spara</button>
 </Link>
 <Link to="/workmethods" className="btn1">
@@ -170,4 +139,4 @@ class Timer extends Component {
       );
     }
   }
-  export default Timer;
+  export default Stopwatch;

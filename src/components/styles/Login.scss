@@ -262,6 +262,15 @@ input {
   }
 }
 @media only screen and (max-height: 2050px) and (min-height: 1700px) {
+  .container.container-form {
+    width: 15em;
+    height: 30em;
+  
+    padding-left: 15px;
+    
+
+  
+  }
   .container {
     width: 30em;
     height: 17em;
@@ -275,4 +284,18 @@ input {
   a {
     font-size: 0.8em;
   }
+.timerBtn{
+  padding-top: 50px;
+  padding-left: 10px;
 }
+
+}
+
+
+.watchText{
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 50px;
+
+}
+
