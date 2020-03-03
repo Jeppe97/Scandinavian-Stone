@@ -13,6 +13,7 @@ export class Dimensions extends Component {
 
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+        this.refreshPage = this.refreshPage.bind(this)
     }
 
     showMenu(event) {
@@ -29,6 +30,9 @@ export class Dimensions extends Component {
     }
     changeBackground(e) {
         e.target.style.background = 'red';
+    }
+    refreshPage() {
+        window.location.reload();
     }
 
     render() {
@@ -50,9 +54,9 @@ export class Dimensions extends Component {
                             ? (
                                 <div className="menu-active">
                                     <Link to="/">
-                                        <button> Sågning </button>
-                                        <button> Sprängning </button>
-                                        <button> Borrning </button>
+                                        <button onClick={ this.refreshPage }> Sågning </button>
+                                        <button onClick={ this.refreshPage }> Sprängning </button>
+                                        <button onClick={ this.refreshPage }> Borrning </button>
                                     </Link>
                                 </div>
                             )

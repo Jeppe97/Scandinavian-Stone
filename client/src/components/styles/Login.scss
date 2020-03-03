@@ -30,6 +30,7 @@ a {
   text-decoration: none;
   margin: 15px 0;
   border-bottom: solid #222;
+  cursor: default;
 }
 a.btn1 {
   border-bottom: none;
@@ -110,6 +111,7 @@ input {
   margin: auto;
 }
 .container.container-form{
+  
   
   display: grid;
   font-size: 1em;
