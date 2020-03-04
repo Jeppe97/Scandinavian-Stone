@@ -16,7 +16,6 @@ export class Dimensions extends Component {
         return (
             <div>
                 <div className="wrapper">
-
                     <form className="dimension-form 1">
                         <h1 className="sides">Sida 1:</h1>
                         Höjd: (cm)
@@ -24,9 +23,8 @@ export class Dimensions extends Component {
                         Längd: (cm)
                 <Slider />
                         <Link className="btn1" to="/workmethods/primary/dimensions">
-                            <button > Sågning </button>
-                            <button > Sprängning </button>
-                            <button > Borrning </button>
+                            <button>Borrning + Sprängning</button>
+                            <button>Borrning + Sågning</button>
                         </Link>
                     </form>
 
@@ -37,7 +35,8 @@ export class Dimensions extends Component {
                         Längd: (cm)
                 <Slider />
                         <Link className="btn1" to="/">
-                           <button>Test</button>
+                            <button>Borrning + Sprängning</button>
+                            <button>Borrning + Sågning</button>
                         </Link>
                     </form>
 
@@ -48,9 +47,8 @@ export class Dimensions extends Component {
                         Längd: (cm)
                 <Slider />
                         <Link className="btn1" to="/">
-                            <button > Sågning </button>
-                            <button > Sprängning </button>
-                            <button > Borrning </button>
+                            <button>Borrning + Sprängning</button>
+                            <button>Borrning + Sågning</button>
                         </Link>
                     </form>
 
@@ -61,9 +59,8 @@ export class Dimensions extends Component {
                         Längd: (cm)
                 <Slider />
                         <Link className="btn1" to="/">
-                            <button > Sågning </button>
-                            <button > Sprängning </button>
-                            <button > Borrning </button>
+                            <button>Borrning + Sprängning</button>
+                            <button>Borrning + Sågning</button>
                         </Link>
                     </form>
                 </div>
