@@ -9,7 +9,10 @@ import MainMenu from './components/MainMenu';
 import Login from "./components/login/Login";
 import Dimensions from './components/Dimensions';
 import Timer from './components/Timer';
+import TimerSkiva from './TimerSkiva';
+import Block from './components/Block'
 import { ProtectedRoute} from './components/login/protected-route';
+
 
 function App() {
   return (
@@ -23,10 +26,13 @@ function App() {
                     <Route exact path="/" component={Login} />
                     <ProtectedRoute exact path="/mainmenu" component={MainMenu} />
                     <ProtectedRoute exact path="/workmethods" component={WorkMethods} />
+                    <ProtectedRoute exact path="/workmethods/block" component={Block} />
                     <ProtectedRoute exact path="/workmethods/primary" component={Timer} />
                     <ProtectedRoute exact path="/workmethods/primary/dimensions" component={Dimensions} />
                     <ProtectedRoute path="/statistics" component={Statistics} />
+                    <ProtectedRoute exact path="/workmethods/primarySkiva" component={TimerSkiva} />
                     <Route path="*" component={() => "404 NOT FOUND"}/>
+
                   </Switch>
         </Router>
     </div>

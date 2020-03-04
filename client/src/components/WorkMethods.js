@@ -9,10 +9,10 @@ export default class WorkMethods extends Component {
                     <Link to="/workmethods/primary" className="btn1">
                         <button>Primärblock</button>
                     </Link>
-                    <Link to="/workmethods" className="btn1">
+                    <Link to="/workmethods/primarySkiva" className="btn1">
                         <button>Skiva</button>
                     </Link>
-                    <Link to="/workmethods" className="btn1">
+                    <Link to="/workmethods/block" className="btn1">
                         <button>Block</button>
                     </Link>
                     <Link to="/mainmenu" className="btn1">

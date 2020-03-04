@@ -50,9 +50,8 @@ export class Dimensions extends Component {
                             ? (
                                 <div className="menu-active">
                                     <Link to="/">
-                                        <button> Sågning </button>
-                                        <button> Sprängning </button>
-                                        <button> Borrning </button>
+                                        <button> Borrning + Sågning </button>
+                                        <button> Borrning + Sprängning </button>
                                     </Link>
                                 </div>
                             )

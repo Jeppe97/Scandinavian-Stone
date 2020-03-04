@@ -125,6 +125,18 @@ input {
     display: grid;
     grid-template-columns: 50% 50%;
   }
+
+  .timer-grid3{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+
+  }
+  .block-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+  }
+
   a {
     display:inherit;
   }
