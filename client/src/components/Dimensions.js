@@ -8,63 +8,65 @@ export class Dimensions extends Component {
         super();
 
         this.state = {
-            showMenu: false,
+
         }
-
-        this.showMenu = this.showMenu.bind(this);
-        this.closeMenu = this.closeMenu.bind(this);
-        this.refreshPage = this.refreshPage.bind(this)
-    }
-
-    showMenu(event) {
-        event.preventDefault();
-
-        this.setState({ showMenu: true }, () => {
-            document.addEventListener('click', this.closeMenu);
-        });
-    }
-    closeMenu() {
-        this.setState({ showMenu: false }, () => {
-            document.removeEventListener('click', this.closeMenu);
-        });
-    }
-    changeBackground(e) {
-        e.target.style.background = 'red';
-    }
-    refreshPage() {
-        window.location.reload();
     }
 
     render() {
         return (
             <div>
-                Sida 1
-                <form className="dimension-form">
-                    Höjd: (cm)
-                <Slider />
-                    Längd: (cm)
-                <Slider />
+                <div className="wrapper">
 
-                    <button onClick={this.showMenu} className="dimbtn1">
-                        Välj Arbetsmetod:
-                    </button>
+                    <form className="dimension-form 1">
+                        <h1 className="sides">Sida 1:</h1>
+                        Höjd: (cm)
+                <Slider />
+                        Längd: (cm)
+                <Slider />
+                        <Link className="btn1" to="/workmethods/primary/dimensions">
+                            <button > Sågning </button>
+                            <button > Sprängning </button>
+                            <button > Borrning </button>
+                        </Link>
+                    </form>
 
-                    {
-                        this.state.showMenu
-                            ? (
-                                <div className="menu-active">
-                                    <Link to="/">
-                                        <button onClick={ this.refreshPage }> Sågning </button>
-                                        <button onClick={ this.refreshPage }> Sprängning </button>
-                                        <button onClick={ this.refreshPage }> Borrning </button>
-                                    </Link>
-                                </div>
-                            )
-                            : (
-                                null
-                            )
-                    }
-                </form>
+                    <form className="dimension-form 2">
+                        <h1 className="sides">Sida 2:</h1>
+                        Höjd: (cm)
+                <Slider />
+                        Längd: (cm)
+                <Slider />
+                        <Link className="btn1" to="/">
+                           <button>Test</button>
+                        </Link>
+                    </form>
+
+                    <form className="dimension-form 3">
+                        <h1 className="sides">Sida 3:</h1>
+                        Höjd: (cm)
+                <Slider />
+                        Längd: (cm)
+                <Slider />
+                        <Link className="btn1" to="/">
+                            <button > Sågning </button>
+                            <button > Sprängning </button>
+                            <button > Borrning </button>
+                        </Link>
+                    </form>
+
+                    <form className="dimension-form 4">
+                        <h1 className="sides">Sida 4:</h1>
+                        Höjd: (cm)
+                <Slider />
+                        Längd: (cm)
+                <Slider />
+                        <Link className="btn1" to="/">
+                            <button > Sågning </button>
+                            <button > Sprängning </button>
+                            <button > Borrning </button>
+                        </Link>
+                    </form>
+                </div>
             </div>
         );
     }

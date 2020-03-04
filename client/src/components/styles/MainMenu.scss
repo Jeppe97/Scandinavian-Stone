@@ -1,7 +1,6 @@
 .MainMenu {
   display: grid;
   padding-top: 10rem;
-  font-size: 0.7em;
 
   a {
     text-decoration: none;
@@ -35,7 +34,7 @@
 @media screen and (max-width: 1600px) {
   .MainMenu {
     grid-auto-rows: minmax(200px, auto);
-
+    font-size: 0.7em;
     a {
       text-decoration: none;
       button {
