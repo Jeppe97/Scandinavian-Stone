@@ -31,7 +31,8 @@ export default function RangeSlider() {
       </Typography>
       <Slider
         min={100}
-        max={200}
+        max={5000}
+        step={10}
         value={value}
         onChange={handleChange}
         valueLabelDisplay="auto"

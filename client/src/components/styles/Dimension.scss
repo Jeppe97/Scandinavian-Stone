@@ -10,6 +10,32 @@ $thumbSize: 1em;
     // transform: translateX(0);
   }
 }
+.wrapper{
+  display: grid;
+  max-width: 1500px;
+  grid-auto-columns: minmax(70px,auto);
+  grid-template-columns: repeat(2,1fr);
+  gap: 1em;
+  
+  h1.sides{
+    font-size: 0.8em;
+  }
+
+  form{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    grid-template-rows: repeat(5,1fr) 4fr;
+  }
+  form.dimension-form{
+    
+    border: 1px solid black;
+  }
+  
+}
+div.makeStyles-root-1{
+  width: 100%;
+}
 .makeStyles-root-1 {
   .MuiTypography-root {
     font-family: "Montserrat", sans-serif;
@@ -67,9 +93,5 @@ form {
 @media screen and (min-height: 1500px) {
   .dimbtn1 {
     font-size: 0.5em;
-    margin-top: 1em;
-  }
-  .dimension-form {
-    font-size: 2em;
   }
 }

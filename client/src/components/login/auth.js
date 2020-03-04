@@ -18,7 +18,6 @@ class Auth {
         this.adminAuthenticated = false;
         cb();
     }
-
     isAuthenticated() {
         return this.authenticated;
     }

@@ -30,6 +30,7 @@ a {
   text-decoration: none;
   margin: 15px 0;
   border-bottom: solid #222;
+  cursor: default;
 }
 a.btn1 {
   border-bottom: none;
@@ -110,12 +111,15 @@ input {
   margin: auto;
 }
 .container.container-form{
-  
   display: grid;
   font-size: 1em;
   padding: 1em;
   width: 30em;
-  
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows:minmax(100px,auto);
+
+
+
   .timer-grid1{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
@@ -134,11 +138,27 @@ input {
   .block-grid{
     display: grid;
     grid-template-columns: 50% 50%;
+ 
+
 
   }
+  
+  
+
+
+
+
+
+  
 
   a {
     display:inherit;
+  }
+  a.btn1.savebtn{
+    grid-column: 1/3;
+  }
+  a.btn1.cancelbtn{
+    grid-column: 3/5;
   }
   button {
     margin: 15px;
