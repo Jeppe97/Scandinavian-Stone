@@ -74,7 +74,7 @@ class Block extends Component {
     <div className="container container-form">
         <div>
           <form>
-          Volym(m³: <input type="text" placeholder="Volym(m³)" onChange={this.handleChange0} />
+          Volym(m³): <input type="text" placeholder="Volym(m³)" onChange={this.handleChange0} />
 
           Vikt(ton): <input type="text" placeholder="Vikt(ton)" onChange={this.handleChange1} />
 

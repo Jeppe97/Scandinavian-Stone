@@ -11,6 +11,7 @@ import Dimensions from './components/Dimensions';
 import Timer from './components/Timer';
 import TimerSkiva from './TimerSkiva';
 import Block from './components/Block'
+import DimensionsSkiva from './components/DimensionsSkiva'
 import { ProtectedRoute} from './components/login/protected-route';
 
 
@@ -31,6 +32,7 @@ function App() {
                     <ProtectedRoute exact path="/workmethods/primary/dimensions" component={Dimensions} />
                     <ProtectedRoute path="/statistics" component={Statistics} />
                     <ProtectedRoute exact path="/workmethods/primarySkiva" component={TimerSkiva} />
+                    <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions" component={DimensionsSkiva} />
                     <Route path="*" component={() => "404 NOT FOUND"}/>
 
                   </Switch>

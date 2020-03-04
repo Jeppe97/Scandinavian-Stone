@@ -94,7 +94,7 @@ class TimerSkiva extends Component {
 
         </div>
         <div className="timer-grid2">
-          <Link to="/workmethods/primary/dimensions" className="btn1">
+          <Link to="/workmethods/primarySkiva/dimensions" className="btn1">
             <button>Spara</button>
           </Link>
           <Link to="/workmethods" className="btn1">
