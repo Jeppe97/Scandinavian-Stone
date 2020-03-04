@@ -53,7 +53,7 @@ export class Dimensions extends Component {
                     </form>
 
                     <form className="dimension-form 4">
-                        <h1 className="sides">Sida 4:</h1>
+                        <h1 className="sides">Botten: </h1>
                         Höjd: (cm)
                 <Slider />
                         Längd: (cm)
