@@ -78,7 +78,7 @@ class TimerSkiva extends Component {
     const { status0, status1 ,runningTime0, runningTime1} = this.state;
     return (
       <div>
-        <div className="container container-formSkiva">
+        <div className="container container-formD2">
           <div className="timer-grid3">
           <p className="watchText">Sida 1:</p>
           <div className="test">{(Math.round(runningTime0) / 1000 / 60) << 0}:{Math.round((runningTime0 / 1000) % 60)}</div>

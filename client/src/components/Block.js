@@ -71,7 +71,7 @@ class Block extends Component {
 
   render() {
     return (
-    <div className="container container-form">
+    <div className="container container-formD2">
         <div>
           <form>
           Volym(m³): <input type="text" placeholder="Volym(m³)" onChange={this.handleChange0} />

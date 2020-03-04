@@ -128,7 +128,7 @@ input {
   }
   .timer-grid2{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
   }
 
   .timer-grid3{
@@ -188,7 +188,7 @@ input {
 }
 
 
-.container.container-formSkiva{
+.container.container-formD2{
   display: grid;
   font-size: 1em;
   padding: 1em;
