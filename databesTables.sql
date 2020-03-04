@@ -51,6 +51,8 @@ CREATE TABLE Block(
   stoneID INT NOT NULL,
   primaryStoneID INT NOT NULL,
   producIDBlock VARCHAR(30),
+  quality VARCHAR(30),
+  weight FLOAT NOT NULL,
   PRIMARY KEY (blockID),
   FOREIGN KEY (stoneID) REFERENCES Stone(stoneID),
   FOREIGN KEY (primaryStoneID) REFERENCES PrimaryStone(primaryStoneID)
@@ -111,15 +113,15 @@ DROP TABLE IF EXISTS Users;
 
 INSERT INTO Quarry(stoneType, stoneName, quarryName) VALUES
     ('Diabas','Swedish Biskopsgården','Biskopsgården'),
-    ('granit','Swedish Brown','Bjärlöv');
-   /* ('Brännhult'),
-    ('Bårarp'),
-    ('Duvhult'),
-    ('Ekeröd'),
-    ('Flivik'),
-    ('Gylsboda'),
-    ('Hjortsjö'),
-    ('Hägghult'),
-    ('Iddefjord'),
-    ('Kulla'),
-    ('Vånga');*/
+    ('Granit','Swedish Brown','Bjärlöv'),
+    ('Diabas', 'Swedish Black','Brännhult'),
+    ('Gnesis', 'Swedish Gnesis Bårarp', 'Bårarp'),
+    ('Diabas', 'Swedish Black Duchult', 'Duvhult'),
+    ('Syenite', 'Swedish Green Ekeröd','Ekeröd'),
+    ('Granite', 'Swedish Mahogany Flivik','Flivik'),
+    ('Diabas', 'Swedish Black Gylsboda','Gylsboda'),
+    ('Diabas', 'Swedish Black Hjortsjö','Hjortsjö'),
+    ('Diabas', 'Swedish Black Hägghult','Hägghult'),
+    ('Granite', 'Bohus Gray Iddefjord', 'Iddefjord'),
+    ('Granite','Swedish Gray Kulla','Kulla'),
+    ('Granite','Swedish Red Vånga','Vånga');
