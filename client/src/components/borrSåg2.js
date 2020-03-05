@@ -11,8 +11,6 @@ export class bS2 extends Component {
 
         }
     }
-
-
     refreshPage() {
         window.location.assign("/");
     }
@@ -27,15 +25,15 @@ export class bS2 extends Component {
                         Längd på hålen:
                 <Slider />
 
-                Spräng sort:
+                        Spräng sort:
                 <Slider />
                         Mängd sprängdeg:
                 <Slider />
-                      
+
 
                     </form>
 
-                    
+
                     <form className="dimension-form 2">
                         <h1 className="sides">Sida 2:</h1>
                         Antal hål:
@@ -43,19 +41,19 @@ export class bS2 extends Component {
                         Längd på hålen:
                 <Slider />
 
-                Spräng sort:
+                        Spräng sort:
                 <Slider />
                         Mängd sprängdeg:
                 <Slider />
                         <Link className="btn1" to="/">
                             <button onClick={this.refreshPage}>Spara</button>
-                            
+
                         </Link>
                     </form>
-                    
-                 
-                    
-                  
+
+
+
+
                 </div>
             </div>
         );

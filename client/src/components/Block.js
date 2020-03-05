@@ -11,10 +11,10 @@ class Block extends Component {
 
 
     this.state = {
-     Volym: "",
-    Vikt: "",
+      Volym: "",
+      Vikt: "",
       Kvalite: "",
-      Pris:""
+      Pris: ""
 
     }
 
@@ -24,7 +24,7 @@ class Block extends Component {
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
-    
+
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
 
@@ -39,14 +39,14 @@ class Block extends Component {
 
   handleChange1(event) {
     this.setState({
-     Vikt: event.target.value,
+      Vikt: event.target.value,
 
     })
   }
 
   handleChange2(event) {
     this.setState({
-     Kvalite: event.target.value,
+      Kvalite: event.target.value,
 
     })
   }
@@ -72,31 +72,31 @@ class Block extends Component {
 
   render() {
     return (
-    <div className="container container-formD2">
+      <div className="container container-formD2">
         <div>
           <form>
-          Volym(m³): <input type="text" placeholder="Volym(m³)" onChange={this.handleChange0} />
+            Volym(m³): <input type="text" placeholder="Volym(m³)" onChange={this.handleChange0} />
 
-          Vikt(ton): <input type="text" placeholder="Vikt(ton)" onChange={this.handleChange1} />
+            Vikt(ton): <input type="text" placeholder="Vikt(ton)" onChange={this.handleChange1} />
 
-          Kvalité: <input type="text" placeholder="Kvalité" onChange={this.handleChange2} />
+            Kvalité: <input type="text" placeholder="Kvalité" onChange={this.handleChange2} />
 
-          Pris:   <input type="text" placeholder="Pris" onChange={this.handleChange3} />
-         
-         
+            Pris:   <input type="text" placeholder="Pris" onChange={this.handleChange3} />
+
+
           </form>
         </div >
-       <div className="block-grid">
-      <Link to="/mainmenu" className="btn1">
-          <button onClick={this.handleClick0}>
-            {this.state.isToggleOn ? "Spara" : "Sparat"}</button>
-      </Link>
-      <Link to="/workmethods" className="btn1">
-          <button onClick={this.handleClick}>
-            {this.setState.isToggleOn = "Avbryt"}</button>
-      </Link>
+        <div className="block-grid">
+          <Link to="/mainmenu" className="btn1">
+            <button onClick={this.handleClick0}>
+              {this.state.isToggleOn ? "Spara" : "Sparat"}</button>
+          </Link>
+          <Link to="/workmethods" className="btn1">
+            <button onClick={this.handleClick}>
+              {this.setState.isToggleOn = "Avbryt"}</button>
+          </Link>
+        </div>
       </div>
-  </div>
     )
   }
 }

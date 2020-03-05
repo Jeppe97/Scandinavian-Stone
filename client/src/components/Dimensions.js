@@ -103,7 +103,7 @@ export class Dimensions extends Component {
                         </Link>
                     </form>
                     <Link className="nextbtn" to="/">
-                    <button onClick={this.refreshPage} className="nextbtn">Nästa</button>
+                        <button onClick={this.refreshPage} className="nextbtn">Nästa</button>
                     </Link>
                 </div>
             </div>
