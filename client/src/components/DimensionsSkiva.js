@@ -15,7 +15,7 @@ export class Dimensions extends Component {
     render() {
         return (
             <div>
-                <div className="wrapper">
+                <div >
                     <form className="dimension-form 1">
                         <h1 className="sides">Sida 1:</h1>
                         Höjd: (cm)
@@ -24,10 +24,14 @@ export class Dimensions extends Component {
                 <Slider />
                         <Link className="btn1" to="/">
                             <button>Borrning + Sprängning</button>
+                            
+                      
                             <button>Borrning + Sågning</button>
                         </Link>
+
                     </form>
 
+                    
                     <form className="dimension-form 2">
                         <h1 className="sides">Sida 2:</h1>
                         Höjd: (cm)
@@ -39,7 +43,9 @@ export class Dimensions extends Component {
                             <button>Borrning + Sågning</button>
                         </Link>
                     </form>
-
+                    
+                 
+                    
                   
                 </div>
             </div>

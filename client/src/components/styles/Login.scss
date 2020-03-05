@@ -129,6 +129,8 @@ input {
   .timer-grid2{
     display: grid;
     grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+  
   }
 
   .timer-grid3{
@@ -138,7 +140,7 @@ input {
   }
   .block-grid{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2,1fr);
  
 
 
