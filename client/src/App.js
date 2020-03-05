@@ -33,6 +33,7 @@ function App() {
                     <ProtectedRoute path="/statistics" component={Statistics} />
                     <ProtectedRoute exact path="/workmethods/primarySkiva" component={TimerSkiva} />
                     <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions" component={DimensionsSkiva} />
+                    
                     <Route path="*" component={() => "404 NOT FOUND"}/>
 
                   </Switch>
