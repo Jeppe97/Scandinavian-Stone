@@ -10,46 +10,44 @@ $thumbSize: 1em;
     // transform: translateX(0);
   }
 }
-button.selected-button{
+button.selected-button {
   background: green;
 }
-button.selected-button{
+button.selected-button {
   background: green;
 }
-.wrapper{
+.wrapper {
   display: grid;
   max-width: 1500px;
-  grid-auto-columns: minmax(70px,auto);
-  grid-template-columns: repeat(2,1fr);
+  grid-auto-columns: minmax(70px, auto);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1em;
 
-  button{
+  button {
     width: 100%;
   }
-  a.btn1{
+  a.btn1 {
     font-size: 0.5em;
   }
-  
-  h1.sides{
+
+  h1.sides {
     font-size: 0.8em;
   }
-  .nextbtn{
+  .nextbtn {
     grid-column: 1/3;
     border: none;
   }
-  form{
+  form {
     display: grid;
     justify-content: center;
     text-align: center;
-    grid-template-rows: repeat(5,1fr) 4fr;
+    grid-template-rows: repeat(5, 1fr) 4fr;
   }
-  form.dimension-form{
-    
+  form.dimension-form {
     border: 1px solid black;
   }
-  
 }
-div.makeStyles-root-1{
+div.makeStyles-root-1 {
   width: 100%;
 }
 .makeStyles-root-1 {
@@ -83,7 +81,8 @@ span {
     font-family: "Montserrat", sans-serif;
     font-size: 0.2em;
   }
-  .PrivateValueLabel-thumb-52.PrivateValueLabel-open-53 .PrivateValueLabel-offset-54 {
+  .PrivateValueLabel-thumb-52.PrivateValueLabel-open-53
+    .PrivateValueLabel-offset-54 {
     transform: scale(3) translateY(-8px);
   }
 }
@@ -110,9 +109,9 @@ form {
   .dimbtn1 {
     font-size: 0.5em;
   }
-  .wrapper{
+  .wrapper {
     font-size: 0.8em;
-    button{
+    button {
       margin: 10px;
       width: 100%;
     }

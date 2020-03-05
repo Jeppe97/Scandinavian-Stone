@@ -1,28 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './styles/MainMenu.scss';
-import auth from './login/auth';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./styles/MainMenu.scss";
+import auth from "./login/auth";
 
-export const MainMenu = (props) => {
-    return (
-        <div className="MainMenu">
-            <Link to="/workmethods" className="btn1">
-                <button>RÄKNA</button>
-            </Link>
-            <Link to="/statistics" className="btn1">
-                <button >STATISTIK</button>
-            </Link>
-            <a className="btn1">
-                <button onClick={() => {
-                    auth.logout(() => {
-                        props.history.push("/");
-                    })
-                }} >LOGGA UT</button>
-            </a>
-        </div>
-    );
-}
+export const MainMenu = props => {
+  return (
+    <div className="MainMenu">
+      <Link to="/workmethods" className="btn1">
+        <button>RÄKNA</button>
+      </Link>
+      <Link to="/statistics" className="btn1">
+        <button>STATISTIK</button>
+      </Link>
+      <a className="btn1">
+        <button
+          onClick={() => {
+            auth.logout(() => {
+              props.history.push("/");
+            });
+          }}
+        >
+          LOGGA UT
+        </button>
+      </a>
+    </div>
+  );
+};
 function refreshPage() {
-    window.location.assign("/");
+  window.location.assign("/");
 }
 export default MainMenu;

@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./components/styles/Skiva.scss";
 
-
 class TimerSkiva extends Component {
-
   constructor() {
     super();
 
@@ -16,14 +14,10 @@ class TimerSkiva extends Component {
 
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
- 
+
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
-    
-
   }
-
-
 
   handleClick0 = () => {
     this.setState(state => {
@@ -39,7 +33,6 @@ class TimerSkiva extends Component {
     });
   };
 
-
   handleClick1 = () => {
     this.setState(state => {
       if (state.status1) {
@@ -54,8 +47,6 @@ class TimerSkiva extends Component {
     });
   };
 
-
-
   handleReset0 = () => {
     clearInterval(this.timer0);
     this.setState({ runningTime0: 0, status0: false });
@@ -66,8 +57,6 @@ class TimerSkiva extends Component {
     this.setState({ runningTime1: 0, status1: false });
   };
 
-
-
   componentWillUnmount0() {
     clearInterval(this.timer0);
   }
@@ -76,39 +65,45 @@ class TimerSkiva extends Component {
   }
 
   render() {
-    const { status0, status1 ,runningTime0, runningTime1} = this.state;
+    const { status0, status1, runningTime0, runningTime1 } = this.state;
     return (
       <div>
         <div className="container container-formD2">
           <div className="timer-grid3">
-          <p className="watchText">Sida 1:</p>
-          <div className="test">{(Math.round(runningTime0) / 1000 / 60) << 0}:{Math.round((runningTime0 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick0}>{status0 ? 'Paus' : 'Start'}</button>
-          <button className="timerbtn" id="reset" onClick={this.handleReset0}>Reset</button>
+            <p className="watchText">Sida 1:</p>
+            <div className="test">
+              {(Math.round(runningTime0) / 1000 / 60) << 0}:
+              {Math.round((runningTime0 / 1000) % 60)}
+            </div>
+            <button className="timerbtn" id="start" onClick={this.handleClick0}>
+              {status0 ? "Paus" : "Start"}
+            </button>
+            <button className="timerbtn" id="reset" onClick={this.handleReset0}>
+              Reset
+            </button>
 
-
-          <p className="watchText">Sida 2:</p>
-          <div className="test">{(Math.round(runningTime1) / 1000 / 60) << 0}:{Math.round((runningTime1 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick1}>{status1 ? 'Paus' : 'Start'}</button>
-          <button className="timerbtn" id="reset" onClick={this.handleReset1}>Reset</button>
-
-
+            <p className="watchText">Sida 2:</p>
+            <div className="test">
+              {(Math.round(runningTime1) / 1000 / 60) << 0}:
+              {Math.round((runningTime1 / 1000) % 60)}
+            </div>
+            <button className="timerbtn" id="start" onClick={this.handleClick1}>
+              {status1 ? "Paus" : "Start"}
+            </button>
+            <button className="timerbtn" id="reset" onClick={this.handleReset1}>
+              Reset
+            </button>
+          </div>
+          <div className="timer-grid2">
+            <Link to="/workmethods/primarySkiva/dimensions" className="btn1">
+              <button>Spara</button>
+            </Link>
+            <Link to="/workmethods" className="btn1">
+              <button>Avbryt</button>
+            </Link>
+          </div>
         </div>
-        <div className="timer-grid2">
-          <Link to="/workmethods/primarySkiva/dimensions" className="btn1">
-            <button>Spara</button>
-          </Link>
-          <Link to="/workmethods" className="btn1">
-            <button>Avbryt</button>
-          </Link>
-        </div>
-
-
-
-        </div>
-        
       </div>
-
     );
   }
 }
