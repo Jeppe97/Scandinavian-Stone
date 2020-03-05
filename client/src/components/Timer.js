@@ -132,7 +132,7 @@ class Timer extends Component {
   render() {
     const { status0, status1, status2, status3 ,runningTime0, runningTime1, runningTime2, runningTime3 } = this.state;
     return (
-      
+
         <div className="container container-form">
           {/* <div className="timer-grid1"> */}
           <p className="watchText">Sida 1:</p>
@@ -166,7 +166,7 @@ class Timer extends Component {
           <Link to="/workmethods" className="btn1 cancelbtn">
             <button className="cancelbtn">Avbryt</button>
           </Link>
-   </div>
+        </div>
 
     );
   
