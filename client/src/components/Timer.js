@@ -131,7 +131,7 @@ class Timer extends Component {
 
   render() {
     const { status0, status1, status2, status3 ,runningTime0, runningTime1, runningTime2, runningTime3 } = this.state;
-    return (<div>
+    return (
       
         <div className="container container-form">
           {/* <div className="timer-grid1"> */}
@@ -159,20 +159,14 @@ class Timer extends Component {
           <button className="timerbtn" id="start" onClick={this.handleClick3}>{status3 ? 'Paus' : 'Start'}</button>
           <button className="timerbtn" id="reset" onClick={this.handleReset3}>Reset</button>
      
-   </div>
 
-
-        <div className="timer-grid2">
-          <Link to="/workmethods/primary/dimensions" className="btn1">
+          <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
             <button>Spara</button>
           </Link>
           <Link to="/workmethods" className="btn1 cancelbtn">
             <button className="cancelbtn">Avbryt</button>
           </Link>
-        {/* </div> */}
-
-        </div>
-</div>
+   </div>
 
     );
   
