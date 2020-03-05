@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Statistics extends Component {
-    render() {
-        return (
-            <div>
-                <div className="MainMenu">
+  render() {
+    return (
+      <div>
+        <div className="MainMenu">
+          <h1>STATS</h1>
 
-                    <h1>STATS</h1>
-
-                    <Link to="/mainmenu" className="btn1">
-                        <button>Tillbaka</button>
-                    </Link>
-                </div>
-            </div>
-        )
-    }
+          <Link to="/mainmenu" className="btn1">
+            <button>Tillbaka</button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
 function refreshPage() {
-    window.location.assign("/");
+  window.location.assign("/");
 }

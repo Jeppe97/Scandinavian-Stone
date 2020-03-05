@@ -1,17 +1,13 @@
-import React from 'react'
-import './styles/Header.scss';
+import React from "react";
+import "./styles/Header.scss";
 
 function Header() {
-    return (
-        <div className="Header">
-            <div className="CompanyName" >
-                Scandinavian Stone
-            </div>
-            <div className="QuarryName" >
-                Bjärlöv
-            </div>
-        </div>
-    )
+  return (
+    <div className="Header">
+      <div className="CompanyName">Scandinavian Stone</div>
+      <div className="QuarryName">Bjärlöv</div>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
