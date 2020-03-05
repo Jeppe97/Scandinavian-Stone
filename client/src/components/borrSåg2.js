@@ -13,6 +13,8 @@ export class bS2 extends Component {
 
         }
     }
+
+
     refreshPage() {
         window.location.assign("/");
     }
@@ -47,10 +49,10 @@ export class bS2 extends Component {
                 <Slider />
                         Mängd sprängdeg:
                 <Slider />
-                <Link className="btn1 savebtn" to ="/">
-                    <button onClick={this.refreshPage} className="nextbtn">Spara</button>
-
-                    </Link>
+                        <Link className="btn1" to="/">
+                            <button onClick={this.refreshPage}>Spara</button>
+                            
+                        </Link>
                     </form>
                     
                  
