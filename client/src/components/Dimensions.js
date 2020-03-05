@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 export class Dimensions extends Component {
 
 
+    refreshPage() {
+        window.location.assign("/");
+    }
     componentDidMount() {
         const drillblow1 = document.getElementById('drillblow1');
         const drillblow2 = document.getElementById('drillblow2');
@@ -99,7 +102,9 @@ export class Dimensions extends Component {
                             <button className="drillsaw" id="drillsaw4" >Borrning + Sågning</button>
                         </Link>
                     </form>
-                    <button className="nextbtn">Nästa</button>
+                    <Link className="nextbtn" to="/">
+                    <button onClick={this.refreshPage} className="nextbtn">Nästa</button>
+                    </Link>
                 </div>
             </div>
         );
