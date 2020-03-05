@@ -14,7 +14,7 @@ CREATE TABLE Quarry (
   quarryID INT AUTO_INCREMENT,
   /*userID INT NOT NULL,*/
   stoneType VARCHAR(20),
-  stoneName VARCHAR(20),
+  stoneName VARCHAR(50),
   quarryName VARCHAR(20),
   PRIMARY KEY (quarryID)
  /* FOREIGN KEY (userID) REFERENCES Users(userID)*/
@@ -29,7 +29,7 @@ CREATE TABLE Stone (
     length FLOAT NOT NULL,
     depth FLOAT NOT NULL,
     location INT,
-    nrOfPRocessedSides INT,
+    nrOfProcessedSides INT,
     PRIMARY KEY (stoneID),
     FOREIGN KEY (quarryID) REFERENCES Quarry(quarryID)
 );
@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS PrimaryStone;
 CREATE TABLE PrimaryStone (
   primaryStoneID INT NOT NULL AUTO_INCREMENT,
   stoneID INT NOT NULL,
-  producIDPrimary VARCHAR(30),
+  productIDPrimary VARCHAR(30),
   PRIMARY KEY (primaryStoneID),
   FOREIGN KEY (stoneID) REFERENCES Stone(stoneID)
 );
@@ -50,7 +50,7 @@ CREATE TABLE Block(
   bLockID INT NOT NULL AUTO_INCREMENT,
   stoneID INT NOT NULL,
   primaryStoneID INT NOT NULL,
-  producIDBlock VARCHAR(30),
+  productIDBlock VARCHAR(30),
   quality VARCHAR(30),
   weight FLOAT NOT NULL,
   PRIMARY KEY (blockID),
@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS ProcessedSide;
 CREATE TABLE ProcessedSide (
   sideID INT NOT NULL AUTO_INCREMENT,
   stoneID INT NOT NULL,
-  hight FLOAT NOT NULL,
+  height FLOAT NOT NULL,
   length FLOAT NOT NULL,
   PRIMARY KEY (sideID),
   FOREIGN KEY (stoneID) REFERENCES Stone(stoneID)
