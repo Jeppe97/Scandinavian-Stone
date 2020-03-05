@@ -20,6 +20,11 @@ export class bS2 extends Component {
                         <h1 className="sides">Sida 1:</h1>
                         Antal hål:
                 <Slider />
+                        Längd på hålen:
+                <Slider />
+
+                Spräng sort:
+                <Slider />
                         Mängd sprängdeg:
                 <Slider />
                       
@@ -30,6 +35,11 @@ export class bS2 extends Component {
                     <form className="dimension-form 2">
                         <h1 className="sides">Sida 2:</h1>
                         Antal hål:
+                <Slider />
+                        Längd på hålen:
+                <Slider />
+
+                Spräng sort:
                 <Slider />
                         Mängd sprängdeg:
                 <Slider />

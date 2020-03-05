@@ -2,54 +2,70 @@ import React, { Component } from 'react';
 import Slider from './Slider';
 import { Link } from "react-router-dom";
 
-export class Dimensions extends Component {
+export class DimensionsSkiva extends Component {
 
-    constructor() {
-        super();
 
-        this.state = {
+    componentDidMount() {
+        const drillblow1 = document.getElementById('drillblow1');
+        const drillblow2 = document.getElementById('drillblow2');
+      
+        const drillsaw1 = document.getElementById('drillsaw1');
+        const drillsaw2 = document.getElementById('drillsaw2');
+      
 
-        }
+        drillblow1.addEventListener('click', () => {
+            drillblow1.classList.add("selected-button");
+            drillsaw1.classList.remove("selected-button");
+        });
+        drillsaw1.addEventListener('click', () => {
+            drillblow1.classList.remove("selected-button");
+            drillsaw1.classList.add("selected-button");
+        });
+        drillblow2.addEventListener('click', () => {
+            drillblow2.classList.add("selected-button");
+            drillsaw2.classList.remove("selected-button");
+        });
+        drillsaw2.addEventListener('click', () => {
+            drillsaw2.classList.add("selected-button");
+            drillblow2.classList.remove("selected-button");
+        });
+   
     }
-
     render() {
         return (
             <div>
-                <div >
+                <div className="wrapper" id="wrapper">
                     <form className="dimension-form 1">
                         <h1 className="sides">Sida 1:</h1>
                         Höjd: (cm)
                 <Slider />
                         Längd: (cm)
                 <Slider />
-                        <Link className="btn1" to="/">
-                            <button>Borrning + Sprängning</button>
-                            
-                      
-                            <button>Borrning + Sågning</button>
+                        <Link className="btn1" to="/workmethods/primarySkiva/dimensions">
+                            <button className="drillblow" id="drillblow1">Borrning + Sprängning</button>
+                            <button className="drillsaw" id="drillsaw1">Borrning + Sågning</button>
                         </Link>
-
                     </form>
 
-                    
                     <form className="dimension-form 2">
                         <h1 className="sides">Sida 2:</h1>
                         Höjd: (cm)
                 <Slider />
                         Längd: (cm)
                 <Slider />
-                        <Link className="btn1" to="/">
-                            <button>Borrning + Sprängning</button>
-                            <button>Borrning + Sågning</button>
+                        <Link className="btn1" to="/workmethods/primarySkiva/dimensions">
+                            <button className="drillblow" id="drillblow2" >Borrning + Sprängning</button>
+                            <button className="drillsaw" id="drillsaw2" >Borrning + Sågning</button>
                         </Link>
                     </form>
-                    
-                 
-                    
-                  
+
+<Link className="nextbtn" to ="/workmethods/primarySkiva/dimensions/bS2">
+                    <button >Nästa</button>
+
+                    </Link>
                 </div>
             </div>
         );
     }
 }
-export default Dimensions;
+export default DimensionsSkiva;
