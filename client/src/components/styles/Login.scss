@@ -117,43 +117,7 @@ input {
   width: 30em;
   grid-template-columns: repeat(4,1fr);
   grid-auto-rows:minmax(100px,auto);
-
-
-
-
-  .timer-grid1{
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-  }
-  .timer-grid2{
-    display: grid;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: 50% 50%;
   
-  }
-
-  .timer-grid3{
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-
-  }
-  .block-grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
- 
-
-
-  }
-  
-  
-
-
-
-
-
-  
-
   a {
     display:inherit;
   }
@@ -188,85 +152,6 @@ input {
     border-color: black;
   }
 }
-
-
-.container.container-formD2{
-  display: grid;
-  font-size: 1em;
-  padding: 1em;
-  width: 30em;
-
-  grid-auto-rows:minmax(100px,auto);
-
-
-
-
-  .timer-grid1{
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-  }
-  .timer-grid2{
-    display: grid;
-    grid-template-columns: 50% 50%;
-  }
-
-  .timer-grid3{
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-
-  }
-  .block-grid{
-    display: grid;
-    grid-template-columns: 50% 50%;
- 
-
-
-  }
-  
-  
-
-
-
-
-
-  
-
-  a {
-    display:inherit;
-  }
-  a.btn1.savebtn{
-    grid-column: 1/3;
-  }
-  a.btn1.cancelbtn{
-    grid-column: 3/5;
-  }
-  button {
-    margin: 15px;
-  }
-  .watchText {
-    font-size: 1.7em;
-    margin: auto;
-  }
-  .test {
-    font-size: 1.5em;
-    margin: auto;
-  }
-  .timerbtn{
-    font-size: 0.7em;
-  }
-  .timerbtn#start{
-    background: green;
-    border: solid;
-    border-color: black;
-  }
-  .timerbtn#reset {
-    background: #710c0c;
-    border: solid;
-    border-color: black;
-  }
-}
-
 .container-form {
   width: inherit;
   height: inherit;
@@ -427,13 +312,6 @@ input {
   }
 }
 @media only screen and (max-height: 2050px) and (min-height: 1700px) {
-  .container.container-form {
-    
-    padding-left: 15px;
-    
-
-  
-  }
   .container {
     width: 30em;
     height: 17em;
@@ -447,18 +325,4 @@ input {
   a {
     font-size: 0.8em;
   }
-.timerBtn{
-  padding-top: 50px;
-  padding-left: 10px;
 }
-
-}
-
-
-.watchText{
-  font-size: 40px;
-  font-family: "Montserrat", sans-serif;
-  padding-top: 50px;
-
-}
-
