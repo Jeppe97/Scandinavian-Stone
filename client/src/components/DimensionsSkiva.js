@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export class DimensionsSkiva extends Component {
 
 
+
     componentDidMount() {
         const drillblow1 = document.getElementById('drillblow1');
         const drillblow2 = document.getElementById('drillblow2');
@@ -60,7 +61,7 @@ export class DimensionsSkiva extends Component {
                     </form>
 
 <Link className="nextbtn" to ="/workmethods/primarySkiva/dimensions/bS2">
-                    <button onClick={this.refreshPage} className="nextbtn">Nästa</button>
+                    <button className="nextbtn">Nästa</button>
 
                     </Link>
                 </div>

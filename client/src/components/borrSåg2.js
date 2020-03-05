@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 export class bS2 extends Component {
 
+    
+
     constructor() {
         super();
 
@@ -11,7 +13,9 @@ export class bS2 extends Component {
 
         }
     }
-
+    refreshPage() {
+        window.location.assign("/");
+    }
     render() {
         return (
             <div>
@@ -43,10 +47,10 @@ export class bS2 extends Component {
                 <Slider />
                         Mängd sprängdeg:
                 <Slider />
-                        <Link className="btn1" to="/">
-                            <button>Spara</button>
-                            
-                        </Link>
+                <Link className="btn1 savebtn" to ="/">
+                    <button onClick={this.refreshPage} className="nextbtn">Spara</button>
+
+                    </Link>
                     </form>
                     
                  
