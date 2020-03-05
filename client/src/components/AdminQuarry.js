@@ -11,8 +11,8 @@ export default class AdminQuarry extends Component {
                 <div className="MainMenu">
                                        
                     <BrowserRouter ><AdminDropdownMenuQuarry /></BrowserRouter>
-                    <AdminDropdownMenuPlace />
-                    <Link className="btn1" to="/AdminMainmenu">
+                    {/*<AdminDropdownMenuPlace />*/}
+                    <Link className="btn1" to="/AdminQuarry">
                         <button>Godkänn</button>
                     </Link>
                     <Link className="btn1" to="/AdminMainmenu">

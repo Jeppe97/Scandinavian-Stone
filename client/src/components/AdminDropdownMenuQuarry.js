@@ -1,48 +1,8 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import {  withStyles } from '@material-ui/core/styles';
 import './styles/admin.scss';
-
-const BootstrapButton = withStyles({
-  root: {
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: '2em',
-    padding: '6px 12px',
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: '#007bff',
-    borderColor: '#007bff',
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: '#0069d9',
-      borderColor: '#0062cc',
-      boxShadow: '5px 10px',
-    },
-    '&:active': {
-      boxShadow: '5px 10px',
-      backgroundColor: '#0062cc',
-      borderColor: '#005cbf',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-    },
-  },
-})(Button);
 
 
 export default class AdminDropdownMenuQuarry extends React.Component {
@@ -63,14 +23,14 @@ export default class AdminDropdownMenuQuarry extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <div>
-       <BootstrapButton
+      <div >
+       <button className='btn1'
           aria-owns={anchorEl ? 'industries-menu' : null}
           aria-haspopup="true" variant="contained"
           onClick={this.handleIndustriesOpen}
         >
          Välj Stenbrott
-        </BootstrapButton>
+        </button>
         <Menu
           id="industries-menu"
           anchorEl={anchorEl}
@@ -105,19 +65,19 @@ export default class AdminDropdownMenuQuarry extends React.Component {
       
 
   
-    {window.location.pathname === '/AdminQuarry/Alla-Stenbrott' ? ( <h3>Alla Stenbrott</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Biskopsg%C3%A5rden' ? ( <h3>Biskopsgården</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Bj%C3%A4rl%C3%B6v' ? ( <h3>Bjärlöv</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Br%C3%A4nnhult' ? ( <h3>Brännhult</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/B%C3%A5rarp' ? ( <h3>Bårarp</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Duvhult' ? ( <h3>Duvhult</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Eker%C3%B6d' ? ( <h3>Ekeröd</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Flivik' ? ( <h3>Flivik</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Gylsboda' ? ( <h3>Gylsboda</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Hjortsj%C3%B6' ? ( <h3>Hjortsjö</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/H%C3%A4gghult' ? ( <h3>Hägghult</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Iddefjord_Norway' ? ( <h3>Iddefjord Norway</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/Kulla' ? ( <h3>Kulla</h3>): "" }
-    {window.location.pathname === '/AdminQuarry/V%C3%A5nga' ? ( <h3>Vånga</h3>): "" }
+    {window.location.pathname === '/AdminQuarry/Alla-Stenbrott' ? ( <h1>Alla Stenbrott</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Biskopsg%C3%A5rden' ? ( <h1>Biskopsgården</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Bj%C3%A4rl%C3%B6v' ? ( <h1>Bjärlöv</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Br%C3%A4nnhult' ? ( <h1>Brännhult</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/B%C3%A5rarp' ? ( <h1>Bårarp</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Duvhult' ? ( <h1>Duvhult</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Eker%C3%B6d' ? ( <h1>Ekeröd</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Flivik' ? ( <h1>Flivik</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Gylsboda' ? ( <h1>Gylsboda</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Hjortsj%C3%B6' ? ( <h1>Hjortsjö</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/H%C3%A4gghult' ? ( <h1>Hägghult</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Iddefjord_Norway' ? ( <h1>Iddefjord Norway</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/Kulla' ? ( <h1>Kulla</h1>): "" }
+    {window.location.pathname === '/AdminQuarry/V%C3%A5nga' ? ( <h1>Vånga</h1>): "" }
       </div>
     )}}

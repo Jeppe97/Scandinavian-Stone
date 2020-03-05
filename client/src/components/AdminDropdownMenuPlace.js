@@ -1,47 +1,8 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import {  withStyles } from '@material-ui/core/styles';
 import './styles/admin.scss';
-
-const BootstrapButton = withStyles({
-  root: {
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: '2em',
-    padding: '6px 12px',
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: '#007bff',
-    borderColor: '#007bff',
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: '#0069d9',
-      borderColor: '#0062cc',
-      boxShadow: '5px 10px',
-    },
-    '&:active': {
-      boxShadow: '5px 10px',
-      backgroundColor: '#0062cc',
-      borderColor: '#005cbf',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-    },
-  },
-})(Button);
+import './styles/MainMenu.scss';
 
 
 export default class AdminDropdownMenuPlace extends React.Component {
@@ -63,14 +24,14 @@ export default class AdminDropdownMenuPlace extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <div>
-       <BootstrapButton
+      <div className='MainMenu'>
+       <button className='btn1'
           aria-owns={anchorEl ? 'place-menu' : null}
           aria-haspopup="true" variant="contained"
           onClick={this.handleIndustriesOpen}
         >
          Välj Plats
-        </BootstrapButton>
+        </button>
         <Menu
           id="place-menu"
           anchorEl={anchorEl}
