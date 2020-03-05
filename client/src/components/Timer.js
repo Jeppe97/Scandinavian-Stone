@@ -19,10 +19,11 @@ class Timer extends Component {
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
     this.handleClick3 = this.handleClick3.bind(this);
+
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     this.handleReset2 = this.handleReset2.bind(this);
-    this.handlReset3 = this.handleReset3.bind(this);
+    this.handleReset3 = this.handleReset3.bind(this);
 
   }
 
@@ -72,7 +73,6 @@ class Timer extends Component {
     });
   };
 
-
   handleClick3 = () => {
     this.setState(state => {
       if (state.status3) {
@@ -87,6 +87,8 @@ class Timer extends Component {
     });
   };
 
+
+ 
 
 
 
@@ -122,13 +124,15 @@ class Timer extends Component {
   componentWillUnmount() {
     clearInterval(this.timer2);
   }
+
   componentWillUnmount() {
     clearInterval(this.timer3);
   }
 
   render() {
-    const { status0, status1, status2, status3, runningTime0, runningTime1, runningTime2, runningTime3 } = this.state;
+    const { status0, status1, status2, status3 ,runningTime0, runningTime1, runningTime2, runningTime3 } = this.state;
     return (
+      
         <div className="container container-form">
           {/* <div className="timer-grid1"> */}
           <p className="watchText">Sida 1:</p>
@@ -150,26 +154,22 @@ class Timer extends Component {
           <button className="timerbtn" id="reset" onClick={this.handleReset2}>Reset</button>
 
 
-          <p className="watchText">Botten:</p>
+          <p className="watchText">Botten</p>
           <div className="test">{(Math.round(runningTime3) / 1000 / 60) << 0}:{Math.round((runningTime3 / 1000) % 60)}</div>
           <button className="timerbtn" id="start" onClick={this.handleClick3}>{status3 ? 'Paus' : 'Start'}</button>
           <button className="timerbtn" id="reset" onClick={this.handleReset3}>Reset</button>
-        {/* </div> */}
-        {/* <div className="timer-grid2"> */}
+     
+
           <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
-            <button className="savebtn">Spara</button>
+            <button>Spara</button>
           </Link>
           <Link to="/workmethods" className="btn1 cancelbtn">
             <button className="cancelbtn">Avbryt</button>
           </Link>
-        {/* </div> */}
-
-
-
-        </div>
-        
+   </div>
 
     );
-  }
+  
+    }
 }
 export default Timer;
