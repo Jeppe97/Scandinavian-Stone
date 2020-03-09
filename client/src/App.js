@@ -14,6 +14,11 @@ import Block from "./components/Block";
 import DimensionsSkiva from "./components/DimensionsSkiva";
 import bS2 from "./components/borrSåg2";
 import { ProtectedRoute } from "./components/login/protected-route";
+import AdminMainMenu from "./components/AdminMainmenu";
+import AdminQuarry from "./components/AdminQuarry";
+import AdminDropdownMenuQuarry from "./components/AdminDropdownMenuQuarry";
+import AdminDropdownMenuPlace from "./components/AdminDropdownMenuPlace";
+import AdminModifyData from "./components/AdminModifyData";
 
 function App() {
   return (
@@ -23,7 +28,28 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <ProtectedRoute exact path="/mainmenu" component={MainMenu} />
+          <ProtectedRoute
+            exact
+            path="/AdminMainmenu"
+            component={AdminMainMenu}
+          />
           <ProtectedRoute exact path="/workmethods" component={WorkMethods} />
+          <ProtectedRoute exact path="/AdminQuarry" component={AdminQuarry} />
+          <ProtectedRoute
+            exact
+            path="/AdminModifyData"
+            component={AdminModifyData}
+          />
+          <ProtectedRoute
+            exact
+            path="/AdminDropdownMenuQuarry"
+            component={AdminDropdownMenuQuarry}
+          />
+          <ProtectedRoute
+            exact
+            path="/AdminDropdownMenuPlace"
+            component={AdminDropdownMenuPlace}
+          />
           <ProtectedRoute exact path="/workmethods/block" component={Block} />
           <ProtectedRoute exact path="/workmethods/primary" component={Timer} />
           <ProtectedRoute

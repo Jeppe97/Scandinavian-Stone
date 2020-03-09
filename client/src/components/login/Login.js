@@ -30,7 +30,7 @@ export class Login extends Component {
             <button
               onClick={() => {
                 auth.adminLogin(() => {
-                  this.props.history.push("/mainmenu");
+                  this.props.history.push("/AdminMainmenu");
                 });
               }}
             >
