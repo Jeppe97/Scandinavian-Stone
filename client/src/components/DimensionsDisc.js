@@ -60,7 +60,7 @@ export class DimensionsSkiva extends Component {
                         </Link>
                     </form>
 
-                    <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/bS2">
+                    <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/DSB2">
                         <button className="nextbtn">Nästa</button>
 
                     </Link>

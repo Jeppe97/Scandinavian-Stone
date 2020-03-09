@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
+import "./styles/DSB.scss";
 
-export class bS2 extends Component {
+export class DSB2 extends Component {
   constructor() {
     super();
 
@@ -15,7 +16,7 @@ export class bS2 extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="wrapperDSB" id="wrapper">
           <form className="dimension-form 1">
             <h1 className="sides">Sida 1:</h1>
             Antal hål:
@@ -38,13 +39,14 @@ export class bS2 extends Component {
             <Slider />
             Mängd sprängdeg:
             <Slider />
-            <Link className="btn1" to="/">
-              <button onClick={this.refreshPage}>Spara</button>
-            </Link>
           </form>
+          <Link className="nextbtnDSB" to="/">
+          <button onClick={this.refreshPage} className="nextbtnDSB">Spara</button>
+        </Link>
         </div>
+        
       </div>
     );
   }
 }
-export default bS2;
+export default DSB2;
