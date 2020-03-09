@@ -8,10 +8,10 @@ export class DimensionsSkiva extends Component {
     componentDidMount() {
         const drillblow1 = document.getElementById('drillblow1');
         const drillblow2 = document.getElementById('drillblow2');
-      
+
         const drillsaw1 = document.getElementById('drillsaw1');
         const drillsaw2 = document.getElementById('drillsaw2');
-      
+
 
         drillblow1.addEventListener('click', () => {
             drillblow1.classList.add("selected-button");
@@ -29,7 +29,7 @@ export class DimensionsSkiva extends Component {
             drillsaw2.classList.add("selected-button");
             drillblow2.classList.remove("selected-button");
         });
-   
+
     }
     render() {
         return (
@@ -59,8 +59,8 @@ export class DimensionsSkiva extends Component {
                         </Link>
                     </form>
 
-<Link className="nextbtn" to ="/workmethods/primarySkiva/dimensions/bS2">
-                    <button onClick={this.refreshPage} className="nextbtn">Nästa</button>
+                    <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/bS2">
+                        <button className="nextbtn">Nästa</button>
 
                     </Link>
                 </div>
