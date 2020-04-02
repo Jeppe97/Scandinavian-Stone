@@ -1,0 +1,61 @@
+.container.container-formD2 {
+  display: grid;
+  font-size: 1em;
+  padding: 1em;
+  width: 30em;
+
+  grid-auto-rows: minmax(100px, auto);
+
+  .timer-grid1 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+  .timer-grid2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .timer-grid3 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  .block-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  a {
+    display: inherit;
+  }
+  a.btn1.savebtn {
+    grid-column: 1/3;
+  }
+  a.btn1.cancelbtn {
+    grid-column: 3/5;
+  }
+  button {
+    margin: 15px;
+  }
+  .watchText {
+    font-size: 1.7em;
+    margin: auto;
+  }
+  .test {
+    font-size: 1.5em;
+    margin: auto;
+  }
+  .timerbtn {
+    font-size: 0.7em;
+  }
+  .timerbtn#start {
+    background: green;
+    border: solid;
+    border-color: black;
+  }
+  .timerbtn#reset {
+    background: #710c0c;
+    border: solid;
+    border-color: black;
+  }
+}

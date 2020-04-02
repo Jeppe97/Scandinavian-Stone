@@ -1,0 +1,118 @@
+$thumbSize: 1em;
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(100%);
+    //transform: translateX(-100%)
+  }
+  100% {
+    transform: translateY(0);
+    // transform: translateX(0);
+  }
+}
+button.selected-button {
+  background: green;
+}
+button.selected-button {
+  background: green;
+}
+.wrapper {
+  display: grid;
+  max-width: 1500px;
+  grid-auto-columns: minmax(70px, auto);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+
+  button {
+    width: 100%;
+  }
+  a.btn1 {
+    font-size: 0.5em;
+  }
+
+  h1.sides {
+    font-size: 0.8em;
+  }
+  .nextbtn {
+    grid-column: 1/3;
+    border: none;
+  }
+  form {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    grid-template-rows: repeat(5, 1fr) 4fr;
+  }
+  form.dimension-form {
+    border: 1px solid black;
+  }
+}
+div.makeStyles-root-1 {
+  width: 100%;
+}
+.makeStyles-root-1 {
+  .MuiTypography-root {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+  .MuiTypography-body1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+  .MuiTypography-gutterBottom {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+}
+span {
+  font-size: inherit;
+  .MuiSlider-rail {
+    height: $thumbSize/6;
+  }
+  .MuiSlider-track {
+    height: $thumbSize/6;
+  }
+  .MuiSlider-thumb {
+    height: $thumbSize;
+    width: $thumbSize;
+    margin-top: $thumbSize * -(5/12);
+  }
+  .PrivateValueLabel-offset-54 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.2em;
+  }
+  .PrivateValueLabel-thumb-52.PrivateValueLabel-open-53 .PrivateValueLabel-offset-54 {
+    transform: scale(3) translateY(-8px);
+  }
+}
+button {
+  .dimbtn1 {
+    font-size: 0.7em;
+  }
+}
+form {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  .menu-active {
+    position: absolute;
+    top: 74em;
+    padding-top: 0.5em;
+    font-size: 0.2em;
+    animation: 0.5s ease-out 0s 1 slideDown;
+    button:hover {
+      background-color: green;
+    }
+  }
+}
+@media screen and (min-height: 1500px) {
+  .dimbtn1 {
+    font-size: 0.5em;
+  }
+  .wrapper {
+    font-size: 0.8em;
+    button {
+      margin: 10px;
+      width: 100%;
+    }
+  }
+}
