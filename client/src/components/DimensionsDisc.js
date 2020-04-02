@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
 import { Link } from "react-router-dom";
+import "./styles/DimensionsSkiva.scss";
 
 export class DimensionsSkiva extends Component {
 
@@ -9,9 +10,11 @@ export class DimensionsSkiva extends Component {
     componentDidMount() {
         const drillblow1 = document.getElementById('drillblow1');
         const drillblow2 = document.getElementById('drillblow2');
+        const drillblow3 = document.getElementById('drillblow3');
 
         const drillsaw1 = document.getElementById('drillsaw1');
         const drillsaw2 = document.getElementById('drillsaw2');
+        const drillsaw3 = document.getElementById('drillsaw3');
 
 
         drillblow1.addEventListener('click', () => {
@@ -29,6 +32,15 @@ export class DimensionsSkiva extends Component {
         drillsaw2.addEventListener('click', () => {
             drillsaw2.classList.add("selected-button");
             drillblow2.classList.remove("selected-button");
+        });
+
+        drillblow3.addEventListener('click', () => {
+            drillblow3.classList.add("selected-button");
+            drillsaw3.classList.remove("selected-button");
+        });
+        drillsaw3.addEventListener('click', () => {
+            drillsaw3.classList.add("selected-button");
+            drillblow3.classList.remove("selected-button");
         });
 
     }
@@ -59,6 +71,21 @@ export class DimensionsSkiva extends Component {
                             <button className="drillsaw" id="drillsaw2" >Borrning + Sågning</button>
                         </Link>
                     </form>
+
+                  
+
+                    <form className="dimension-form 2">
+                        <h1 className="sides">Botten:</h1>
+                        Höjd: (cm)
+                <Slider />
+                        Längd: (cm)
+                <Slider />
+                        <Link className="btn1" to="/workmethods/primarySkiva/dimensions">
+                            <button className="drillblow" id="drillblow3" >Borrning + Sprängning</button>
+                            <button className="drillsaw" id="drillsaw3" >Borrning + Sågning</button>
+                        </Link>
+                    </form>
+
 
                     <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/DSB2">
                         <button className="nextbtn">Nästa</button>

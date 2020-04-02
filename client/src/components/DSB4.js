@@ -5,6 +5,49 @@ import "./styles/DSB.scss";
 
 export class DSB4 extends Component {
 
+    constructor() {
+        super();
+    
+        this.state = {
+        sprängSort0:"",
+        sprängSort1:"",
+        sprängSort2:"",
+        sprängSort3:""
+        };
+    
+        this.state = { isToggleOn: true };
+    
+        this.handleChange0 = this.handleChange0.bind(this);
+        this.handleChange1 = this.handleChange1.bind(this);
+        this.handleChange2 = this.handleChange2.bind(this);
+        this.handleChange3 = this.handleChange3.bind(this);
+        
+      }
+      handleChange0(event) {
+        this.setState({
+          sprängSort0: event.target.value
+        });
+      }
+    
+      handleChange1(event) {
+        this.setState({
+          sprängSort1: event.target.value
+        });
+
+      }
+    
+      handleChange2(event) {
+        this.setState({
+          sprängSort2: event.target.value
+        });
+      }
+    
+      handleChange3(event) {
+        this.setState({
+          sprängSort3: event.target.value
+        });
+
+      }
 
     refreshPage() {
         window.location.assign("/");
@@ -20,9 +63,14 @@ export class DSB4 extends Component {
             <Slider />
             Längd på hålen:
             <Slider />
-            Spräng sort:
-            <Slider />
-            Mängd sprängdeg:
+            Spräng Sort:{" "}
+            <input
+              type="text"
+              placeholder="Spräng Sort"
+              onChange={this.handleChange0}
+            />
+       
+            Mängd sprängdeg(g):
             <Slider />
                        
                     </form>
@@ -33,9 +81,13 @@ export class DSB4 extends Component {
             <Slider />
             Längd på hålen:
             <Slider />
-            Spräng sort:
-            <Slider />
-            Mängd sprängdeg:
+            Spräng Sort:{" "}
+            <input
+              type="text"
+              placeholder="Spräng Sort"
+              onChange={this.handleChange1}
+            />
+            Mängd sprängdeg(g):
             <Slider />
                     </form>
 
@@ -45,9 +97,13 @@ export class DSB4 extends Component {
             <Slider />
             Längd på hålen:
             <Slider />
-            Spräng sort:
-            <Slider />
-            Mängd sprängdeg:
+            Spräng Sort:{" "}
+            <input
+              type="text"
+              placeholder="Spräng Sort"
+              onChange={this.handleChange2}
+            />
+            Mängd sprängdeg(g):
             <Slider />
                     </form>
 
@@ -57,9 +113,13 @@ export class DSB4 extends Component {
             <Slider />
             Längd på hålen:
             <Slider />
-            Spräng sort:
-            <Slider />
-            Mängd sprängdeg:
+            Spräng Sort:{" "}
+            <input
+              type="text"
+              placeholder="Spräng Sort"
+              onChange={this.handleChange3}
+            />
+            Mängd sprängdeg(g):
             <Slider />
                     </form>
                     <Link className="nextbtn" to="/">
