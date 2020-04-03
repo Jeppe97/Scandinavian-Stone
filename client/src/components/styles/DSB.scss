@@ -16,7 +16,7 @@ button.selected-button {
 button.selected-button {
   background: green;
 }
-.wrapper {
+.wrapperDSB {
   display: grid;
   max-width: 1500px;
   grid-auto-columns: minmax(70px, auto);
@@ -37,11 +37,18 @@ button.selected-button {
     grid-column: 1/3;
     border: none;
   }
+
+  .nextbtnDSB {
+    grid-column: 1/3;
+    border: none;
+
+
+  }
   form {
     display: grid;
     justify-content: center;
     text-align: center;
-    grid-template-rows: repeat(5, 1fr) 4fr;
+    grid-template-rows: repeat(9, 1fr);
   }
   form.dimension-form {
     border: 1px solid black;
@@ -106,6 +113,9 @@ form {
   }
 }
 @media screen and (min-height: 1500px) {
+    .wrapperDSB{
+        font-size: 0.9em;
+    }
   .dimbtn1 {
     font-size: 0.5em;
   }

@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
+import "./styles/Dimension.scss";
 
 export class Dimensions extends Component {
-  refreshPage() {
-    window.location.assign("/");
-  }
   componentDidMount() {
     const drillblow1 = document.getElementById("drillblow1");
     const drillblow2 = document.getElementById("drillblow2");
@@ -116,10 +114,8 @@ export class Dimensions extends Component {
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/Mainmenu">
-            <button className="nextbtn">
-              Nästa
-            </button>
+          <Link className="nextbtn" to="/workmethods/dimensions/DSB4">
+            <button className="nextbtn">Nästa</button>
           </Link>
         </div>
       </div>

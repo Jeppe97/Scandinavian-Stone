@@ -21,6 +21,8 @@ import AdminDropdownMenuPlace from "./components/Admin/AdminDropdownMenuPlace";
 import AdminModifyData from "./components/Admin/AdminModifyData";
 import TimerSkiva from "./TimerSkiva";
 import Block from "./components/Block";
+import DSB2 from "./components/DSB2";
+import DSB4 from "./components/DSB4";
 
 function App() {
   return (
@@ -75,7 +77,11 @@ function App() {
           <ProtectedRoute
             exact
             path="/workmethods/dimensions/timer"
-            component={Timer}
+            component={Timer} />
+          <ProtectedRoute
+            exact
+            path="/workmethods/primary/dimensions/DSB4"
+            component={DSB4}
           />
           <ProtectedRoute path="/statistics" component={Statistics} />
           <ProtectedRoute
@@ -102,6 +108,8 @@ function App() {
             exact
             path="/workmethods/primarySkiva/dimensions/bS2"
             component={bS2}
+            path="/workmethods/primarySkiva/dimensions/DSB2"
+            component={DSB2}
           />
 
           <Route path="*" component={() => "404 NOT FOUND"} />
