@@ -22,6 +22,9 @@ class Timer extends Component {
     this.handleReset2 = this.handleReset2.bind(this);
     this.handlReset3 = this.handleReset3.bind(this);
   }
+  refreshPage() {
+    window.location.assign("/");
+  }
 
   handleClick0 = () => {
     this.setState(state => {
@@ -135,7 +138,7 @@ class Timer extends Component {
           {status0 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset0}>
-          Reset
+          Nollställ
         </button>
 
         <p className="watchText">Sida 2:</p>
@@ -147,7 +150,7 @@ class Timer extends Component {
           {status1 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset1}>
-          Reset
+          Nollställ
         </button>
 
         <p className="watchText">Sida 3:</p>
@@ -159,7 +162,7 @@ class Timer extends Component {
           {status2 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset2}>
-          Reset
+          Nollställ
         </button>
 
         <p className="watchText">Botten:</p>
@@ -171,10 +174,10 @@ class Timer extends Component {
           {status3 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset3}>
-          Reset
+          Nollställ
         </button>
-        <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
-          <button className="savebtn">Spara</button>
+        <Link to="/" className="btn1 savebtn">
+          <button onClick={this.refreshPage} className="savebtn">Spara</button>
         </Link>
         <Link to="/workmethods" className="btn1 cancelbtn">
           <button className="cancelbtn">Avbryt</button>

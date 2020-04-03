@@ -51,11 +51,11 @@ function App() {
             component={AdminDropdownMenuPlace}
           />
           <ProtectedRoute exact path="/workmethods/block" component={Block} />
-          <ProtectedRoute exact path="/workmethods/primary" component={Timer} />
+          <ProtectedRoute exact path="/workmethods/dimensions" component={Dimensions} />
           <ProtectedRoute
             exact
-            path="/workmethods/primary/dimensions"
-            component={Dimensions}
+            path="/workmethods/dimensions/timer"
+            component={Timer}
           />
           <ProtectedRoute path="/statistics" component={Statistics} />
           <ProtectedRoute
