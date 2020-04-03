@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import "./styles/Header.scss";
-
-function Header() {
-  return (
-    <div className="Header">
-      <div className="CompanyName">Scandinavian Stone</div>
-      <div className="QuarryName">Bjärlöv</div>
-    </div>
-  );
-=======
 import React, { Component } from "react";
 import "./styles/Header.scss";
 
@@ -56,13 +44,15 @@ class Header extends Component {
         <button className="timerbtn" id="start" onClick={this.handleClick}>
           {status ? "Paus" : "Start"}
         </button>
+        {/*<button className="timerbtn" id="reset" onClick={this.handleReset}>
+          Klar
+    </button>*/}
         <button className="timerbtn" id="reset" onClick={this.handleReset}>
           Nollställ
         </button>
       </div>
     );
   }
->>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
 }
 
 export default Header;

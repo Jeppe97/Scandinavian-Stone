@@ -6,7 +6,7 @@ export default class Statistics extends Component {
     return (
       <div>
         <div className="MainMenu">
-          <h1>STATS</h1>
+          <h1>Statistik placeholder</h1>
 
           <Link to="/mainmenu" className="btn1">
             <button>Tillbaka</button>
