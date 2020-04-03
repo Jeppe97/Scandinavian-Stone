@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
+import "./styles/Dimension.scss";
 
 export class Dimensions extends Component {
   componentDidMount() {

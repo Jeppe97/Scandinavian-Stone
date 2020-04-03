@@ -16,7 +16,18 @@ button.selected-button {
 button.selected-button {
   background: green;
 }
-.wrapper {
+
+div#wrapper.wrapperDSB {
+  grid-template-columns: repeat(3,1fr);
+
+  }
+
+  button#nextbtnDSB.wrapperDSB {
+    grid-column: 1/4;
+
+  }
+
+.wrapperDim {
   display: grid;
   max-width: 1500px;
   grid-auto-columns: minmax(70px, auto);
@@ -34,7 +45,7 @@ button.selected-button {
     font-size: 0.8em;
   }
   .nextbtn {
-    grid-column: 1/4;
+    grid-column: 1/3;
     border: none;
   }
   form {
@@ -117,4 +128,8 @@ form {
     }
   }
 }
- 
+
+
+ .nextbtn{
+   grid-column: 1/4;
+ }
