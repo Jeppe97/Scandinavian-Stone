@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Jeppe97/Scandinavian-Stone#readme",
   "dependencies": {
+<<<<<<< HEAD
     "babel": "^6.23.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -27,6 +28,10 @@
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "react-scripts": "^3.4.0"
+=======
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1"
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
   },
   "devDependencies": {
     "nodemon": "^2.0.2",

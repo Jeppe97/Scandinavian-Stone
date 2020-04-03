@@ -55,11 +55,19 @@ export class Dimensions extends Component {
         <div className="wrapper" id="wrapper">
           <form className="dimension-form 1">
             <h1 className="sides">Sida 1:</h1>
+<<<<<<< HEAD
             Höjd: (cm)
             <Slider />
             Längd: (cm)
             <Slider />
             <Link className="btn1" to="/workmethods/primary/dimensions">
+=======
+            Djup: (cm)
+            <Slider />
+            Längd: (cm)
+            <Slider />
+            <Link className="btn1" to="/workmethods/dimensions">
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
               <button className="drillblow" id="drillblow1">
                 Borrning + Sprängning
               </button>
@@ -71,11 +79,19 @@ export class Dimensions extends Component {
 
           <form className="dimension-form 2">
             <h1 className="sides">Sida 2:</h1>
+<<<<<<< HEAD
             Höjd: (cm)
             <Slider />
             Längd: (cm)
             <Slider />
             <Link className="btn1" to="/workmethods/primary/dimensions">
+=======
+            Djup: (cm)
+            <Slider />
+            Längd: (cm)
+            <Slider />
+            <Link className="btn1" to="/workmethods/dimensions">
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
               <button className="drillblow" id="drillblow2">
                 Borrning + Sprängning
               </button>
@@ -87,11 +103,19 @@ export class Dimensions extends Component {
 
           <form className="dimension-form 3">
             <h1 className="sides">Sida 3:</h1>
+<<<<<<< HEAD
             Höjd: (cm)
             <Slider />
             Längd: (cm)
             <Slider />
             <Link className="btn1" to="/workmethods/primary/dimensions">
+=======
+            Djup: (cm)
+            <Slider />
+            Längd: (cm)
+            <Slider />
+            <Link className="btn1" to="/workmethods/dimensions">
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
               <button className="drillblow" id="drillblow3">
                 Borrning + Sprängning
               </button>
@@ -103,11 +127,19 @@ export class Dimensions extends Component {
 
           <form className="dimension-form 4">
             <h1 className="sides">Botten: </h1>
+<<<<<<< HEAD
             Höjd: (cm)
             <Slider />
             Längd: (cm)
             <Slider />
             <Link className="btn1" to="/workmethods/primary/dimensions">
+=======
+            Djup: (cm)
+            <Slider />
+            Längd: (cm)
+            <Slider />
+            <Link className="btn1" to="/workmethods/dimensions">
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
               <button className="drillblow" id="drillblow4">
                 Borrning + Sprängning
               </button>
@@ -116,8 +148,13 @@ export class Dimensions extends Component {
               </button>
             </Link>
           </form>
+<<<<<<< HEAD
           <Link className="nextbtn" to="/">
             <button onClick={this.refreshPage} className="nextbtn">
+=======
+          <Link className="nextbtn" to="/workmethods/dimensions/timer">
+            <button className="nextbtn">
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
               Nästa
             </button>
           </Link>

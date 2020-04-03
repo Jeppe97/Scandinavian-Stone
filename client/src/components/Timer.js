@@ -22,6 +22,12 @@ class Timer extends Component {
     this.handleReset2 = this.handleReset2.bind(this);
     this.handlReset3 = this.handleReset3.bind(this);
   }
+<<<<<<< HEAD
+=======
+  refreshPage() {
+    window.location.assign("/");
+  }
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
 
   handleClick0 = () => {
     this.setState(state => {
@@ -135,7 +141,11 @@ class Timer extends Component {
           {status0 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset0}>
+<<<<<<< HEAD
           Reset
+=======
+          Nollställ
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
         </button>
 
         <p className="watchText">Sida 2:</p>
@@ -147,7 +157,11 @@ class Timer extends Component {
           {status1 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset1}>
+<<<<<<< HEAD
           Reset
+=======
+          Nollställ
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
         </button>
 
         <p className="watchText">Sida 3:</p>
@@ -159,7 +173,11 @@ class Timer extends Component {
           {status2 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset2}>
+<<<<<<< HEAD
           Reset
+=======
+          Nollställ
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
         </button>
 
         <p className="watchText">Botten:</p>
@@ -171,10 +189,17 @@ class Timer extends Component {
           {status3 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn" id="reset" onClick={this.handleReset3}>
+<<<<<<< HEAD
           Reset
         </button>
         <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
           <button className="savebtn">Spara</button>
+=======
+          Nollställ
+        </button>
+        <Link to="/" className="btn1 savebtn">
+          <button onClick={this.refreshPage} className="savebtn">Spara</button>
+>>>>>>> 1ad328b25c2a347e5f87a5abcb0e0058e9f5f0c9
         </Link>
         <Link to="/workmethods" className="btn1 cancelbtn">
           <button className="cancelbtn">Avbryt</button>
