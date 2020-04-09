@@ -42,10 +42,10 @@ export class DSB2 extends Component {
     });
   }
 
-
   refreshPage() {
     window.location.assign("/");
   }
+ 
   render() {
     return (
       <div>
@@ -99,9 +99,12 @@ export class DSB2 extends Component {
             <Slider />
           </form>
 
-          <Link className="nextbtnDSB" to="/">
-          <button onClick={this.refreshPage} className="nextbtnDSB">Spara</button>
-        </Link>
+          <Link to="/workmethods/primarySkiva" className="btn1">
+              <button>Spara</button>
+            </Link>
+            <Link to="/workmethods" className="btn1">
+              <button  onClick={this.refreshPage}>Avbryt</button>
+            </Link>
         </div>
 
 

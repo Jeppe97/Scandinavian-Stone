@@ -91,7 +91,9 @@ class TimerSkiva extends Component {
   componentWillUnmount2() {
     clearInterval(this.timer2);
   }
-
+  refreshPage() {
+    window.location.assign("/");
+  }
   render() {
     const { status0, status1, status2 ,runningTime0, runningTime1, runningTime2 } = this.state;
     return (
@@ -138,12 +140,13 @@ class TimerSkiva extends Component {
 
           </div>
           <div className="timer-grid2">
-            <Link to="/workmethods/primarySkiva/dimensions" className="btn1">
-              <button>Spara</button>
-            </Link>
-            <Link to="/workmethods" className="btn1">
-              <button>Avbryt</button>
-            </Link>
+
+          <Link className="btn1" to="/">
+          <button onClick={this.refreshPage} className="btn1">Spara</button>
+        </Link>
+
+
+            
           </div>
         </div>
       </div>
