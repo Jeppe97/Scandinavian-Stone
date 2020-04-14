@@ -6,7 +6,8 @@ import "../styles/admin.scss";
 import AdminQuarryButton from "./AdminQuarryButton"
 export default class AdminDropdownMenuQuarry extends React.Component {
   state = {
-    anchorEl: null
+    anchorEl: null,
+    
   };
   handleIndustriesOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
@@ -162,10 +163,10 @@ export default class AdminDropdownMenuQuarry extends React.Component {
           
         </Menu>
         </BrowserRouter>
-        {console.log(window.location.pathname)}
+        
 
         {window.location.pathname === "/AdminQuarry/Alla-Stenbrott" ? (
-            <AdminQuarryButton quarry="Alla Stenbrott" path="/AdminQuarry/Alla-Stenbrott"/>                                     
+            <AdminQuarryButton quarry="Alla-Stenbrott" path="/AdminQuarry/Alla-Stenbrott"/>                                     
         ) : (
           ""
         )}

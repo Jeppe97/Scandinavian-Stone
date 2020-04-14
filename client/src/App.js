@@ -2,7 +2,6 @@ import React from "react";
 import "./App.scss";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 import WorkMethods from "./components/WorkMethods";
 import Statistics from "./components/Statistics";
 import MainMenu from "./components/MainMenu";
@@ -19,6 +18,7 @@ import AdminQuarry from "./components/Admin/AdminQuarry";
 import AdminDropdownMenuQuarry from "./components/Admin/AdminDropdownMenuQuarry";
 import AdminDropdownMenuPlace from "./components/Admin/AdminDropdownMenuPlace";
 import AdminModifyData from "./components/Admin/AdminModifyData";
+import AdminStatistics from "./components/Admin/AdminStatistics";
 import TimerSkiva from "./TimerSkiva";
 import Block from "./components/Block";
 import DSB2 from "./components/DSB2";
@@ -80,10 +80,11 @@ function App() {
             component={Timer} />
           <ProtectedRoute
             exact
-            path="/workmethods/primary/dimensions/DSB4"
+            path="/workmethods/dimensions/DSB4"
             component={DSB4}
           />
           <ProtectedRoute path="/statistics" component={Statistics} />
+          <ProtectedRoute path="/Admin-statistics" component={AdminStatistics} />
           <ProtectedRoute
             exact
             path="/workmethods/primarySkiva"
@@ -108,6 +109,8 @@ function App() {
             exact
             path="/workmethods/primarySkiva/dimensions/bS2"
             component={bS2}
+            />
+            <ProtectedRoute
             path="/workmethods/primarySkiva/dimensions/DSB2"
             component={DSB2}
           />

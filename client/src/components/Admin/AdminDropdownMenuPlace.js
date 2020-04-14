@@ -1,21 +1,96 @@
 import React from "react";
 import Menu from "@material-ui/core/Menu";
+import { Link, BrowserRouter } from "react-router-dom";
 import MenuItem from "@material-ui/core/MenuItem";
 import "../styles/admin.scss";
 import "../styles/MainMenu.scss";
-var path = -1;
-export default class AdminDropdownMenuPlace extends React.Component {
-  state = {
-    anchorEl: null
-  };
 
-  handleIndustriesOpen = event => {
+export default class AdminDropdownMenuPlace extends React.Component {
+  constructor(props)
+  {
+    super(props);
+    {
+      this.state = {
+        quarry: props.quarry,
+        anchorEl: null,
+        place: props.place
+      }
+    }
+  }
+  static defaultProps = {
+    displayQuarry: "Vald Stenbrott:",
+    displayPlace: "Vald Plats:",
+    place: "0",
+    quarry: "N/A"
+  }
+
+  handleOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleIndustriesClose = () => {
-    this.setState({ anchorEl: null });
-  };
+ HandleZero = () => {
+  this.setState({place :0, anchorEl: null}
+    )
+ };
+ HandleOne = () => {
+   
+  this.setState({place :1,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+ HandleTwo = () => {
+   
+  this.setState({place :2,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+ HandleThree = () => {
+   
+  this.setState({place :3,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+ HandleFour = () => {
+   
+  this.setState({place :4,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+ HandleFive = () => {
+   
+  this.setState({place :5,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+ HandleSix = () => {
+   
+  this.setState({place :6,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+ HandleSeven = () => {
+   
+  this.setState({place :7,anchorEl: null},
+  () => {
+   console.log("felfelfel " + this.state.place)
+ }
+  )
+ };
+
+
+
 
   render() {
     const { anchorEl } = this.state;
@@ -27,7 +102,7 @@ export default class AdminDropdownMenuPlace extends React.Component {
           aria-owns={anchorEl ? "place-menu" : null}
           aria-haspopup="true"
           variant="contained"
-          onClick={this.handleIndustriesOpen}
+          onClick={this.handleOpen}
         >
           Välj Plats
         </button>
@@ -35,7 +110,7 @@ export default class AdminDropdownMenuPlace extends React.Component {
           id="place-menu"
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
-          onClose={this.handleIndustriesClose}
+          onClose={this.handleClose}
           PaperProps={{
             style: {
               maxHeight: 2000,
@@ -43,86 +118,22 @@ export default class AdminDropdownMenuPlace extends React.Component {
             }
           }}
         >
-          <MenuItem onClick={this.handleIndustriesClose} >0</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="1">1</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="2">2</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="3">3</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="4">4</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="5">5</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="6">6</MenuItem>
-          <MenuItem onClick={this.handleIndustriesClose} path="7">7</MenuItem>
+          <MenuItem onClick={this.HandleZero}>0</MenuItem>
+          <MenuItem onClick={this.HandleOne } >1</MenuItem>
+          <MenuItem onClick={this.HandleTwo} >2</MenuItem>
+          <MenuItem onClick={this.HandleThree} >3</MenuItem>
+          <MenuItem onClick={this.HandleFour} >4</MenuItem>
+          <MenuItem onClick={this.HandleFive} >5</MenuItem>
+          <MenuItem onClick={this.HandleSix} >6</MenuItem>
+          <MenuItem onClick={this.handleSeven} >7</MenuItem>
         </Menu>
-        {console.log(path)}
-        {path === 0 ? (
+        {/*console.log(path)}
+        {/*path === "1" ? (
           <h1>Plats 0</h1>
         ) : (
           ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Biskopsg%C3%A5rden" ? (
-          <h1>Biskopsgården</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Bj%C3%A4rl%C3%B6v" ? (
-          <h1>Bjärlöv</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Br%C3%A4nnhult" ? (
-          <h1>Brännhult</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/B%C3%A5rarp" ? (
-          <h1>Bårarp</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Duvhult" ? (
-          <h1>Duvhult</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Eker%C3%B6d" ? (
-          <h1>Ekeröd</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Flivik" ? (
-          <h1>Flivik</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Gylsboda" ? (
-          <h1>Gylsboda</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Hjortsj%C3%B6" ? (
-          <h1>Hjortsjö</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/H%C3%A4gghult" ? (
-          <h1>Hägghult</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Iddefjord_Norway" ? (
-          <h1>Iddefjord Norway</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/Kulla" ? (
-          <h1>Kulla</h1>
-        ) : (
-          ""
-        )}
-        {window.location.pathname === "/AdminQuarry/V%C3%A5nga" ? (
-          <h1>Vånga</h1>
-        ) : (
-          ""
-        )}
+        )*/}
+        <h1>{this.props.displayPlace + " " +this.state.place}</h1>
       </div>
     );
   }

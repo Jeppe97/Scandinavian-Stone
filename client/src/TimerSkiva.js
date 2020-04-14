@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./components/styles/Skiva.scss";
+import React, {Component} from 'react';
 
 class TimerSkiva extends Component {
   constructor() {

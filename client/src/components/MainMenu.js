@@ -26,7 +26,5 @@ export const MainMenu = props => {
     </div>
   );
 };
-function refreshPage() {
-  window.location.assign("/");
-}
+
 export default MainMenu;

@@ -114,7 +114,7 @@ export class Dimensions extends Component {
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/workmethods/dimensions/DSB4">
+          <Link className="nextbtn" to="/workmethods/primary">
             <button className="nextbtn">Nästa</button>
           </Link>
         </div>
