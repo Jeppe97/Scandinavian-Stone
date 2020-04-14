@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import "../styles/Login.scss";
 import auth from './auth';
-
+var value1="";
 export class Login extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            userName: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    
     componentDidMount() {
         const adminLoginButton = document.getElementById('admin');
         const userLoginButton = document.getElementById('user');
@@ -16,19 +25,37 @@ export class Login extends Component {
         userLoginButton.addEventListener('click', () => {
             container.classList.remove("right-panel-active");
         });
+
     }
+    handleChange(event){
+        this.setState({userName: event.target.value});
+    }
+    handleClick(){
+        value1=this.state.userName;
+        console.log('Linked is cklicked');
+        console.log(this.state.userName);
+        return value1;
+    }
+
     render() {
+        const {userName}=this.state;
+
+
         return (
             <div className="container" id="container">
 
                 <div className="form-container admin-container">
                     <form action="#">
                         <h1>Admin</h1>
-                        <input type="email" placeholder="Användarnamn" />
+                        <input type ="text"
+                        value={this.state.userName}
+                        onChange={this.handleChange}
+                         />
                         <input type="password" placeholder="Lösenord" />
                         <a href="/jebaited" className="forgot-password">Glömt ditt lösenord?</a>
                         <button onClick={
                             () => {
+                                this.handleClick();
                                 auth.adminLogin(() => {
                                     this.props.history.push("/mainmenu");
                                 });
@@ -42,13 +69,16 @@ export class Login extends Component {
                         <h1>Användare</h1>
                         <input type="email" placeholder="Användarnamn" />
                         <input type="password" placeholder="Lösenord" />
+                        
                         <a href="/jebaited" className="forgot-password">Glömt ditt lösenord?</a>
+
                         <button onClick={
                             () => {
                                 auth.login(() => {
                                     this.props.history.push("/mainmenu");
                                 });
                             }
+                            
                         }>Logga In</button>
                     </form>
                 </div>
@@ -73,4 +103,4 @@ export class Login extends Component {
     }
 }
 export default Login;
-
+export {value1};
