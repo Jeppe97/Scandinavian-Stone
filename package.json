@@ -28,7 +28,8 @@
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "react-chartjs-2": "^2.9.0",
-    "react-scripts": "^3.4.0"
+    "react-scripts": "^3.4.0",
+    "react-table": "^7.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",

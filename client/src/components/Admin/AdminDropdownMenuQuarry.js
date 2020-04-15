@@ -9,11 +9,11 @@ export default class AdminDropdownMenuQuarry extends React.Component {
     anchorEl: null,
     
   };
-  handleIndustriesOpen = event => {
+  handleOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleIndustriesClose = () => {
+  handleClose = () => {
     this.setState({ anchorEl: null });
   };
   refreshPage = () => {
@@ -28,10 +28,10 @@ export default class AdminDropdownMenuQuarry extends React.Component {
         <BrowserRouter>
         <button
           className="btn1"
-          aria-owns={anchorEl ? "industries-menu" : null}
+          aria-owns={anchorEl ? "menu" : null}
           aria-haspopup="true"
           variant="contained"
-          onClick={this.handleIndustriesOpen}
+          onClick={this.handleOpen}
         >
           Välj Stenbrott
         </button>
@@ -40,7 +40,7 @@ export default class AdminDropdownMenuQuarry extends React.Component {
           id="industries-menu"
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
-          onClose={this.handleIndustriesClose}
+          onClose={this.handleClose}
           PaperProps={{
             style: {
               maxHeight: 2000,
@@ -49,112 +49,98 @@ export default class AdminDropdownMenuQuarry extends React.Component {
           }}
         >
           <MenuItem
-            quarry="/AdminQuarry/Alla-Stenbrott"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Alla-Stenbrott"
           >
             Alla Stenbrott
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Biskopsgården"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Biskopsgården"
           >
             Biskopsgården
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Bjärlöv"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Bjärlöv"
           >
             Bjärlöv
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Brännhult"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Brännhult"
           >
             Brännhult
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Bårarp"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Bårarp"
           >
             Bårarp
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Duvhult"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Duvhult"
           >
             Duvhult
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Ekeröd"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Ekeröd"
           >
             Ekeröd
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Flivik"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Flivik"
           >
             Flivik
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Gylsboda"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Gylsboda"
           >
             Gylsboda
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Hjortsjö"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Hjortsjö"
           >
             Hjortsjö
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Hägghult"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Hägghult"
           >
             Hägghult
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Iddefjord_Norway"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Iddefjord_Norway"
           >
             Iddefjord, Norway
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Kulla"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Kulla"
           >
             Kulla
           </MenuItem>
           <MenuItem
-            quarry="/AdminQuarry/Vånga"
-            onClick={this.handleIndustriesClose}
+            onClick={this.handleClose}
             component={Link}
             to="/AdminQuarry/Vånga"
           >

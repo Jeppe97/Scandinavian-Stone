@@ -23,9 +23,9 @@ export default class Statistics extends Component {
                     {
                         label: 'Timmar',
                         data:[
-                            2234,
+                            3134,
                             3344,
-                            1234
+                            3234
                         ],
                      backgroundColor:[
                          'rgba(255, 99, 132, 0.6)',
