@@ -17,7 +17,7 @@ export class Dimensions extends Component {
             <div>
                 <div className="wrapper">
                     <form className="dimension-form 1">
-                        <h1 className="sides">Sida 1:</h1>
+                        <h1 className="sides">Sida 1: </h1>
                         Höjd: (cm)
                 <Slider />
                         Längd: (cm)

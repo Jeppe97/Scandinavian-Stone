@@ -14,6 +14,7 @@ const useStyles = makeStyles({
 
 function valuetext(value) {
   return value;
+  
 }
 
 export default function RangeSlider() {

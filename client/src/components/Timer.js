@@ -12,8 +12,11 @@ class Timer extends Component {
       runningTime0: 0,
       runningTime1: 0,
       runningTime2: 0,
-      runningTime3: 0
+      runningTime3: 0,
+     
     };
+    
+
 
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
@@ -22,7 +25,9 @@ class Timer extends Component {
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     this.handleReset2 = this.handleReset2.bind(this);
-    this.handlReset3 = this.handleReset3.bind(this);
+    this.handleReset3 = this.handleReset3.bind(this);
+
+    this.addToDatabase = this.addToDatabase.bind(this);
 
   }
 
@@ -32,14 +37,17 @@ class Timer extends Component {
     this.setState(state => {
       if (state.status0) {
         clearInterval(this.timer0);
+
       } else {
         const startTime0 = Date.now() - this.state.runningTime0;
         this.timer0 = setInterval(() => {
           this.setState({ runningTime0: Date.now() - startTime0 });
         });
       }
+      
       return { status0: !state.status0 };
     });
+
   };
 
 
@@ -54,6 +62,7 @@ class Timer extends Component {
         });
       }
       return { status1: !state.status1 };
+  
     });
   };
 
@@ -112,6 +121,23 @@ class Timer extends Component {
   };
 
 
+//testing adding tha first timer to the database
+  addToDatabase = _ =>{
+    const tempTime  =  (Math.round((this.state.runningTime0 / 1000) % 60));
+    var time = {};
+    time["firstTime"] = [];
+    time["quarryName"] = [];
+    time.quarryName = ['test'];
+    time.firstTime = [tempTime];
+      
+    console.log("this is the time to log " + time.firstTime + " quarryName " + time.quarryName);
+    fetch(`/quarry/instertTime?quarryName=${time.quarryName}&time=${time.firstTime}`)
+    
+    //.then(response => response.json())
+    .then(this.getQuarry)
+    .catch(err => console.error(err))
+  
+  }
 
   componentWillUnmount() {
     clearInterval(this.timer0);
@@ -157,7 +183,7 @@ class Timer extends Component {
         {/* </div> */}
         {/* <div className="timer-grid2"> */}
           <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
-            <button className="savebtn">Spara</button>
+            <button className="savebtn" onClick={this.addToDatabase}>Spara</button>
           </Link>
           <Link to="/workmethods" className="btn1 cancelbtn">
             <button className="cancelbtn">Avbryt</button>
@@ -173,3 +199,6 @@ class Timer extends Component {
   }
 }
 export default Timer;
+//export {time0};
+
+
