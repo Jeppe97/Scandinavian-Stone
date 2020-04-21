@@ -1,8 +1,8 @@
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./components/styles/Skiva.scss";
-import React, {Component} from 'react';
+import "./styles/Skiva.scss";
 
-class TimerSkiva extends Component {
+class TimerBlock extends Component {
   constructor() {
     super();
 
@@ -16,10 +16,6 @@ class TimerSkiva extends Component {
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
-    
-    this.handleReset0 = this.handleReset0.bind(this);
-    this.handleReset1 = this.handleReset1.bind(this);
-    
 
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
@@ -53,7 +49,6 @@ class TimerSkiva extends Component {
       return { status1: !state.status1 };
     });
   };
-
   handleClick2 = () => {
     this.setState(state => {
       if (state.status2) {
@@ -68,8 +63,6 @@ class TimerSkiva extends Component {
     });
   };
 
-  
-
   handleReset0 = () => {
     clearInterval(this.timer0);
     this.setState({ runningTime0: 0, status0: false });
@@ -79,7 +72,6 @@ class TimerSkiva extends Component {
     clearInterval(this.timer1);
     this.setState({ runningTime1: 0, status1: false });
   };
-
   handleReset2 = () => {
     clearInterval(this.timer2);
     this.setState({ runningTime2: 0, status2: false });
@@ -91,20 +83,16 @@ class TimerSkiva extends Component {
   componentWillUnmount1() {
     clearInterval(this.timer1);
   }
-
   componentWillUnmount2() {
     clearInterval(this.timer2);
   }
-  refreshPage() {
-    window.location.assign("/");
-  }
+
   render() {
-    const { status0, status1, status2 ,runningTime0, runningTime1, runningTime2 } = this.state;
+    const { status0, status1,status2, runningTime0, runningTime1, runningTime2 } = this.state;
     return (
       <div>
         <div className="container container-formD2">
           <div className="timer-grid3">
-           
             <p className="watchText">Sida 1:</p>
             <div className="test">
               {(Math.round(runningTime0) / 1000 / 60) << 0}:
@@ -128,8 +116,6 @@ class TimerSkiva extends Component {
             <button className="timerbtn" id="reset" onClick={this.handleReset1}>
               Reset
             </button>
-
-
             <p className="watchText">Botten:</p>
             <div className="test">
               {(Math.round(runningTime2) / 1000 / 60) << 0}:
@@ -141,20 +127,18 @@ class TimerSkiva extends Component {
             <button className="timerbtn" id="reset" onClick={this.handleReset2}>
               Reset
             </button>
-
           </div>
           <div className="timer-grid2">
-
-          <Link className="btn1" to="/">
-          <button onClick={this.refreshPage} className="btn1">Spara</button>
-        </Link>
-
-
-            
+            <Link to="/workmethods/primaryBlock/dimensions" className="btn1">
+              <button>Spara</button>
+            </Link>
+            <Link to="/workmethods" className="btn1">
+              <button>Avbryt</button>
+            </Link>
           </div>
         </div>
       </div>
     );
   }
 }
-export default TimerSkiva;
+export default TimerBlock;

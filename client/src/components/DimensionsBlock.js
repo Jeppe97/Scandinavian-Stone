@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
-import "./styles/Dimension.scss";
 
-export class Dimensions extends Component {
+export default class DimensionsBlock extends Component {
+  refreshPage() {
+    window.location.assign("/");
+  }
   componentDidMount() {
     const drillblow1 = document.getElementById("drillblow1");
     const drillblow2 = document.getElementById("drillblow2");
@@ -57,7 +59,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primary/dimensions">
               <button className="drillblow" id="drillblow1">
                 Borrning + Sprängning
               </button>
@@ -73,7 +75,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primary/dimensions">
               <button className="drillblow" id="drillblow2">
                 Borrning + Sprängning
               </button>
@@ -89,7 +91,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primary/dimensions">
               <button className="drillblow" id="drillblow3">
                 Borrning + Sprängning
               </button>
@@ -105,7 +107,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primary/dimensions">
               <button className="drillblow" id="drillblow4">
                 Borrning + Sprängning
               </button>
@@ -114,12 +116,13 @@ export class Dimensions extends Component {
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/workmethods/primary">
-            <button className="nextbtn">Nästa</button>
+          <Link className="nextbtn" to="/workmethods/block">
+            <button className="nextbtn">
+              Nästa
+            </button>
           </Link>
         </div>
       </div>
     );
   }
 }
-export default Dimensions;

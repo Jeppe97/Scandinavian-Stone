@@ -1,28 +1,39 @@
 .Header {
-  width: 100%;
-  //background-color: #333;
-  border-style: solid;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom-width: 4px;
-  border-bottom-color: black;
-  color: black;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   justify-content: space-between;
-  font-size: 1.3em;
-  font-weight: bold;
+  margin-right: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  background-color: white;
+  padding: 1em;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
+  .test {
+    text-align: center;
+    margin: auto;
+  }
+  p {
+    font-size: 1em;
+  }
   .CompanyName {
     padding-left: 2rem;
   }
 
   .QuarryName {
     padding-right: 2rem;
+  }
+  .timerbtn#start {
+    background: green;
+    border: solid;
+    border-color: black;
+  }
+  .timerbtn#reset {
+    background: #710c0c;
+    border: solid;
+    border-color: black;
   }
 }
 

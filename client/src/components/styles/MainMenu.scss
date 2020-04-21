@@ -1,6 +1,5 @@
 .MainMenu {
   display: grid;
-  padding-top: 10rem;
 
   a {
     text-decoration: none;
@@ -35,6 +34,7 @@
   .MainMenu {
     grid-auto-rows: minmax(200px, auto);
     font-size: 0.7em;
+    justify-content: center;
     a {
       text-decoration: none;
       button {
