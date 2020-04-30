@@ -16,11 +16,22 @@ button.selected-button {
 button.selected-button {
   background: green;
 }
-.wrapper {
+
+div#wrapper.wrapperDSB {
+  grid-template-columns: repeat(3,1fr);
+
+  }
+
+  button#nextbtnDSB.wrapperDSB {
+    grid-column: 1/4;
+
+  }
+
+.wrapperDim {
   display: grid;
   max-width: 1500px;
   grid-auto-columns: minmax(70px, auto);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1em;
 
   button {
@@ -117,3 +128,8 @@ form {
     }
   }
 }
+
+
+ .nextbtn{
+   grid-column: 1/4;
+ }

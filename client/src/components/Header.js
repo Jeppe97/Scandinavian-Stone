@@ -1,71 +1,66 @@
-import React, { Component } from 'react'
-import './styles/Header.scss';
-import Auth from './login/auth';
+import React, { Component } from "react";
+import "./styles/Header.scss";
 
 class Header extends Component {
+  constructor() {
+    super();
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            quarrys: [],
-            isAuth: Auth.authenticated
-        }
-    }
+    this.state = {
+      status: false,
+      runningTime: 0
+    };
 
-   /* componentDidMount() {
-        fetch('/quarry')
-            .then(res => res.json())
-            .then(quarry => this.setState({ quarry }, () => console.log('Quarry name fetched', quarry)));
-    }*/
+    this.handleClick = this.handleClick.bind(this);
+    this.handleReset = this.handleReset.bind(this);
 
-    componentDidMount() {
-        this.getQuarry();
-     }
- 
-     getQuarry = _ =>{
-         fetch('/quarry')
-         .then(response => response.json())
-         .then(response=>this.setState({ quarrys: response.data}))
-         .catch(err => console.error(err))
- 
-     }
+  }
+    
 
-    updateAuth() {
-        this.setState({isAuth: Auth.authenticated});
-    }
+  handleClick = () => {
+    this.setState(state => {
+      if (state.status) {
+        clearInterval(this.timer);
+      } else {
+        const startTime = Date.now() - this.state.runningTime;
+        this.timer = setInterval(() => {
+          this.setState({ runningTime: Date.now() - startTime });
+        });
+      }
+      return { status: !state.status };
+    });
+  };
+  handleReset = () => {
+    clearInterval(this.timer);
+    this.setState({ runningTime: 0, status: false });
+  };
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
 
-    renderQuarry = ({quarryName}) => <div>{quarryName}</div>
 
-    render() {
-        const { quarrys } = this.state;
-        var quarryName = this.state.quarrys.map((quarrys) => quarrys.quarryName);
-      
+  render() {
 
-       /* var test = "heej";
+    const { status, runningTime } = this.state;
+    return (
+       <div className="Header">
 
-        if (Auth.authenticated === true) {
-            
-            quarryName = "Inloggad";
-        }
-        else if(Auth.authenticated === false){
-            test;
-        }
-*/
-      
-        return (
-            
-            <div className="Header">
-                {quarrys.map(this.renderQuarry)}
-
-                <div className="CompanyName" >
-                    Scandinavian Stone
-            </div>
-                <div className="QuarryName" >
-                    {quarryName[2]}
-                </div>
-            </div>
-        )
-    }
+        <p className="watchText">Huvudtimer:</p>
+        <div className="test">
+          {(Math.round(runningTime) / 1000 / 60) << 0}:
+          {Math.round((runningTime / 1000) % 60)}
+        </div>
+        <button className="timerbtn" id="start" onClick={this.handleClick}>
+          {status ? "Paus" : "Start"}
+        </button>
+        {/*<button className="timerbtn" id="reset" onClick={this.handleReset}>
+          Klar
+    </button>*/}
+        <button className="timerbtn" id="reset" onClick={this.handleReset}>
+          Nollställ
+        </button>
+      </div>
+    );
+  }
 }
 
 export default Header;

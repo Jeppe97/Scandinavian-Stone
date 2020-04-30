@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles/MainMenu.scss";
-import auth from "./login/auth";
+import auth from "../login/auth";
 
-export const MainMenu = props => {
+export const AdminMainMenu = props => {
   return (
     <div className="MainMenu">
-      <Link to="/workmethods" className="btn1">
-        <button>RÄKNA</button>
+      <Link className="btn1" to="/AdminQuarry">
+        <button>Statistik</button>
       </Link>
-      <Link to="/statistics" className="btn1">
-        <button>STATISTIK</button>
+      <Link className="btn1" to="/AdminModifyData">
+        <button>Redigera data</button>
       </Link>
       <a className="btn1">
         <button
@@ -27,4 +26,4 @@ export const MainMenu = props => {
   );
 };
 
-export default MainMenu;
+export default AdminMainMenu;

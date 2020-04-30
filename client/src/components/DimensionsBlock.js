@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
-import "./styles/Dimension.scss";
 
 var methodSide1 = "";
 var methodSide2 ="";
-var methodSide3 = "";
 var methodSideBottom = "";
 
-export class Dimensions extends Component {
+export default class DimensionsBlock extends Component {
+  refreshPage() {
+    window.location.assign("/");
+  }
+  
   componentDidMount() {
     const drillblow1 = document.getElementById("drillblow1");
     const drillblow2 = document.getElementById("drillblow2");
@@ -32,22 +34,20 @@ export class Dimensions extends Component {
     drillblow2.addEventListener("click", () => {
       drillblow2.classList.add("selected-button");
       drillsaw2.classList.remove("selected-button");
-      methodSide2 = "Blasting";
+      methodSide2="Blasting";
     });
     drillsaw2.addEventListener("click", () => {
       drillsaw2.classList.add("selected-button");
       drillblow2.classList.remove("selected-button");
-      methodSide2 = "Sawing";
+      methodSide2="Sawing";
     });
     drillblow3.addEventListener("click", () => {
       drillblow3.classList.add("selected-button");
       drillsaw3.classList.remove("selected-button");
-      methodSide3 = "Blasting";
     });
     drillsaw3.addEventListener("click", () => {
       drillsaw3.classList.add("selected-button");
       drillblow3.classList.remove("selected-button");
-      methodSide3 = "Sawing";
     });
     drillblow4.addEventListener("click", () => {
       drillblow4.classList.add("selected-button");
@@ -70,7 +70,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primaryBlock/dimensions">
               <button className="drillblow" id="drillblow1">
                 Borrning + Sprängning
               </button>
@@ -86,7 +86,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primaryBlock/dimensions">
               <button className="drillblow" id="drillblow2">
                 Borrning + Sprängning
               </button>
@@ -102,7 +102,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primaryBlock/dimensions">
               <button className="drillblow" id="drillblow3">
                 Borrning + Sprängning
               </button>
@@ -118,7 +118,7 @@ export class Dimensions extends Component {
             <Slider />
             Längd: (cm)
             <Slider />
-            <Link className="btn1" to="/workmethods/dimensions">
+            <Link className="btn1" to="/workmethods/primaryBlock/dimensions">
               <button className="drillblow" id="drillblow4">
                 Borrning + Sprängning
               </button>
@@ -127,13 +127,14 @@ export class Dimensions extends Component {
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/workmethods/primary">
-            <button className="nextbtn">Nästa</button>
+          <Link className="nextbtn" to="/workmethods/block">
+            <button className="nextbtn">
+              Nästa
+            </button>
           </Link>
         </div>
       </div>
     );
   }
 }
-export default Dimensions;
-export {methodSide1, methodSide2, methodSide3, methodSideBottom}
+export {methodSide1,methodSide2,methodSideBottom}

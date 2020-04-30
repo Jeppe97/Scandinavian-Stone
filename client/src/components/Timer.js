@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
+var timeSide1=0;
+var timeSide2=0;
+var timeSide3=0;
+var timeBottom=0;
 
 class Timer extends Component {
-
   constructor() {
     super();
 
@@ -12,11 +15,8 @@ class Timer extends Component {
       runningTime0: 0,
       runningTime1: 0,
       runningTime2: 0,
-      runningTime3: 0,
-     
+      runningTime3: 0
     };
-    
-
 
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
@@ -27,29 +27,22 @@ class Timer extends Component {
     this.handleReset2 = this.handleReset2.bind(this);
     this.handleReset3 = this.handleReset3.bind(this);
 
-    this.addToDatabase = this.addToDatabase.bind(this);
-
+    this.saveTime = this.saveTime.bind(this);
   }
-
-
 
   handleClick0 = () => {
     this.setState(state => {
       if (state.status0) {
         clearInterval(this.timer0);
-
       } else {
         const startTime0 = Date.now() - this.state.runningTime0;
         this.timer0 = setInterval(() => {
           this.setState({ runningTime0: Date.now() - startTime0 });
         });
       }
-      
       return { status0: !state.status0 };
     });
-
   };
-
 
   handleClick1 = () => {
     this.setState(state => {
@@ -62,10 +55,8 @@ class Timer extends Component {
         });
       }
       return { status1: !state.status1 };
-  
     });
   };
-
 
   handleClick2 = () => {
     this.setState(state => {
@@ -81,7 +72,6 @@ class Timer extends Component {
     });
   };
 
-
   handleClick3 = () => {
     this.setState(state => {
       if (state.status3) {
@@ -95,10 +85,6 @@ class Timer extends Component {
       return { status3: !state.status3 };
     });
   };
-
-
-
-
 
   handleReset0 = () => {
     clearInterval(this.timer0);
@@ -120,25 +106,6 @@ class Timer extends Component {
     this.setState({ runningTime3: 0, status3: false });
   };
 
-
-//testing adding tha first timer to the database
-  addToDatabase = _ =>{
-    const tempTime  =  (Math.round((this.state.runningTime0 / 1000) % 60));
-    var time = {};
-    time["firstTime"] = [];
-    time["quarryName"] = [];
-    time.quarryName = ['test'];
-    time.firstTime = [tempTime];
-      
-    console.log("this is the time to log " + time.firstTime + " quarryName " + time.quarryName);
-    fetch(`/quarry/instertTime?quarryName=${time.quarryName}&time=${time.firstTime}`)
-    
-    //.then(response => response.json())
-    .then(this.getQuarry)
-    .catch(err => console.error(err))
-  
-  }
-
   componentWillUnmount() {
     clearInterval(this.timer0);
   }
@@ -152,53 +119,90 @@ class Timer extends Component {
     clearInterval(this.timer3);
   }
 
+  saveTime(){
+
+    timeSide1=(Math.round((this.state.runningTime0 / 1000) % 60));
+    timeSide2=(Math.round((this.state.runningTime1 / 1000) % 60));
+    timeSide3=(Math.round((this.state.runningTime2 / 1000) % 60));
+    timeBottom=(Math.round((this.state.runningTime3 / 1000) % 60));
+    console.log(timeSide1 + " " + timeSide2 + " " + timeSide3 + " " + timeBottom);
+  }
+  
+
   render() {
-    const { status0, status1, status2, status3, runningTime0, runningTime1, runningTime2, runningTime3 } = this.state;
+
+    const {
+      status0,
+      status1,
+      status2,
+      status3,
+      runningTime0,
+      runningTime1,
+      runningTime2,
+      runningTime3
+    } = this.state;
+
     return (
-        <div className="container container-form">
-          {/* <div className="timer-grid1"> */}
-          <p className="watchText">Sida 1:</p>
-          <div className="test">{(Math.round(runningTime0) / 1000 / 60) << 0}:{Math.round((runningTime0 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick0}>{status0 ? 'Paus' : 'Start'}</button>
-          <button className="timerbtn" id="reset" onClick={this.handleReset0}>Reset</button>
 
-
-          <p className="watchText">Sida 2:</p>
-          <div className="test">{(Math.round(runningTime1) / 1000 / 60) << 0}:{Math.round((runningTime1 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick1}>{status1 ? 'Paus' : 'Start'}</button>
-          <button className="timerbtn" id="reset" onClick={this.handleReset1}>Reset</button>
-
-
-
-          <p className="watchText">Sida 3:</p>
-          <div className="test">{(Math.round(runningTime2) / 1000 / 60) << 0}:{Math.round((runningTime2 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick2}>{status2 ? 'Paus' : 'Start'}</button>
-          <button className="timerbtn" id="reset" onClick={this.handleReset2}>Reset</button>
-
-
-          <p className="watchText">Botten:</p>
-          <div className="test">{(Math.round(runningTime3) / 1000 / 60) << 0}:{Math.round((runningTime3 / 1000) % 60)}</div>
-          <button className="timerbtn" id="start" onClick={this.handleClick3}>{status3 ? 'Paus' : 'Start'}</button>
-          <button className="timerbtn" id="reset" onClick={this.handleReset3}>Reset</button>
-        {/* </div> */}
-        {/* <div className="timer-grid2"> */}
-          <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
-            <button className="savebtn" onClick={this.addToDatabase}>Spara</button>
-          </Link>
-          <Link to="/workmethods" className="btn1 cancelbtn">
-            <button className="cancelbtn">Avbryt</button>
-          </Link>
-        {/* </div> */}
-
-
-
+      <div className="container container-form">
+        {/* <div className="timer-grid1"> */}
+        <p className="watchText">Sida 1:</p>
+        <div className="test">
+          {(Math.round(runningTime0) / 1000 / 60) << 0}:
+          {Math.round((runningTime0 / 1000) % 60)}
         </div>
-        
+        <button className="timerbtn" id="start" onClick={this.handleClick0}>
+          {status0 ? "Paus" : "Start"}
+        </button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset0}>
+          Reset
+        </button>
 
+        <p className="watchText">Sida 2:</p>
+        <div className="test">
+          {(Math.round(runningTime1) / 1000 / 60) << 0}:
+          {Math.round((runningTime1 / 1000) % 60)}
+        </div>
+        <button className="timerbtn" id="start" onClick={this.handleClick1}>
+          {status1 ? "Paus" : "Start"}
+        </button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset1}>
+          Reset
+        </button>
+
+        <p className="watchText">Sida 3:</p>
+        <div className="test">
+          {(Math.round(runningTime2) / 1000 / 60) << 0}:
+          {Math.round((runningTime2 / 1000) % 60)}
+        </div>
+        <button className="timerbtn" id="start" onClick={this.handleClick2}>
+          {status2 ? "Paus" : "Start"}
+        </button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset2}>
+          Reset
+        </button>
+
+        <p className="watchText">Botten:</p>
+        <div className="test">
+          {(Math.round(runningTime3) / 1000 / 60) << 0}:
+          {Math.round((runningTime3 / 1000) % 60)}
+        </div>
+        <button className="timerbtn" id="start" onClick={this.handleClick3}>
+          {status3 ? "Paus" : "Start"}
+        </button>
+        <button className="timerbtn" id="reset" onClick={this.handleReset3}>
+          Reset
+        </button>
+        <Link to="/workmethods/primary/dimensions" className="btn1 savebtn">
+          <button className="savebtn" onClick={this.saveTime}>Spara</button>
+        </Link>
+        <Link to="/workmethods" className="btn1 cancelbtn">
+          <button className="cancelbtn">Avbryt</button>
+        </Link>
+      </div>
     );
   }
 }
+
 export default Timer;
-//export {time0};
-
-
+export {timeSide1, timeSide2, timeSide3, timeBottom};
