@@ -5,3 +5,12 @@ a.MuiMenuItem-root{
 li.MuiMenuItem-root{
     font-size:  0.3em;
 }
+/* MEDIA QUERIES */
+
+@media screen and (max-width:700px)
+{
+    a.MuiMenuItem-root{
+        font-size: 2em;
+    
+    } 
+}

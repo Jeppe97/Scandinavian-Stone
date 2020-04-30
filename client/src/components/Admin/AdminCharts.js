@@ -13,9 +13,8 @@ function createData(metod, average, total) {
     return { metod, average, total};
   }
   const rows = [
-        createData('sågning', 15.9, 3010),
-        createData('borrning', 23.7, 3460),
-        createData('Sprängning', 26.2, 3250),
+        createData('borrning och sågning', 15.9, 3010),
+        createData('borrning och Sprängning', 26.2, 3250),
       ];
   class AdminCharts extends Component  {
    constructor(props)
@@ -44,7 +43,47 @@ function createData(metod, average, total) {
       <Table  aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Metod</TableCell>
+            <TableCell>Metod (Primärblock)</TableCell>
+            <TableCell align="right">Genomsnittstid i timmar (m^2)</TableCell>
+            <TableCell align="right">total tid i timmar (månad)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.metod}
+              </TableCell>
+              <TableCell align="right">{row.average}</TableCell>
+              <TableCell align="right">{row.total}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <Table  aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Metod (Skiva)</TableCell>
+            <TableCell align="right">Genomsnittstid i timmar (m^2)</TableCell>
+            <TableCell align="right">total tid i timmar (månad)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.metod}
+              </TableCell>
+              <TableCell align="right">{row.average}</TableCell>
+              <TableCell align="right">{row.total}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <Table  aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Metod (Block)</TableCell>
             <TableCell align="right">Genomsnittstid i timmar (m^2)</TableCell>
             <TableCell align="right">total tid i timmar (månad)</TableCell>
           </TableRow>
