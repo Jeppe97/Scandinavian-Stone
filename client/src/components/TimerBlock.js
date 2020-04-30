@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Skiva.scss";
+import "./styles/navbar.scss"
 
 class TimerBlock extends Component {
   constructor() {
@@ -91,6 +92,7 @@ class TimerBlock extends Component {
     const { status0, status1,status2, runningTime0, runningTime1, runningTime2 } = this.state;
     return (
       <div>
+
         <div className="container container-formD2">
           <div className="timer-grid3">
             <p className="watchText">Sida 1:</p>

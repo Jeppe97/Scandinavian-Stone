@@ -1,6 +1,7 @@
 //import './style.css';
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./styles/navbar.scss"
 
 class Block extends Component {
   constructor() {
@@ -61,6 +62,8 @@ class Block extends Component {
 
   render() {
     return (
+      <div>
+       
       <div className="container container-formD2">
         <div>
           <form>
@@ -102,6 +105,7 @@ class Block extends Component {
             </button>
           </Link>
         </div>
+      </div>
       </div>
     );
   }

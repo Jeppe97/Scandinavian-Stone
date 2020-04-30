@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./components/styles/Skiva.scss";
 import React, {Component} from 'react';
 
+
 class TimerSkiva extends Component {
   constructor() {
     super();
@@ -102,6 +103,7 @@ class TimerSkiva extends Component {
     const { status0, status1, status2 ,runningTime0, runningTime1, runningTime2 } = this.state;
     return (
       <div>
+            
         <div className="container container-formD2">
           <div className="timer-grid3">
            
@@ -145,7 +147,7 @@ class TimerSkiva extends Component {
           </div>
           <div className="timer-grid2">
 
-          <Link className="btn1" to="/">
+          <Link className="btn1" to="/workmethods">
           <button onClick={this.refreshPage} className="btn1">Spara</button>
         </Link>
 

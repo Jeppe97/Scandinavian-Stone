@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./styles/navbar.scss"
 
 export default class WorkMethods extends Component {
   render() {
     return (
       <div>
+       
         <div className="MainMenu">
           <Link to="/workmethods/primary/dimensions" className="btn1">
             <button>Primärblock</button>

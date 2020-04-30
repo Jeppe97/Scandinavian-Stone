@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./styles/navbar.scss"
 
 class Timer extends Component {
   constructor() {
@@ -127,6 +128,7 @@ class Timer extends Component {
       runningTime3
     } = this.state;
     return (
+      <div>   
       <div className="container container-form">
         {/* <div className="timer-grid1"> */}
         <p className="watchText">Sida 1:</p>
@@ -182,6 +184,7 @@ class Timer extends Component {
         <Link to="/workmethods" className="btn1 cancelbtn">
           <button className="cancelbtn">Avbryt</button>
         </Link>
+      </div>
       </div>
     );
   }
