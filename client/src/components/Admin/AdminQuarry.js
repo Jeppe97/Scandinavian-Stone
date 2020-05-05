@@ -22,16 +22,7 @@ export default class AdminQuarry extends Component {
   render() {
     return (
       <div>
-        <div>{this.state.loading || !this.state.person ? 
-        <div>loading...</div>
-         : 
-         <div>
-            <div>{this.state.person.name.title}</div>
-            <div>{this.state.person.name.first}</div>
-            <div> {this.state.person.name.last}</div>
-            <div><img src={this.state.person.picture.large}/></div>
-             </div>
-              } </div>
+        
         <div className="MainMenu">
           
             <AdminDropdownMenuQuarry />

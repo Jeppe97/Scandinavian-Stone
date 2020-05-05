@@ -58,6 +58,3 @@ export default class Statistics extends Component {
         )
     }
 }
-function refreshPage() {
-    window.location.assign("/");
-}

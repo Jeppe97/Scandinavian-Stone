@@ -37,6 +37,30 @@
   }
 }
 
-/*iPad Air 2 adjusted content*/
-@media screen and (max-width: 1600px) {
+
+
+.popup {
+  position: absolute;
+  z-index: 100;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: grid;
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+
 }
+
+/*iPad Air 2 adjusted content*/
+@media screen and (max-width: 700px) {
+  .Header {
+    width: 92%;
+  .timerbtn#start {
+    background: blue;
+    border: solid;
+    border-color: black;
+  }
+}
+  }
+ 

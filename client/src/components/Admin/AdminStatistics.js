@@ -18,18 +18,18 @@ export default class Statistics extends Component {
         //ajax calls here
         this.setState({
             chartData: {
-                labels: ['Sågning', 'Borrning', 'Sprängning'],
+                labels: ['Borrning och Sågning', 'Borrning och Sprängning'],
                 datasets:[
                     {
                         label: 'Timmar',
                         data:[
-                            2234,
-                            3344,
-                            1234
+                            3134,
+                            
+                            3234
                         ],
                      backgroundColor:[
                          'rgba(255, 99, 132, 0.6)',
-                         'rgba(55, 9, 12, 0.6)',
+                         
                          'rgba(205, 59, 232, 0.6)'
                      ]
                     }
