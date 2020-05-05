@@ -54,7 +54,7 @@ class AdminCharts extends Component  {
         var {blocksawing} = this.state;
         var {blockblasting} = this.state;
 
-        var  sumTimeSawing = this.getMethodTimes(blocksawing);
+        var sumTimeSawing = this.getMethodTimes(blocksawing);
         var sumTimeBlasting = this.getMethodTimes(blockblasting);
 
         // assignes the first element in data array ( sawing )
