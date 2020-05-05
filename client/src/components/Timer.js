@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./styles/navbar.scss"
+import "./styles/timer.scss"
+
 
 class Timer extends Component {
   constructor() {
@@ -129,60 +131,60 @@ class Timer extends Component {
     } = this.state;
     return (
       <div>   
-      <div className="container container-form">
+      <div className="container-timer container-form-timer">
         {/* <div className="timer-grid1"> */}
         <p className="watchText">Sida 1:</p>
-        <div className="test">
+        <div className="counter">
           {(Math.round(runningTime0) / 1000 / 60) << 0}:
           {Math.round((runningTime0 / 1000) % 60)}
         </div>
-        <button className="timerbtn" id="start" onClick={this.handleClick0}>
+        <button className="timerbtn start" id="start" onClick={this.handleClick0}>
           {status0 ? "Paus" : "Start"}
         </button>
-        <button className="timerbtn" id="reset" onClick={this.handleReset0}>
+        <button className="timerbtn reset" id="reset" onClick={this.handleReset0}>
           Nollställ
         </button>
 
         <p className="watchText">Sida 2:</p>
-        <div className="test">
+        <div className="counter">
           {(Math.round(runningTime1) / 1000 / 60) << 0}:
           {Math.round((runningTime1 / 1000) % 60)}
         </div>
-        <button className="timerbtn" id="start" onClick={this.handleClick1}>
+        <button className="timerbtn start" id="start" onClick={this.handleClick1}>
           {status1 ? "Paus" : "Start"}
         </button>
-        <button className="timerbtn" id="reset" onClick={this.handleReset1}>
+        <button className="timerbtn reset" id="reset" onClick={this.handleReset1}>
           Nollställ
         </button>
 
         <p className="watchText">Sida 3:</p>
-        <div className="test">
+        <div className="counter">
           {(Math.round(runningTime2) / 1000 / 60) << 0}:
           {Math.round((runningTime2 / 1000) % 60)}
         </div>
-        <button className="timerbtn" id="start" onClick={this.handleClick2}>
+        <button className="timerbtn start" id="start" onClick={this.handleClick2}>
           {status2 ? "Paus" : "Start"}
         </button>
-        <button className="timerbtn" id="reset" onClick={this.handleReset2}>
+        <button className="timerbtn reset" id="reset" onClick={this.handleReset2}>
           Nollställ
         </button>
 
         <p className="watchText">Botten:</p>
-        <div className="test">
+        <div className="counter">
           {(Math.round(runningTime3) / 1000 / 60) << 0}:
           {Math.round((runningTime3 / 1000) % 60)}
         </div>
-        <button className="timerbtn" id="start" onClick={this.handleClick3}>
+        <button className="timerbtn start" id="start" onClick={this.handleClick3}>
           {status3 ? "Paus" : "Start"}
         </button>
-        <button className="timerbtn" id="reset" onClick={this.handleReset3}>
+        <button className="timerbtn reset" id="reset" onClick={this.handleReset3}>
           Reset
         </button>
         <Link to="/workmethods/dimensions/DSB4" className="btn1 savebtn">
-          <button className="savebtn">Spara</button>
+          <button>Spara</button>
         </Link>
         <Link to="/workmethods" className="btn1 cancelbtn">
-          <button className="cancelbtn">Avbryt</button>
+          <button>Avbryt</button>
         </Link>
       </div>
       </div>
