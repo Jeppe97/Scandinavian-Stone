@@ -5,13 +5,13 @@ import auth from "../login/auth";
 export const AdminMainMenu = props => {
   return (
     <div className="MainMenu">
-      <Link className="btn1" to="/AdminQuarry">
+      <Link className="admin-button" to="/AdminQuarry">
         <button>Statistik</button>
       </Link>
-      <Link className="btn1" to="/AdminModifyData">
+      <Link className="admin-button" to="/AdminModifyData">
         <button>Redigera data</button>
       </Link>
-      <a className="btn1">
+      <a className="admin-button">
         <button
           onClick={() => {
             auth.logout(() => {
