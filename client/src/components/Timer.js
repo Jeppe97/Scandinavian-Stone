@@ -178,7 +178,7 @@ class Timer extends Component {
           {status3 ? "Paus" : "Start"}
         </button>
         <button className="timerbtn reset" id="reset" onClick={this.handleReset3}>
-          Reset
+          Nollställ
         </button>
         <Link to="/workmethods/dimensions/DSB4" className="btn1 savebtn">
           <button>Spara</button>
