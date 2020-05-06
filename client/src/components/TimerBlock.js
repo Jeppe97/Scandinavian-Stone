@@ -103,7 +103,7 @@ class TimerBlock extends Component {
               {status0 ? "Paus" : "Start"}
             </button>
             <button className="timerbtn reset" id="reset" onClick={this.handleReset0}>
-              Reset
+            Nollställ
             </button>
 
             <p className="watchText">Sida 2:</p>
@@ -115,7 +115,7 @@ class TimerBlock extends Component {
               {status1 ? "Paus" : "Start"}
             </button>
             <button className="timerbtn reset" id="reset" onClick={this.handleReset1}>
-              Reset
+            Nollställ
             </button>
             <p className="watchText">Botten:</p>
             <div className="counter">
@@ -126,7 +126,7 @@ class TimerBlock extends Component {
               {status2 ? "Paus" : "Start"}
             </button>
             <button className="timerbtn reset" id="reset" onClick={this.handleReset2}>
-              Reset
+              Nollställ
             </button>
             <Link to="/workmethods/primaryBlock/dimensions" className="btn1 savebtn">
               <button>Spara</button>

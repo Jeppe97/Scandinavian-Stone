@@ -16,7 +16,7 @@ button.selected-button {
 button.selected-button {
   background: green;
 }
-.wrapper {
+.disc-wrapper {
   display: grid;
   max-width: 1600px;
   grid-auto-columns: minmax(70px, auto);
@@ -125,14 +125,23 @@ form {
     }
   }
 }
-@media screen and (min-height: 1500px) {
+@media screen and (max-width: 800px) {
   .dimbtn1 {
     font-size: 0.5em;
   }
-  .wrapper {
-    font-size: 0.8em;
+  .disc-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    font-size: 2em; 
+    max-width: 600px;
+    margin: auto;  
+    
+    .nextbtn {
+      grid-column: 1/1;
+      border: none;
+      font-size: 1em;
+    }
+
     button {
-      margin: 10px;
       width: 100%;
     }
   }

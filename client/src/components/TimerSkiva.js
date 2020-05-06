@@ -115,7 +115,7 @@ class TimerSkiva extends Component {
               {status0 ? "Paus" : "Start"}
             </button>
             <button className="timerbtn reset" id="reset" onClick={this.handleReset0}>
-              Reset
+            Nollställ
             </button>
 
             <p className="watchText">Sida 2:</p>
@@ -127,7 +127,7 @@ class TimerSkiva extends Component {
               {status1 ? "Paus" : "Start"}
             </button>
             <button className="timerbtn reset" id="reset" onClick={this.handleReset1}>
-              Reset
+            Nollställ
             </button>
             <p className="watchText">Botten:</p>
             <div className="counter">
@@ -138,7 +138,7 @@ class TimerSkiva extends Component {
               {status2 ? "Paus" : "Start"}
             </button>
             <button className="timerbtn reset" id="reset" onClick={this.handleReset2}>
-              Reset
+              Nollställ
             </button>
           <Link className="btn1 savebtn" to="/workmethods">
           <button>Spara</button>
