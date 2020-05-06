@@ -17,6 +17,7 @@ import AdminMainMenu from "./components/Admin/AdminMainmenu";
 import AdminQuarry from "./components/Admin/AdminQuarry";
 import AdminDropdownMenuQuarry from "./components/Admin/AdminDropdownMenuQuarry";
 import AdminDropdownMenuPlace from "./components/Admin/AdminDropdownMenuPlace";
+import AdminModify from "./components/Admin/AdminModify";
 import AdminModifyData from "./components/Admin/AdminModifyData";
 import AdminRemoveData from "./components/Admin/AdminRemoveData";
 import AdminStatistics from "./components/Admin/AdminStatistics";
@@ -44,6 +45,11 @@ function App() {
             exact
             path="/AdminModifyData"
             component={AdminModifyData}
+          />
+          <ProtectedRoute
+            exact
+            path="/AdminModify"
+            component={AdminModify}
           />
           <ProtectedRoute
             exact

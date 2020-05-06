@@ -8,10 +8,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+{/* Denna funktion används för att skapa tabellen*/}
 function createData(metod, average, total) {
     return { metod, average, total};
   }
+  {/* Detta är testdata som används för att kolla om tabellerna */}
   const rows = [
         createData('borrning och sågning', 15.9, 3010),
         createData('borrning och Sprängning', 26.2, 3250),

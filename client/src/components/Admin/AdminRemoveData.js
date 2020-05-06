@@ -3,6 +3,24 @@ import { Link } from "react-router-dom";
 import "../styles/MainMenu.scss";
 
 export class AdminModifyData extends Component  {
+
+    constructor() {
+        super();
+    
+        this.state = {
+        ID:"",
+        };
+    
+        this.state = { isToggleOn: true };
+    
+        this.handleChange0 = this.handleChange0.bind(this);
+        
+      }
+      handleChange0(event) {
+        this.setState({
+          ID: event.target.value
+        });
+      }
     render() {
         return (
             <div>
@@ -16,7 +34,7 @@ export class AdminModifyData extends Component  {
               placeholder="ID"
               onChange={this.handleChange0}
             />
-            
+            <button>Godkänn</button>
                     </form>
 
 
