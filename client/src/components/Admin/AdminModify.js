@@ -8,7 +8,7 @@ export const AdminModifyData = props => {
       <Link to="/AdminRemoveData" className="btn1">
         <button>Ta bort data</button>
       </Link>
-      <Link to="/AdminMainmenu" className="btn1">
+      <Link to="/AdminModifyData" className="btn1">
         <button>Modifiera data</button>
       </Link>
       <Link to="/AdminMainmenu" className="btn1">

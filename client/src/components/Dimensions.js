@@ -144,7 +144,7 @@ handleClick1() {
     return (
       <div>
          
-        <div className="wrapper" id="wrapper">
+        <div className="wrapper-primary-dim" id="wrapper">
           <form className="dimension-form 1">
             <h1 className="sides">Sida 1:</h1>
             <input

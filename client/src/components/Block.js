@@ -63,9 +63,7 @@ class Block extends Component {
   render() {
     return (
       <div>
-       
-      <div className="container container-formD2">
-        <div>
+      <div className="wrapper-block-reporting">
           <form>
             Volym(m³):{" "}
             <input
@@ -92,14 +90,13 @@ class Block extends Component {
               onChange={this.handleChange3}
             />
           </form>
-        </div>
-        <div className="block-grid">
-          <Link to="/mainmenu" className="btn1">
+        <div className="btn-field">
+          <Link to="/mainmenu" className="btn1 savebtn">
             <button onClick={this.handleClick0}>
               {this.state.isToggleOn ? "Spara" : "Sparat"}
             </button>
           </Link>
-          <Link to="/workmethods" className="btn1">
+          <Link to="/workmethods" className="btn1 cancelbtn">
             <button onClick={this.handleClick}>
               {(this.setState.isToggleOn = "Avbryt")}
             </button>

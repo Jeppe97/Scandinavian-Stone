@@ -16,7 +16,7 @@ export class AdminModifyData extends Component  {
               placeholder="ID"
               onChange={this.handleChange0}
             />
-            
+            <button>Godkänn</button>
                     </form>
 
 

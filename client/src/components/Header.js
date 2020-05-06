@@ -97,8 +97,8 @@ class Header extends Component {
       var boxHeight
 
       if(window.innerWidth < 1000){
-        boxWidth = 250;
-        boxHeight = 250;
+        boxWidth = 500;
+        boxHeight = 500;
       }
       else{
         boxWidth = 500;

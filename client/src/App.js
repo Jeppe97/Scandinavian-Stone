@@ -21,7 +21,7 @@ import AdminModify from "./components/Admin/AdminModify";
 import AdminModifyData from "./components/Admin/AdminModifyData";
 import AdminRemoveData from "./components/Admin/AdminRemoveData";
 import AdminStatistics from "./components/Admin/AdminStatistics";
-import TimerSkiva from "./TimerSkiva";
+import TimerSkiva from "./components/TimerSkiva";
 import Block from "./components/Block";
 import DSB2 from "./components/DSB2";
 import DSB4 from "./components/DSB4";

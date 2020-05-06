@@ -128,7 +128,7 @@ export class DimensionsSkiva extends Component {
         return (
             <div>
                 
-                <div className="wrapper" id="wrapper">
+                <div className="disc-wrapper" id="wrapper">
                     <form className="dimension-form 1">
                         <h1 className="sides">Sida 1:</h1>
                         <input
@@ -187,7 +187,7 @@ export class DimensionsSkiva extends Component {
 
 
                     <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/DSB2">
-                        <button className="nextbtn">Nästa</button>
+                      <button className="nextbtn">Nästa</button>
 
                     </Link>
                 </div>

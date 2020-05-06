@@ -109,6 +109,7 @@ input {
   display: flex;
   //justify-content: center;
   margin: auto;
+  font-size: 2em;
 }
 .container.container-form {
   display: grid;
@@ -129,27 +130,6 @@ input {
   }
   button {
     margin: 15px;
-  }
-  .watchText {
-    font-size: 1.7em;
-    margin: auto;
-  }
-  .test {
-    font-size: 1.5em;
-    margin: auto;
-  }
-  .timerbtn {
-    font-size: 0.7em;
-  }
-  .timerbtn#start {
-    background: green;
-    border: solid;
-    border-color: black;
-  }
-  .timerbtn#reset {
-    background: #710c0c;
-    border: solid;
-    border-color: black;
   }
 }
 .container-form {
@@ -287,10 +267,15 @@ input {
   width: 40px;
 }
 
-@media screen and (min-height: 1500px) {
+@media screen and (max-width: 800px) {
   .container {
-    width: 40em;
-    height: 20em;
+    width: 22em;
+    height: 15em;
+    font-size: 2em;
+
+    h1 {
+      font-size: 1.5em;
+    }
   }
   .container-form {
     width: inherit;
@@ -311,18 +296,19 @@ input {
     font-size: 0.8em;
   }
 }
-@media only screen and (max-height: 2050px) and (min-height: 1700px) {
-  .container {
-    width: 30em;
-    height: 17em;
-  }
-  input {
-    font-size: 0.7em;
-  }
-  button {
-    font-size: 1.5em;
-  }
-  a {
-    font-size: 0.8em;
-  }
-}
+
+// @media only screen and (max-height: 2050px) and (min-height: 1700px) {
+//   .container {
+//     width: 30em;
+//     height: 17em;
+//   }
+//   input {
+//     font-size: 0.7em;
+//   }
+//   button {
+//     font-size: 1.5em;
+//   }
+//   a {
+//     font-size: 0.8em;
+//   }
+// }

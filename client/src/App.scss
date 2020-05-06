@@ -26,7 +26,11 @@ body {
   margin: 0;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-size: 1em;
+}
+
+.app-container {
+  background:#f6f5f7;
 }
 @media screen and (min-height: 1500px) {
   body {

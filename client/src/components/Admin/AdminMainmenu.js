@@ -7,13 +7,13 @@ import auth from "../login/auth";
 export const AdminMainMenu = props => {
   return (
     <div className="MainMenu">
-      <Link className="btn1" to="/AdminQuarry">
-        <button>Statistik</button> {/*Denna knapp tar dig till Statistikkomponenten*/}
+      <Link className="admin-button" to="/AdminQuarry">
+        <button>Statistik</button>
       </Link>
-      <Link className="btn1" to="/AdminModify">
-        <button>Redigera data</button>{/*Denna knapp tar dig till komponenten där du kan redigiera data*/}
+      <Link className="admin-button" to="/AdminModify">
+        <button>Redigera data</button>
       </Link>
-      <a className="btn1">
+      <a className="admin-button">
         <button
           onClick={() => { {/*Denna knapp kallar på en funktion som loggar ut användaren*/}
             auth.logout(() => {
