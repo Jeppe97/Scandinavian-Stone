@@ -3,10 +3,9 @@ import Slider from "./Slider";
 import { Link } from "react-router-dom";
 import "./styles/Dimension.scss";
 
-var methodSide1 = "";
-var methodSide2 ="";
-var methodSide3 = "";
-var methodSideBottom = "";
+var methods = ["","","",""];
+var hight =[0,0,0,0];
+var length =[0,0,0,0];
 
 export class Dimensions extends Component {
   componentDidMount() {
@@ -22,42 +21,42 @@ export class Dimensions extends Component {
     drillblow1.addEventListener("click", () => {
       drillblow1.classList.add("selected-button");
       drillsaw1.classList.remove("selected-button");
-      methodSide1 = "Blasting";
+      methods.splice(0, 1, 'Blasting');
     });
     drillsaw1.addEventListener("click", () => {
       drillblow1.classList.remove("selected-button");
       drillsaw1.classList.add("selected-button");
-      methodSide1 = "Sawing";
+      methods.splice(0, 1, 'Sawing');
     });
     drillblow2.addEventListener("click", () => {
       drillblow2.classList.add("selected-button");
       drillsaw2.classList.remove("selected-button");
-      methodSide2 = "Blasting";
+      methods.splice(1, 1, 'Blasting');
     });
     drillsaw2.addEventListener("click", () => {
       drillsaw2.classList.add("selected-button");
       drillblow2.classList.remove("selected-button");
-      methodSide2 = "Sawing";
+      methods.splice(1, 1, 'Sawing');
     });
     drillblow3.addEventListener("click", () => {
       drillblow3.classList.add("selected-button");
       drillsaw3.classList.remove("selected-button");
-      methodSide3 = "Blasting";
+      methods.splice(2, 1, 'Blasting');
     });
     drillsaw3.addEventListener("click", () => {
       drillsaw3.classList.add("selected-button");
       drillblow3.classList.remove("selected-button");
-      methodSide3 = "Sawing";
+      methods.splice(2, 1, 'Sawing');
     });
     drillblow4.addEventListener("click", () => {
       drillblow4.classList.add("selected-button");
       drillsaw4.classList.remove("selected-button");
-      methodSideBottom = "Blasting";
+      methods.splice(3, 1, 'Blasting');
     });
     drillsaw4.addEventListener("click", () => {
       drillsaw4.classList.add("selected-button");
       drillblow4.classList.remove("selected-button");
-      methodSideBottom = "Sawing";
+      methods.splice(3, 1, 'Sawing');
     });
   }
   render() {
@@ -127,7 +126,7 @@ export class Dimensions extends Component {
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/workmethods/primary">
+          <Link className="nextbtn" to="/workmethods/dimensions/DSB4">
             <button className="nextbtn">Nästa</button>
           </Link>
         </div>
@@ -136,4 +135,4 @@ export class Dimensions extends Component {
   }
 }
 export default Dimensions;
-export {methodSide1, methodSide2, methodSide3, methodSideBottom}
+export { length,hight,methods}

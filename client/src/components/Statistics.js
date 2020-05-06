@@ -11,15 +11,15 @@ export default class Statistics extends Component {
     }
     
     componentDidMount() {
-        this.getData();
+      //  this.getData();
     }
     //testing to fetch from a procidure
-    getData(){
+    /*getData(){
         fetch('/gettest')
         .then(response => response.json())
         .then(dataTest=>this.setState({ dataTest}, () => console.log('data sawing', dataTest)))
         .catch(err => console.error(err))
-    }
+    }*/
     renderTime = ({sideID,time}) => <div key={sideID}>{time}</div>
     
     render() {

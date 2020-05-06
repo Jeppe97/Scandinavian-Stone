@@ -3,9 +3,10 @@ import Slider from './Slider';
 import { Link } from "react-router-dom";
 import "./styles/DimensionsSkiva.scss";
 
-var methodSide1 = "";
-var methodSide2 ="";
-var methodSideBottom = "";
+var methods = ["","",""];
+var hight =[0,0,0];
+var length =[0,0,0];
+
 
 export class DimensionsSkiva extends Component {
 
@@ -23,33 +24,33 @@ export class DimensionsSkiva extends Component {
         drillblow1.addEventListener('click', () => {
             drillblow1.classList.add("selected-button");
             drillsaw1.classList.remove("selected-button");
-            methodSide1 = "Blasting";
+            methods.splice(0, 1, 'Blasting');
         });
         drillsaw1.addEventListener('click', () => {
             drillblow1.classList.remove("selected-button");
             drillsaw1.classList.add("selected-button");
-            methodSide1 = "Sawing";
+            methods.splice(0, 1, 'Sawing');
         });
         drillblow2.addEventListener('click', () => {
             drillblow2.classList.add("selected-button");
             drillsaw2.classList.remove("selected-button");
-            methodSide2="Blasting";
+            methods.splice(1, 1, 'Blasting');
         });
         drillsaw2.addEventListener('click', () => {
             drillsaw2.classList.add("selected-button");
             drillblow2.classList.remove("selected-button");
-            methodSide2="Sawing";
+            methods.splice(1, 1, 'Sawing');
         });
 
         drillblow3.addEventListener('click', () => {
             drillblow3.classList.add("selected-button");
             drillsaw3.classList.remove("selected-button");
-            methodSideBottom = "Blasting";
+            methods.splice(2, 1, 'Blasting');
         });
         drillsaw3.addEventListener('click', () => {
             drillsaw3.classList.add("selected-button");
             drillblow3.classList.remove("selected-button");
-            methodSideBottom = "Sawing";
+            methods.splice(2, 1, 'Sawing');
         });
 
     }
@@ -106,4 +107,4 @@ export class DimensionsSkiva extends Component {
     }
 }
 export default DimensionsSkiva;
-export {methodSide1, methodSide2, methodSideBottom}
+export {length,hight,methods}

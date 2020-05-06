@@ -3,8 +3,10 @@ import Slider from "./Slider";
 import { Link } from "react-router-dom";
 import "./styles/DimensionsDSB2.scss";
 import {timeSide1, timeSide2, timeBottom} from "./TimerSkiva"
-import {methodSide1, methodSide2, methodSideBottom} from "./DimensionsDisc"
-import { methodSide3 } from "./Dimensions";
+import { methods,length,hight} from "./DimensionsDisc"
+import {quarryID} from "./login/Login";
+
+var discID=0;
 
 
 export class DSB2 extends Component {
@@ -15,8 +17,7 @@ export class DSB2 extends Component {
       sprängSort0:"",
       sprängSort1:"",
       sprängSort2:"",
-      sprängSort3:"",
-      discs: [],
+      sprängSort3:""
     };
 
 
@@ -26,7 +27,12 @@ export class DSB2 extends Component {
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
 
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.addSide1 = this.addSide1.bind(this);
+    this.addSide2 = this.addSide2.bind(this);
+    this.addSideBottom = this.addSideBottom.bind(this);
+    this.addDisc = this.addDisc.bind(this);
+
+
     this.refreshPage = this.refreshPage.bind(this);
 
     
@@ -52,34 +58,41 @@ export class DSB2 extends Component {
     return(this.state);
   }
 
-  componentDidMount() {
-    fetch('/getdisc')
-        .then(res => res.json())
-        .then(discs => this.setState({ discs }, () => console.log('DiscID fetched', discs)));
+  addDisc(){
+      fetch(`/insertdisc?quarryID=${quarryID}&mainTime=${0}`)
+      .catch(err => console.error(err)) 
+      .then(response => response.json())
+      .then(function(response){
+       discID = response; 
+       })
+     .then(this.addSide1)
+  }
+  
+  addSide1(){
+    if(discID.length){
+      fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[0]}&height=${hight[0]}&time=${timeSide1}&method=${methods[0]}&sideNr=${1}&nr=${0}&length2=${0}&type=${this.state.sprängSort0}&amount=${0}`)
+     .then(this.addSide2)
+     .catch(err => console.error(err))
+    }
   }
 
-//add a new disc 
-  addDisc = _ =>{
-    var {discs} = this.state;
-    fetch(`/disc/instert?discNumber=${discs}`)
-    .then(this.addSide1)
+  addSide2(){
+    if(discID.length){
+    fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[1]}&height=${hight[1]}&time=${timeSide2}&method=${methods[1]}&sideNr=${2}&nr=${0}&length2=${0}&type=${this.state.sprängSort1}&amount=${0}`)
+    .then(this.addSideBottom)
     .catch(err => console.error(err))
+    }
     
   }
 
-//add values fro one of the discs sides
-  addSide1 = _ =>{
-    console.log("adding disc side");
-    var discArrayID = this.state.discs.map((disc) => disc.discID);
-    var discID = discArrayID.pop() + 1; // +1 beacause of newly added block
-    console.log("disc id" + discID);
-    var blastingTemp1 = this.state.sprängSort0;
-
-    fetch(`/side/instert?discID=${discID}&sideNumber=${1}&time=${timeSide1}&hight=${0}&length=${0}&method=${methodSide1}&nrOfHoles=${0}&lengthHoles=${0}&blastingSort=${blastingTemp1}&amount=${0}`)
-    .then(this.getQuarry)
+  addSideBottom(){
+    if(discID.length){
+    fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[2]}&height=${hight[2]}&time=${timeBottom}&method=${methods[2]}&sideNr=${3}&nr=${0}&length2=${0}&type=${this.state.sprängSort2}&amount=${0}`)
     .catch(err => console.error(err))
- 
+    }
+  
   }
+
 
   refreshPage() {
 
@@ -87,6 +100,7 @@ export class DSB2 extends Component {
   }
 
   render() {
+    
     return (
       <div>
         <div className="wrapperDSB" id="wrapper">
@@ -148,5 +162,6 @@ export class DSB2 extends Component {
       </div>
     );
   }
+
 }
 export default DSB2;

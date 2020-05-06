@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Bar, Line, Pie} from "react-chartjs-2"
-
+import {quarryChoice} from "./AdminQuarryButton"
 
 class AdminCharts extends Component  {
    constructor(props)
@@ -9,8 +9,8 @@ class AdminCharts extends Component  {
        this.state =  {
            chartData: props.chartData,
            loading: true,
-           blocksawing : [],
-           blockblasting :[]
+           sawing : [],
+           blasting :[]
         }
 
     }
@@ -20,50 +20,44 @@ class AdminCharts extends Component  {
         legendPosition: "right"
     }
 
+    getDataSawing(){
+        fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Sawing'}`)
+        .then(res => res.json())
+        .then(sawing => this.setState({ sawing }, () => console.log(' sawing', sawing)))
+        
+    }
+    getDataBlasting(){
+        fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Blasting'}`)
+        .then(res => res.json())
+        .then(blasting => this.setState({ blasting }, () => console.log('blasting', blasting)))
+        
+    }
     componentDidMount(){
-        this.getDatabaseDataSawing();
-        this.getDatabaseDataBlasting();
+        this.getDataSawing();
+        this.getDataBlasting();
     }
 
-    
-    getDatabaseDataSawing(){
-        fetch('/getblocksidesawing')
-        .then(res => res.json())
-        .then(blocksawing => this.setState({ blocksawing }, () => console.log('blocks sawing', blocksawing)))
-        
-    }
 
-    getDatabaseDataBlasting(){
-        fetch('/getblocksideblasting')
-        .then(res => res.json())
-        .then(blockblasting=> this.setState({ blockblasting }, () => console.log('blocks blasting', blockblasting)))
-        
-    }
-    //sum the times from a table in the database 
-    getMethodTimes(method){
+    methodTime(method){
         var time = method.reduce(function(prev, cur) {
             return prev + cur.time;
           }, 0);
         return (time);
     }
-
    
     render()
     {
         var {chartData} = this.state;
-        var {blocksawing} = this.state;
-        var {blockblasting} = this.state;
+        var {sawing} = this.state;
+        var {blasting} = this.state;
 
-        var sumTimeSawing = this.getMethodTimes(blocksawing);
-        var sumTimeBlasting = this.getMethodTimes(blockblasting);
-
-        // assignes the first element in data array ( sawing )
-        chartData.datasets[0].data[0] = sumTimeSawing; 
-        chartData.datasets[0].data[1] = sumTimeBlasting;
-        console.log(chartData.datasets[0].data[1] + "chart data for blasting");
-   
-
+        var sawingTemp = this.methodTime(sawing);
+        var blastingTemp = this.methodTime(blasting);
+     
+        chartData.datasets[0].data = [sawingTemp,blastingTemp]; 
+     
         return(
+            
             <div className="chart">
                 <Bar
                 data={chartData}
