@@ -77,3 +77,39 @@ button {
     border-color: black;
     }   
 }
+
+@media screen and (max-width: 800px) {
+  .dimbtn1 {
+    font-size: 0.5em;
+  }
+  .container-form-timer {
+    font-size: 2em;
+    padding: 1em;
+    width: 23em;
+    height: 17em;
+    grid-template-columns: repeat(4, 1fr);
+   
+    .watchText {
+      margin-left: -0.5em;
+    }
+
+    a.btn1.savebtn {
+      grid-column: 1/4;
+      margin-right: 1em;
+    }
+    
+    a.btn1.cancelbtn {
+      grid-column: 4/5;
+      margin-right: -1em;
+      margin-left: -1em;
+      
+    }
+
+    .reset {
+        margin-right: -0.5em;
+
+      
+      }   
+
+  }
+}

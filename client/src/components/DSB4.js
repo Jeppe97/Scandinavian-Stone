@@ -195,13 +195,13 @@ export class DSB4 extends Component {
           
             <input
               type="text"
-              placeholder="Spräng Sort"
+              placeholder="Sprängmedel"
               onChange={this.handleChange8}
             />
        
        <input
               type="text"
-              placeholder="Mängd Sprängdeg"
+              placeholder="Mängd Sprängmedel"
               onChange={this.handleChange12}
             />
                     </form>
@@ -225,13 +225,13 @@ export class DSB4 extends Component {
           
             <input
               type="text"
-              placeholder="Spräng Sort"
+              placeholder="Sprängmedel"
               onChange={this.handleChange9}
             />
        
        <input
               type="text"
-              placeholder="Mängd Sprängdeg"
+              placeholder="Mängd Sprängmedel"
               onChange={this.handleChange13}
             />
                     </form>
@@ -253,13 +253,13 @@ export class DSB4 extends Component {
           
             <input
               type="text"
-              placeholder="Spräng Sort"
+              placeholder="Sprängmedel"
               onChange={this.handleChange10}
             />
        
        <input
               type="text"
-              placeholder="Mängd Sprängdeg"
+              placeholder="Mängd Sprängmedel"
               onChange={this.handleChange14}
             />
                     </form>
@@ -279,13 +279,13 @@ export class DSB4 extends Component {
           
             <input
               type="text"
-              placeholder="Spräng Sort"
+              placeholder="Sprängmedel"
               onChange={this.handleChange11}
             />
        
        <input
               type="text"
-              placeholder="Mängd Sprängdeg"
+              placeholder="Mängd Sprängmedel"
               onChange={this.handleChange15}
             />
                     </form>

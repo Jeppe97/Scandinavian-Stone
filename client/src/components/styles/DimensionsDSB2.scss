@@ -16,12 +16,6 @@ button.selected-button {
 button.selected-button {
   background: green;
 }
-
-div#wrapper.wrapperDSB {
-  //grid-template-columns: repeat(3,1fr);
-
-  }
-
   button#nextbtnDSB.wrapperDSB {
     grid-column: 1/4;
 
@@ -29,16 +23,19 @@ div#wrapper.wrapperDSB {
 
 .wrapperDim {
   display: grid;
-  max-width: 1500px;
+  max-width: 1600px;
   grid-auto-columns: minmax(70px, auto);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 0.3em;
+  font-size: 2em;
 
   button {
     width: 100%;
+    margin-top: 5px;
   }
   a.btn1 {
-    font-size: 0.5em;
+    font-size: 1em;
+    margin-top: 5px;
   }
 
   h1.sides {
@@ -52,51 +49,60 @@ div#wrapper.wrapperDSB {
     display: grid;
     justify-content: center;
     text-align: center;
-    grid-template-rows: repeat(5, 1fr) 4fr;
+    grid-template-rows: repeat(4, 1fr);
   }
   form.dimension-form {
     border: 1px solid black;
   }
+
+  .btn-field {
+    grid-column: 2/3;
+    
+  }
+
+  
+
+
 }
-div.makeStyles-root-1 {
-  width: 100%;
-}
-.makeStyles-root-1 {
-  .MuiTypography-root {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1em;
-  }
-  .MuiTypography-body1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1em;
-  }
-  .MuiTypography-gutterBottom {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1em;
-  }
-}
-span {
-  font-size: inherit;
-  .MuiSlider-rail {
-    height: $thumbSize/6;
-  }
-  .MuiSlider-track {
-    height: $thumbSize/6;
-  }
-  .MuiSlider-thumb {
-    height: $thumbSize;
-    width: $thumbSize;
-    margin-top: $thumbSize * -(5/12);
-  }
-  .PrivateValueLabel-offset-54 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 0.2em;
-  }
-  .PrivateValueLabel-thumb-52.PrivateValueLabel-open-53
-    .PrivateValueLabel-offset-54 {
-    transform: scale(3) translateY(-8px);
-  }
-}
+// div.makeStyles-root-1 {
+//   width: 100%;
+// }
+// .makeStyles-root-1 {
+//   .MuiTypography-root {
+//     font-family: "Montserrat", sans-serif;
+//     font-size: 1em;
+//   }
+//   .MuiTypography-body1 {
+//     font-family: "Montserrat", sans-serif;
+//     font-size: 1em;
+//   }
+//   .MuiTypography-gutterBottom {
+//     font-family: "Montserrat", sans-serif;
+//     font-size: 1em;
+//   }
+// }
+// span {
+//   font-size: inherit;
+//   .MuiSlider-rail {
+//     height: $thumbSize/6;
+//   }
+//   .MuiSlider-track {
+//     height: $thumbSize/6;
+//   }
+//   .MuiSlider-thumb {
+//     height: $thumbSize;
+//     width: $thumbSize;
+//     margin-top: $thumbSize * -(5/12);
+//   }
+//   .PrivateValueLabel-offset-54 {
+//     font-family: "Montserrat", sans-serif;
+//     font-size: 0.2em;
+//   }
+//   .PrivateValueLabel-thumb-52.PrivateValueLabel-open-53
+//     .PrivateValueLabel-offset-54 {
+//     transform: scale(3) translateY(-8px);
+//   }
+// }
 button {
   .dimbtn1 {
     font-size: 0.7em;
@@ -116,21 +122,32 @@ form {
     }
   }
 }
-@media screen and (min-height: 1500px) {
+@media screen and (max-width: 800px) {
   .dimbtn1 {
     font-size: 0.5em;
   }
-  .wrapper {
-    font-size: 0.8em;
+
+
+  .wrapperDim {
+    max-width: 500px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.3em;
+    font-size: 2em;
+    margin: auto;
+  
     button {
-      margin: 10px;
       width: 100%;
+      margin-top: 5px;
     }
+
+    a.btn1 {
+      font-size: 1.5em;
+    }
+
+    .btn-field {
+      grid-column: 1/2;
+      padding-bottom: 0.8em;
+       
+    } 
   }
 }
-
-
- .nextbtn{
-   grid-column: 1/4;
- }
-

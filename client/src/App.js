@@ -19,7 +19,7 @@ import AdminDropdownMenuQuarry from "./components/Admin/AdminDropdownMenuQuarry"
 import AdminDropdownMenuPlace from "./components/Admin/AdminDropdownMenuPlace";
 import AdminModifyData from "./components/Admin/AdminModifyData";
 import AdminStatistics from "./components/Admin/AdminStatistics";
-import TimerSkiva from "./TimerSkiva";
+import TimerSkiva from "./components/TimerSkiva";
 import Block from "./components/Block";
 import DSB2 from "./components/DSB2";
 import DSB4 from "./components/DSB4";

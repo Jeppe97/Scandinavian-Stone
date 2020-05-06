@@ -1,6 +1,6 @@
 .Header {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   margin-bottom: 1em;
   background-color: white;
@@ -36,8 +36,6 @@
   }
 }
 
-
-
 .popup {
   position: absolute;
   z-index: 100;
@@ -46,20 +44,65 @@
 
   form {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-  }
+    grid-template-columns: repeat(2, 1fr);
 
+    input[type="checkbox"] {
+      /* Double-sized Checkboxes */
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      transform: scale(2);
+      padding: 10px;
+    }
+
+    button {
+      color: white;
+      font-size: 2em;
+
+    }
+
+
+  }
 }
 
 /*iPad Air 2 adjusted content*/
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .Header {
     width: 92%;
-  .timerbtn#start {
-    background: blue;
-    border: solid;
-    border-color: black;
+    margin: auto;
+    margin-bottom: 1em;
+    .timerbtn#start {
+      background: green;
+      border: solid;
+      border-color: black;
+    }
   }
+
+  .popup {
+
+    h3 {
+      font-size: 2em;
+    }
+
+    form {
+      label {
+        font-size: 1.5em;
+      }
+
+
+      input[type="checkbox"] {
+        /* Double-sized Checkboxes */
+        -ms-transform: scale(2); /* IE */
+        -moz-transform: scale(2); /* FF */
+        -webkit-transform: scale(2); /* Safari and Chrome */
+        -o-transform: scale(2); /* Opera */
+        transform: scale(2);
+        padding: 10px;
+      }
+    }
+  }
+
+
+
 }
-  }
- 
