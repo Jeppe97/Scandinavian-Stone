@@ -152,7 +152,7 @@ export class DSB2 extends Component {
     return (
       <div>
      
-        <div className="wrapperDSB" id="wrapper">
+        <div className="wrapperDim" id="wrapper">
           <form className="dimension-form 1">
             <h1 className="sides">Sida 1:</h1>
             <input
@@ -231,13 +231,14 @@ export class DSB2 extends Component {
               onChange={this.handleChang11}
             />
           </form>
-
-          <Link to="/workmethods/primarySkiva" className="btn1">
+          <div className="btn-field">
+          <Link to="/workmethods/primarySkiva" className="btn1 save">
               <button>Spara</button>
             </Link>
-            <Link to="/workmethods" className="btn1">
+            <Link to="/workmethods" className="btn1 cancel">
               <button  onClick={this.refreshPage}>Avbryt</button>
             </Link>
+            </div>
         </div>
 
 

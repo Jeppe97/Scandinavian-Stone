@@ -22,7 +22,6 @@ export class Login extends Component {
       <div className="container" id="container">
        
         <div className="form-container admin-container">
-        <p>test</p>
           <form action="#">
             <h1>Admin</h1>
             <input type="email" placeholder="Användarnamn" />

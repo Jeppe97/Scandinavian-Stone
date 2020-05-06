@@ -16,12 +16,6 @@ button.selected-button {
 button.selected-button {
   background: green;
 }
-
-div#wrapper.wrapperDSB {
-  //grid-template-columns: repeat(3,1fr);
-
-  }
-
   button#nextbtnDSB.wrapperDSB {
     grid-column: 1/4;
 
@@ -29,16 +23,19 @@ div#wrapper.wrapperDSB {
 
 .wrapperDim {
   display: grid;
-  max-width: 1500px;
+  max-width: 1600px;
   grid-auto-columns: minmax(70px, auto);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 0.3em;
+  font-size: 2em;
 
   button {
     width: 100%;
+    margin-top: 5px;
   }
   a.btn1 {
-    font-size: 0.5em;
+    font-size: 1em;
+    margin-top: 5px;
   }
 
   h1.sides {
@@ -52,11 +49,20 @@ div#wrapper.wrapperDSB {
     display: grid;
     justify-content: center;
     text-align: center;
-    grid-template-rows: repeat(5, 1fr) 4fr;
+    grid-template-rows: repeat(4, 1fr);
   }
   form.dimension-form {
     border: 1px solid black;
   }
+
+  .btn-field {
+    grid-column: 2/3;
+    
+  }
+
+  
+
+
 }
 div.makeStyles-root-1 {
   width: 100%;

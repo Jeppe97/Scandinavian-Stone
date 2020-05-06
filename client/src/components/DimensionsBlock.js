@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
 import "./styles/navbar.scss"
+import "./styles/Block.scss"
+
 
 export default class DimensionsBlock extends Component {
   refreshPage() {
@@ -148,7 +150,7 @@ handleClick1() {
     return (
       <div>
        
-        <div className="wrapper" id="wrapper">
+        <div className="wrapper-block" id="wrapper">
           <form className="dimension-form 1">
             <h1 className="sides">Sida 1:</h1>
             <input
