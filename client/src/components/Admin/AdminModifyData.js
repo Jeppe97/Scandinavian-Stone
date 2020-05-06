@@ -5,7 +5,7 @@ import "../styles/MainMenu.scss";
 export const AdminModifyData = props => {
   return (
     <div className="MainMenu">
-      <Link to="/AdminMainmenu" className="btn1">
+      <Link to="/AdminRemoveData" className="btn1">
         <button>Ta bort data</button>
       </Link>
       <Link to="/AdminMainmenu" className="btn1">
