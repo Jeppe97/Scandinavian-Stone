@@ -3,6 +3,11 @@ import Slider from './Slider';
 import { Link } from "react-router-dom";
 import "./styles/DSB.scss";
 import "./styles/navbar.scss"
+import {depth,length,methods} from "./Dimensions"
+import {timeSide1, timeSide2, timeSide3, timeBottom} from "./Timer";
+import {quarryID} from "./login/Login";
+
+var primaryID=0;
 
 export class DSB4 extends Component {
 
@@ -20,10 +25,10 @@ export class DSB4 extends Component {
         LängdPåHål2:"",
         LängdPåHål3:"",
 
-        sprängSort0:"",
-        sprängSort1:"",
-        sprängSort2:"",
-        sprängSort3:"",
+        SprängSort0:"",
+        SprängSort1:"",
+        SprängSort2:"",
+        SprängSort3:"",
 
         MängdSprängDeg0:"",
         MängdSprängDeg1:"",
@@ -56,6 +61,13 @@ export class DSB4 extends Component {
         this.handleChange13 = this.handleChange13.bind(this);
         this.handleChange14 = this.handleChange14.bind(this);
         this.handleChange15 = this.handleChange15.bind(this);
+
+                
+        this.addSide1 = this.addSide1.bind(this);
+        this.addSide2 = this.addSide2.bind(this);
+        this.addSide3 = this.addSide3.bind(this);
+        this.addSideBottom = this.addSideBottom.bind(this);
+        this.addPrimary=this.addPrimary.bind(this);
         
         
       }
@@ -63,12 +75,14 @@ export class DSB4 extends Component {
         this.setState({
           AntalHål0: event.target.value
         });
+        return(this.state);
       }
     
       handleChange1(event) {
         this.setState({
           AntalHål1: event.target.value
         });
+        return(this.state);
 
       }
     
@@ -76,13 +90,14 @@ export class DSB4 extends Component {
         this.setState({
           AntalHål2: event.target.value
         });
+        return(this.state);
       }
     
       handleChange3(event) {
         this.setState({
           AntalHål3: event.target.value
         });
-
+        return(this.state);
       }
 
 
@@ -90,26 +105,28 @@ export class DSB4 extends Component {
         this.setState({
           LängdPåHål0: event.target.value
         });
+        return(this.state);
       }
     
       handleChange5(event) {
         this.setState({
           LängdPåHål1: event.target.value
         });
-
+        return(this.state);
       }
     
       handleChange6(event) {
         this.setState({
           LängdPåHål2: event.target.value
         });
+        return(this.state);
       }
     
       handleChange7(event) {
         this.setState({
           LängdPåHål3: event.target.value
         });
-
+        return(this.state);
       }
 
 
@@ -117,67 +134,111 @@ export class DSB4 extends Component {
         this.setState({
           SprängSort0: event.target.value
         });
+        return(this.state);
       }
     
       handleChange9(event) {
         this.setState({
           SprängSort1: event.target.value
         });
-
+        return(this.state);
       }
     
       handleChange10(event) {
         this.setState({
           SprängSort2: event.target.value
         });
+        return(this.state);
       }
     
       handleChange11(event) {
         this.setState({
           SprängSort3: event.target.value
         });
-
+        return(this.state);
       }
 
       handleChange12(event) {
         this.setState({
           MängdSprängDeg0: event.target.value
         });
+        return(this.state);
       }
     
       handleChange13(event) {
         this.setState({
           MängdSprängDeg1: event.target.value
         });
-
+        return(this.state);
       }
     
       handleChange14(event) {
         this.setState({
           MängdSprängDeg2: event.target.value
         });
+        return(this.state);
       }
     
       handleChange15(event) {
         this.setState({
           MängdSprängDeg3: event.target.value
         });
-
+        return(this.state);
       }
-
-
-
-
 
 
     refreshPage() {
         window.location.assign("/");
     }
+    
+    addPrimary(){
+      fetch(`/insertprimary?quarryID=${quarryID}&mainTime=${0}`)
+      .then(response => response.json())
+      .then(function(response){
+       primaryID = response;
+       })
+       .then(this.addSide1)
+      .catch(err => console.error(err)) 
+    
+  }
+  
+addSide1(){
+  if(primaryID.length){
+    fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[0]}&height=${depth[0]}&time=${timeSide1}&method=${methods[0]}&sideNr=${1}&nr=${this.state.AntalHål0}&length2=${this.state.LängdPåHål0}&type=${this.state.SprängSort0}&amount=${this.state.MängdSprängDeg0}`)
+   .then(this.addSide2)
+   .catch(err => console.error(err))
+  }
+}
+
+addSide2(){
+  if(primaryID.length){
+  fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[1]}&height=${depth[1]}&time=${timeSide2}&method=${methods[1]}&sideNr=${2}&nr=${this.state.AntalHål1}&length2=${this.state.LängdPåHål1}&type=${this.state.SprängSort1}&amount=${this.state.MängdSprängDeg1}`)
+  .then(this.addSide3)
+  .catch(err => console.error(err))
+  }
+  
+}
+  
+addSide3(){
+  if(primaryID.length){
+  fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[2]}&height=${depth[2]}&time=${timeSide3}&method=${methods[2]}&sideNr=${3}&nr=${this.state.AntalHål2}&length2=${this.state.LängdPåHål2}&type=${this.state.SprängSort2}&amount=${this.state.MängdSprängDeg2}`)
+  .then(this.addSideBottom)
+  .catch(err => console.error(err))
+  }
+  
+}
+addSideBottom(){
+  if(primaryID.length){
+  fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[3]}&height=${depth[3]}&time=${timeBottom}&method=${methods[3]}&sideNr=${4}&nr=${this.state.AntalHål3}&length2=${this.state.LängdPåHål3}&type=${this.state.SprängSort3}&amount=${this.state.MängdSprängDeg3}`)
+  .catch(err => console.error(err))
+  }
+  
+}
    
     render() {
+
         return (
             <div>
-             
               
                 <div className="wrapperDSB" id="wrapper">
                     <form className="dimension-form 1">
@@ -290,7 +351,7 @@ export class DSB4 extends Component {
             />
                     </form>
                     <Link className="nextbtn" to="/workmethods">
-                    <button  className="nextbtn">Spara</button>
+                    <button  className="nextbtn" onClick={this.addPrimary} >Spara</button>
                     </Link>
                 </div>
             </div>

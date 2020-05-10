@@ -1,55 +1,41 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
+
 export default class Statistics extends Component {
-    state = {
-        quarrys: [],
-        quarry: {
-            quarryName:'sample'
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataTest:[]
+         };
     }
     
     componentDidMount() {
-       this.getQuarry();
+      //  this.getData();
     }
-
-    getQuarry = _ =>{
-        fetch('/quarry')
+    //testing to fetch from a procidure
+    /*getData(){
+        fetch('/gettest')
         .then(response => response.json())
-        .then(response=>this.setState({ quarrys: response.data}))
+        .then(dataTest=>this.setState({ dataTest}, () => console.log('data sawing', dataTest)))
         .catch(err => console.error(err))
-
-    }
-
-    addQuarry = _ =>{
-        const {quarry} = this.state;
-        fetch(`/quarry/instert?quarryName=${quarry.quarryName}`)
-       // .then(response => response.json())
-        .then(this.getQuarry)
-        .catch(err => console.error(err))
-    }
- 
-
-    renderQuarry = ({quarryName}) => <div>{quarryName}</div>
-
+    }*/
+    renderTime = ({sideID,time}) => <div key={sideID}>{time}</div>
     
     render() {
-        const { quarrys, quarry } = this.state;
+        const {dataTest} = this.state
+       
+       
         return (
             <div>
                 <div className="MainMenu">
                  <h1>STATS</h1>
-                    {quarrys.map(this.renderQuarry)}
-
-                    <div>
-                        <input 
-                            value={quarry.quarryName} 
-                            onChange={e => this.setState({quarry: {...quarry, quarryName: e.target.value}})}
-                            />
-                        <button onClick={this.addQuarry}> Add quarry </button>
-                    </div>
-
-                    
+              
+                   <div>
+                    {dataTest.map(this.renderTime)}
+                   
+                   </div>
+                   
                     <Link to="/mainmenu" className="btn1">
                         <button>Tillbaka</button>
                     </Link>
@@ -57,4 +43,7 @@ export default class Statistics extends Component {
             </div>
         )
     }
+}
+function refreshPage() {
+    window.location.assign("/");
 }

@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./styles/Dimension.scss";
 import "./styles/navbar.scss"
 
+var methods = ["","","",""];
+var depth =[0,0,0,0];
+var length =[0,0,0,0];
+
 export class Dimensions extends Component {
   constructor() {
     super();
@@ -33,23 +37,29 @@ export class Dimensions extends Component {
 
   this.handleClick0 = this.handleClick0.bind(this);
   this.handleClick1 = this.handleClick1.bind(this);
+
+  this.saveInfo=this.saveInfo.bind(this);
+
 }
 handleChange0(event) {
   this.setState({
     Djup1: event.target.value
   });
+  return(this.state);
 }
 
 handleChange1(event) {
   this.setState({
     Djup2: event.target.value
   });
+  return(this.state);
 }
 
 handleChange2(event) {
   this.setState({
     Djup3: event.target.value
   });
+  return(this.state);
 }
 
 
@@ -58,30 +68,35 @@ handleChange3(event) {
   this.setState({
     Längd1: event.target.value
   });
+  return(this.state);
 }
 
 handleChange4(event) {
   this.setState({
     Längd2: event.target.value
   });
+  return(this.state);
 }
 
 handleChange5(event) {
   this.setState({
     Längd3: event.target.value
   });
+  return(this.state);
 }
 
 handleChange6(event) {
   this.setState({
     Djup4: event.target.value
   });
+  return(this.state);
 }
 
 handleChange7(event) {
   this.setState({
     Längd4: event.target.value
   });
+  return(this.state);
 }
 
 
@@ -97,6 +112,22 @@ handleClick1() {
   }));
 
 }
+
+saveInfo(){
+
+  depth[0]=this.state.Djup1;
+  depth[1]=this.state.Djup2;
+  depth[2]=this.state.Djup3;
+  depth[3]=this.state.Djup4;
+
+  length[0]=this.state.Längd1;
+  length[1]=this.state.Längd2;
+  length[2]=this.state.Längd3;
+  length[3]=this.state.Längd4;
+
+}
+
+
   componentDidMount() {
     const drillblow1 = document.getElementById("drillblow1");
     const drillblow2 = document.getElementById("drillblow2");
@@ -110,34 +141,43 @@ handleClick1() {
     drillblow1.addEventListener("click", () => {
       drillblow1.classList.add("selected-button");
       drillsaw1.classList.remove("selected-button");
+      methods.splice(0, 1, 'Blasting');
     });
     drillsaw1.addEventListener("click", () => {
       drillblow1.classList.remove("selected-button");
       drillsaw1.classList.add("selected-button");
+      methods.splice(0, 1, 'Sawing');
     });
     drillblow2.addEventListener("click", () => {
       drillblow2.classList.add("selected-button");
       drillsaw2.classList.remove("selected-button");
+      methods.splice(1, 1, 'Blasting');
     });
     drillsaw2.addEventListener("click", () => {
       drillsaw2.classList.add("selected-button");
       drillblow2.classList.remove("selected-button");
+      methods.splice(1, 1, 'Sawing');
     });
     drillblow3.addEventListener("click", () => {
       drillblow3.classList.add("selected-button");
       drillsaw3.classList.remove("selected-button");
+      methods.splice(2, 1, 'Blasting');
     });
     drillsaw3.addEventListener("click", () => {
       drillsaw3.classList.add("selected-button");
       drillblow3.classList.remove("selected-button");
+      methods.splice(2, 1, 'Sawing');
     });
     drillblow4.addEventListener("click", () => {
       drillblow4.classList.add("selected-button");
       drillsaw4.classList.remove("selected-button");
+      methods.splice(3, 1, 'Blasting');
     });
     drillsaw4.addEventListener("click", () => {
       drillsaw4.classList.add("selected-button");
-      drillblow4.classList.remove("selected-button");});
+      drillblow4.classList.remove("selected-button");
+      methods.splice(3, 1, 'Sawing');
+    });
     
   }
   render() {
@@ -233,7 +273,7 @@ handleClick1() {
             </Link>
           </form>
           <Link className="nextbtn" to="/workmethods/primary">
-            <button className="nextbtn">Nästa</button>
+            <button className="nextbtn" onClick={this.saveInfo}>Nästa</button>
           </Link>
         </div>
       </div>
@@ -241,5 +281,5 @@ handleClick1() {
   }
 }
 export default Dimensions;
-
+export {depth,length,methods};
 

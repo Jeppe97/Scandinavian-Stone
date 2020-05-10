@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Chart from "./AdminCharts"
 
-export default class Statistics extends Component {
+
+export default class AdminStatistics extends Component {
     constructor(){
         super();
         this.state = {

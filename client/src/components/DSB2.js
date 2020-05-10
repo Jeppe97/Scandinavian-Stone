@@ -3,6 +3,12 @@ import Slider from "./Slider";
 import { Link } from "react-router-dom";
 import "./styles/DimensionsDSB2.scss";
 import "./styles/navbar.scss"
+import {timeSide1, timeSide2, timeBottom} from "./TimerSkiva";
+import { height,length,methods} from "./DimensionsDisc";
+import {quarryID} from "./login/Login";
+
+var discID=0;
+
 
 export class DSB2 extends Component {
   
@@ -20,9 +26,9 @@ export class DSB2 extends Component {
     LängdPåHål2:"",
  
 
-    sprängSort0:"",
-    sprängSort1:"",
-    sprängSort2:"",
+    SprängSort0:"",
+    SprängSort1:"",
+    SprängSort2:"",
 
 
     MängdSprängDeg0:"",
@@ -52,6 +58,12 @@ export class DSB2 extends Component {
     this.handleChange10 = this.handleChange10.bind(this);
     this.handleChange11 = this.handleChange11.bind(this);
 
+    
+    this.addSide1 = this.addSide1.bind(this);
+    this.addSide2 = this.addSide2.bind(this);
+    this.addSideBottom = this.addSideBottom.bind(this);
+    this.addDisc = this.addDisc.bind(this);
+
 
     
     
@@ -60,19 +72,21 @@ export class DSB2 extends Component {
     this.setState({
       AntalHål0: event.target.value
     });
+    return(this.state);
   }
 
   handleChange1(event) {
     this.setState({
       AntalHål1: event.target.value
     });
-
+    return(this.state);
   }
 
   handleChange2(event) {
     this.setState({
       AntalHål2: event.target.value
     });
+    return(this.state);
   }
 
 
@@ -81,34 +95,36 @@ export class DSB2 extends Component {
     this.setState({
       LängdPåHål0: event.target.value
     });
+    return(this.state);
   }
 
   handleChange4(event) {
     this.setState({
       LängdPåHål1: event.target.value
     });
-
+    return(this.state);
   }
 
   handleChange5(event) {
     this.setState({
       LängdPåHål2: event.target.value
     });
+    return(this.state);
   }
-
- 
 
 
    handleChange6(event) {
     this.setState({
       SprängSort0: event.target.value
     });
+    return(this.state);
   }
 
   handleChange7(event) {
     this.setState({
       SprängSort1: event.target.value
     });
+    return(this.state);
 
   }
 
@@ -116,6 +132,7 @@ export class DSB2 extends Component {
     this.setState({
       SprängSort2: event.target.value
     });
+    return(this.state);
   }
 
 
@@ -123,12 +140,14 @@ export class DSB2 extends Component {
     this.setState({
       MängdSprängDeg0: event.target.value
     });
+    return(this.state);
   }
 
   handleChange10(event) {
     this.setState({
       MängdSprängDeg1: event.target.value
     });
+    return(this.state);
 
   }
 
@@ -136,11 +155,43 @@ export class DSB2 extends Component {
     this.setState({
       MängdSprängDeg2: event.target.value
     });
+    return(this.state);
   }
 
+  addDisc(){
+    fetch(`/insertdisc?quarryID=${quarryID}&mainTime=${0}`)
+    .catch(err => console.error(err)) 
+    .then(response => response.json())
+    .then(function(response){
+     discID = response; 
+     })
+   .then(this.addSide1)
+}
+
+addSide1(){
+  if(discID.length){
+    fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[0]}&height=${height[0]}&time=${timeSide1}&method=${methods[0]}&sideNr=${1}&nr=${this.state.AntalHål0}&length2=${this.state.LängdPåHål0}&type=${this.state.SprängSort0}&amount=${this.state.MängdSprängDeg0}`)
+   .then(this.addSide2)
+   .catch(err => console.error(err))
+  }
+}
+
+addSide2(){
+  if(discID.length){
+  fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[1]}&height=${height[1]}&time=${timeSide2}&method=${methods[1]}&sideNr=${2}&nr=${this.state.AntalHål1}&length2=${this.state.LängdPåHål1}&type=${this.state.SprängSort1}&amount=${this.state.MängdSprängDeg1}`)
+  .then(this.addSideBottom)
+  .catch(err => console.error(err))
+  }
   
+}
 
+addSideBottom(){
+  if(discID.length){
+  fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[2]}&height=${height[2]}&time=${timeBottom}&method=${methods[2]}&sideNr=${3}&nr=${this.state.AntalHål2}&length2=${this.state.LängdPåHål2}&type=${this.state.SprängSort2}&amount=${this.state.MängdSprängDeg2}`)
+  .catch(err => console.error(err))
+  }
 
+}
 
 
 
@@ -175,7 +226,7 @@ export class DSB2 extends Component {
        <input
               type="text"
               placeholder="Mängd Sprängdeg"
-              onChange={this.handleChang9}
+              onChange={this.handleChange9}
             />
           </form>
 
@@ -201,7 +252,7 @@ export class DSB2 extends Component {
        <input
               type="text"
               placeholder="Mängd Sprängmedel"
-              onChange={this.handleChang10}
+              onChange={this.handleChange10}
             />
           </form>
 
@@ -228,15 +279,15 @@ export class DSB2 extends Component {
        <input
               type="text"
               placeholder="Mängd Sprängmedel"
-              onChange={this.handleChang11}
+              onChange={this.handleChange11}
             />
           </form>
           <div className="btn-field">
           <Link to="/workmethods/primarySkiva" className="btn1 save">
-              <button>Spara</button>
+              <button onClick={this.addDisc}>Spara</button>
             </Link>
             <Link to="/workmethods" className="btn1 cancel">
-              <button  onClick={this.refreshPage}>Avbryt</button>
+              <button >Avbryt</button>
             </Link>
             </div>
         </div>

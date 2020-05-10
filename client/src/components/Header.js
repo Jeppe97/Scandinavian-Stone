@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles/Header.scss";
-import { doc, check } from "prettier";
+//import { doc, check } from "prettier";
 
 class Header extends Component {
   constructor() {
@@ -84,7 +84,7 @@ class Header extends Component {
     form1.appendChild(cBox3);
     
     form1.appendChild(reasonLabel);
-    form1.appendChild(textfield1);
+    form1.appendChild(textfield1);s
     
 
 

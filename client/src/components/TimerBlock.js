@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./styles/timer.scss";
 import "./styles/navbar.scss"
 
+var timeSide1=0;
+var timeSide2=0;
+var timeBottom=0;
+
 class TimerBlock extends Component {
   constructor() {
     super();
@@ -21,7 +25,19 @@ class TimerBlock extends Component {
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     this.handleReset2 = this.handleReset2.bind(this);
+    
+    this.saveTime = this.saveTime.bind(this);
   }
+
+
+  saveTime(){
+
+    timeSide1=(Math.round((this.state.runningTime0 / 1000) % 60));
+    timeSide2=(Math.round((this.state.runningTime1 / 1000) % 60));
+    timeBottom=(Math.round((this.state.runningTime2 / 1000) % 60));
+    console.log(timeSide1 + " " + timeSide2 + " "  + timeBottom);
+  }
+
 
   handleClick0 = () => {
     this.setState(state => {
@@ -129,7 +145,7 @@ class TimerBlock extends Component {
               Nollställ
             </button>
             <Link to="/workmethods/primaryBlock/dimensions" className="btn1 savebtn">
-              <button>Spara</button>
+              <button onClick={this.saveTime}>Spara</button>
             </Link>
             <Link to="/workmethods" className="btn1 cancelbtn">
               <button>Avbryt</button>
@@ -140,3 +156,4 @@ class TimerBlock extends Component {
   }
 }
 export default TimerBlock;
+export {timeSide1, timeSide2, timeBottom};

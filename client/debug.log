@@ -1,3 +1,4 @@
 [0429/165838.558:ERROR:process_reader_win.cc(123)] NtOpenThread: {Åtkomst nekad} En process har begärt åtkomst till ett objekt, men har inte de rättigheter som krävs. (0xc0000022)
 [0429/165838.574:ERROR:exception_snapshot_win.cc(98)] thread ID 21744 not found in process
 [0429/165838.574:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Ett försök gjordes att använda en befintlig process. (0xc000010a)
+[0510/140007.162:ERROR:exception_snapshot_win.cc(98)] thread ID 7276 not found in process

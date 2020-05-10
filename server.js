@@ -1,20 +1,12 @@
 const express = require('express');
 const app = express();
-
-
 const mysql = require('mysql');
-var bodyParser = require('body-parser');
-
-//import {value1} from './client/src/components/MainMenu';
-//var {test2} = require ('./client/src/components/MainMenu');
-//app.use(bodyParser.json({type:'application/json'}));
-//app.use(bodyParser.urlencoded({extended:true}));
 
 var db = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'',
-    database:'projectscs'
+    database:'project'
 
 });
 const port = 5000;
@@ -26,36 +18,117 @@ db.connect(function(error){
     if(error) console.log(error);
     else console.log("connected");
 });
-/*
-app.get('/createtableA', (req, res) =>{
-    let sql = 'CREATE TABLE A(id int AUTO_INCREMENT, name VARCHAR(225), number INT, PRIMARY KEY (id))';
-    db.query(sql,(err, result) => {
-        if(err) throw err;
-        console.log(result);
-        res.send('a table created');
-    });
-});
-*/
 
-const selectAll = 'SELECT * FROM quarry';
-const selectSome = "SELECT * FROM quarry WHERE quarryName = 'Hej'";
 
-//Select post
-app.get('/getposts', (req, res) => {
-    let sql = 'SELECT * FROM quarry';
-    let query = db.query(sql, (err, results) => {
+app.get('/gettimes', (req, res) => {
+    const {quarryName, method} = req.query;
+    let sql = `CALL timeMethod('${quarryName}','${method}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
         if(err) console.log(err);
-        const drinks = [results];
-        console.log(results);
-        res.send(results);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+app.get('/gettimestones', (req, res) => {
+    const {quarryName, method} = req.query;
+    let sql = `CALL timeForStones('${quarryName}','${method}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
     });
 });
 
-app.get('/quarry/instert', (req, res)=> {
-    const {quarryName} = req.query;
-    const INSERT_TO_QUARRY = `INSERT INTO quarry (quarryName) VALUES('${quarryName}')`;
+app.get('/gettimesprimary', (req, res) => {
+    const {quarryName, method} = req.query;
+    let sql = `CALL timePrimary('${quarryName}','${method}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+
+app.get('/gettimesdisc', (req, res) => {
+    const {quarryName, method} = req.query;
+    let sql = `CALL timeDisc('${quarryName}','${method}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+app.get('/gettimesblock', (req, res) => {
+    const {quarryName, method} = req.query;
+    let sql = `CALL timeBlock('${quarryName}','${method}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+app.get('/logginuser', (req, res) => {
   
-    db.query(INSERT_TO_QUARRY, (err, result)=> {
+    const {name,password} = req.query;
+    let sql = `CALL logginUser('${name}','${password}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+//controll if name and password is right
+app.get('/logginadmin', (req, res) => {
+  
+    const {name,password} = req.query;
+    let sql = `CALL logginAdmin('${name}','${password}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+//insert the side on a disc (including blasting values)
+app.get('/insertsidedisc', (req, res) => {
+    const {discID,length1,height,time,method,sideNr,nr,length2,type,amount} = req.query;
+    let sql = `CALL insertSideDisc('${discID}','${length1}','${height}','${time}','${method}','${sideNr}','${nr}','${length2}','${type}','${amount}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+//insert a new disc
+app.get('/insertdisc', (req, res) => {
+    const {quarryID, mainTime} = req.query;
+    let sql = `CALL insertDisc('${quarryID}','${mainTime}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+
+//insert the side in the block 
+app.get('/insertsideblock', (req, res) => {
+    const {blockID,length,height,time,method,sideNr} = req.query;
+    let sql = `CALL insertSideBlock('${blockID}','${length}','${height}','${time}','${method}','${sideNr}')`;
+    db.query(sql, (err, result)=> {
         if(err){
             return res.send(err)
         }
@@ -65,18 +138,54 @@ app.get('/quarry/instert', (req, res)=> {
     });
 });
 
+//insert a new block
+app.get('/insertblock', (req, res) => {
+    const {quarryID, mainTime} = req.query;
+    let sql = `CALL insertBlock('${quarryID}','${mainTime}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
 
-
-app.get('/quarry', (req, res) => {
-    db.query(selectAll, (err, results) => {
+//insert measurements for a block
+app.get('/insertmeasure', (req, res) => {
+    const {blockID,volume,weight,quality,price} = req.query;
+    let sql = `CALL insertMeasurement('${blockID}','${volume}','${weight}','${quality}','${price}')`;
+    
+    db.query(sql, (err, result)=> {
         if(err){
             return res.send(err)
         }
         else{
-            return res.json({
-                data: results
-            })
+            return res.send("ADDED")
         }
-    })
+    });
 });
+
+//insert a new block
+app.get('/insertprimary', (req, res) => {
+    const {quarryID, mainTime} = req.query;
+    let sql = `CALL insertPrimary('${quarryID}','${mainTime}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+//insert side for a primary stone
+app.get('/insertsideprimary', (req, res) => {
+    const {primaryID,length1,height,time,method,sideNr,nr,length2,type,amount} = req.query;
+    let sql = `CALL insertSidePrimary('${primaryID}','${length1}','${height}','${time}','${method}','${sideNr}','${nr}','${length2}','${type}','${amount}')`;
+    let query = db.query(sql, true, (err, results, fields) => {
+        if(err) console.log(err);
+        const info = results[0];
+        console.log(info);
+        res.send(info);
+    });
+});
+ 
 
