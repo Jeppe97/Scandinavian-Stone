@@ -350,7 +350,7 @@ addSideBottom(){
               onChange={this.handleChange15}
             />
                     </form>
-                    <Link className="nextbtn" to="/workmethods">
+                    <Link className="nextbtn" to="/workmethods/primary">
                     <button  className="nextbtn" onClick={this.addPrimary} >Spara</button>
                     </Link>
                 </div>

@@ -272,7 +272,7 @@ saveInfo(){
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/workmethods/primary">
+          <Link className="nextbtn" to="/workmethods/dimensions/DSB4">
             <button className="nextbtn" onClick={this.saveInfo}>Nästa</button>
           </Link>
         </div>

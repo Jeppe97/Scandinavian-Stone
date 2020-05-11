@@ -34,99 +34,28 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <ProtectedRoute exact path="/mainmenu" component={MainMenu} />
-          <ProtectedRoute
-            exact
-            path="/AdminMainmenu"
-            component={AdminMainMenu}
-          />
-          <ProtectedRoute exact path="/workmethods" component={WorkMethods} />
+          <ProtectedRoute exact path="/AdminMainmenu" component={AdminMainMenu} />
+          <ProtectedRoute exact path="/Admin-statistics" component={AdminStatistics} />
           <ProtectedRoute exact path="/AdminQuarry" component={AdminQuarry} />
-          <ProtectedRoute
-            exact
-            path="/AdminModifyData"
-            component={AdminModifyData}
-          />
-          <ProtectedRoute
-            exact
-            path="/AdminModify"
-            component={AdminModify}
-          />
-          <ProtectedRoute
-            exact
-            path="/AdminRemoveData"
-            component={AdminRemoveData}
-          />
-          <ProtectedRoute
-            exact
-            path="/AdminDropdownMenuQuarry"
-            component={AdminDropdownMenuQuarry}
-          />
-          <ProtectedRoute
-            exact
-            path="/AdminDropdownMenuPlace"
-            component={AdminDropdownMenuPlace}
-          />
-          <ProtectedRoute 
-          exact 
-          path="/workmethods/block" 
-          component={Block} 
-          />
-          <ProtectedRoute exact 
-          path="/workmethods/primary" 
-          component={Timer} 
-          />
-          <ProtectedRoute
-            exact
-            path="/workmethods/primary/dimensions"
-            component={Dimensions}
-          />
-          <ProtectedRoute 
-          path="/statistics" 
-          component={Statistics} 
-          />
+          <ProtectedRoute exact path="/AdminModifyData" component={AdminModifyData} />
+          <ProtectedRoute exact path="/AdminModify" component={AdminModify} />
+          <ProtectedRoute exact path="/AdminRemoveData" component={AdminRemoveData} />
+          <ProtectedRoute exact path="/AdminDropdownMenuQuarry" component={AdminDropdownMenuQuarry} />
+          <ProtectedRoute exact path="/AdminDropdownMenuPlace" component={AdminDropdownMenuPlace} />
+          <ProtectedRoute exact path="/workmethods" component={WorkMethods} />
+          <ProtectedRoute exact path="/workmethods/primary" component={Timer} />
+          <ProtectedRoute exact path="/workmethods/primary/dimensions" component={Dimensions} />
           <ProtectedRoute exact path="/workmethods/block" component={Block} />
           <ProtectedRoute exact path="/workmethods/dimensions" component={Dimensions} />
-          <ProtectedRoute
-            exact
-            path="/workmethods/dimensions/timer"
-            component={Timer} />
-          <ProtectedRoute
-            exact
-            path="/workmethods/dimensions/DSB4"
-            component={DSB4}
-          />
-          <ProtectedRoute path="/statistics" component={Statistics} />
-          <ProtectedRoute path="/Admin-statistics" component={AdminStatistics} />
-          <ProtectedRoute
-            exact
-            path="/workmethods/primarySkiva"
-            component={TimerSkiva}
-          />
-          <ProtectedRoute
-            exact
-            path="/workmethods/primaryBlock"
-            component={TimerBlock}
-          />
-          <ProtectedRoute
-            exact
-            path="/workmethods/primarySkiva/dimensions"
-            component={DimensionsSkiva}
-          />
-          <ProtectedRoute
-            exact
-            path="/workmethods/primaryBlock/dimensions"
-            component={DimensionsBlock}
-          />
-          <ProtectedRoute
-            exact
-            path="/workmethods/primarySkiva/dimensions/bS2"
-            component={bS2}
-            />
-            <ProtectedRoute
-            path="/workmethods/primarySkiva/dimensions/DSB2"
-            component={DSB2}
-          />
-
+          <ProtectedRoute exact path="/workmethods/dimensions/timer" component={Timer} />
+          <ProtectedRoute exact path="/workmethods/dimensions/DSB4" component={DSB4} />
+          <ProtectedRoute exact path="/workmethods/primarySkiva" component={TimerSkiva} />
+          <ProtectedRoute exact path="/workmethods/primaryBlock" component={TimerBlock} />
+          <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions" component={DimensionsSkiva} />
+          <ProtectedRoute exact path="/workmethods/primaryBlock/dimensions" component={DimensionsBlock} />
+          <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions/bS2" component={bS2} />
+          <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions/DSB2" component={DSB2} />
+          <ProtectedRoute exact path="/statistics" component={Statistics} />
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </Router>
