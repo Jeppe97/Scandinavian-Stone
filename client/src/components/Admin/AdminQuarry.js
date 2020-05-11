@@ -28,7 +28,7 @@ export default class AdminQuarry extends Component {
             <AdminDropdownMenuQuarry />
           
           <Link  to="/AdminMainmenu">
-            <button>Tillbaka</button>
+            <button className="btn1">Tillbaka</button>
           </Link>
         </div>
       </div>

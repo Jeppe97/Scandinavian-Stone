@@ -46,7 +46,7 @@ export default class AdminStatistics extends Component {
         <div className="MainMenu">
           
             <Chart chartData={this.state.chartData}></Chart>
-          <Link to="/AdminMainmenu" className="btn1">
+          <Link to="/AdminMainmenu" className="btn1" >
             <button>Tillbaka</button>
           </Link>
           
