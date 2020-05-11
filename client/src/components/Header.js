@@ -84,7 +84,7 @@ class Header extends Component {
     form1.appendChild(cBox3);
     
     form1.appendChild(reasonLabel);
-    form1.appendChild(textfield1);s
+    form1.appendChild(textfield1);
     
 
 
