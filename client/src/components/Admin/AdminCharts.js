@@ -8,7 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import {quarryChoice} from "./AdminQuarryButton";
 
   class AdminCharts extends Component  {
    constructor(props)
@@ -43,13 +43,11 @@ import Paper from '@material-ui/core/Paper';
       this.getDiscBlasting();
       this.getBlockSawing();
       this.getBlockBlasting();
-    //  this.getAllBlasting();
-      //this.getAllSawing();
-   //   this.setData();
+   
   }
 
     getDataSawing =()=>{
-      fetch(`/gettimes?quarryName=${'Alla-Stenbrott'}&method=${'Sawing'}`)
+      fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Sawing'}`)
       .then(res => res.json())
       .then(sawing => this.setState({ sawing },() => console.log(' sawing', sawing)))
    
@@ -57,55 +55,44 @@ import Paper from '@material-ui/core/Paper';
 
     
   getDataBlasting(){
-      fetch(`/gettimes?quarryName=${'Alla-Stenbrott'}&method=${'Blasting'}`)
+      fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Blasting'}`)
       .then(res => res.json())
       .then(blasting => this.setState({ blasting }, () => console.log(' blasting', blasting)))
       
   }
- /* getAllBlasting(){
-    fetch(`/gettimestones?quarryName=${'Alla-Stenbrott'}&method=${'Blasting'}`)
-    .then(res => res.json())
-    .then(allBlasting => this.setState({ allBlasting }, () => console.log('all blasting', allBlasting)))
-    
-  }
-  getAllSawing(){
-    fetch(`/gettimestones?quarryName=${'Alla-Stenbrott'}&method=${'Sawing'}`)
-    .then(res => res.json())
-    .then(allSawing => this.setState({ allSawing }, () => console.log('all  sawing', allSawing)))
-    
-  }*/
+ 
   getPrimarySawing(){
-    fetch(`/gettimesprimary?quarryName=${'Alla-Stenbrott'}&method=${'Sawing'}`)
+    fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Sawing'}`)
     .then(res => res.json())
     .then(primarySawing => this.setState({ primarySawing }))
     
   }
   getPrimaryBlasting(){
-    fetch(`/gettimesprimary?quarryName=${'Alla-Stenbrott'}&method=${'Blasting'}`)
+    fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Blasting'}`)
     .then(res => res.json())
     .then(primaryBlasting => this.setState({ primaryBlasting }))
     
   }
   getDiscSawing(){
-    fetch(`/gettimesdisc?quarryName=${'Alla-Stenbrott'}&method=${'Sawing'}`)
+    fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Sawing'}`)
     .then(res => res.json())
     .then(discSawing => this.setState({ discSawing }))
     
   }
   getDiscBlasting(){
-    fetch(`/gettimesdisc?quarryName=${'Alla-Stenbrott'}&method=${'Blasting'}`)
+    fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Blasting'}`)
     .then(res => res.json())
     .then(discBlasting => this.setState({ discBlasting }))
     
   }
   getBlockSawing(){
-    fetch(`/gettimesblock?quarryName=${'Alla-Stenbrott'}&method=${'Sawing'}`)
+    fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Sawing'}`)
     .then(res => res.json())
     .then(blockSawing => this.setState({ blockSawing }))
     
   }
   getBlockBlasting(){
-    fetch(`/gettimesblock?quarryName=${'Alla-Stenbrott'}&method=${'Blasting'}`)
+    fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Blasting'}`)
     .then(res => res.json())
     .then(blockBlasting => this.setState({ blockBlasting }))
     
@@ -119,25 +106,7 @@ import Paper from '@material-ui/core/Paper';
   }
   
   
- /* getDataSawing(){
-    console.log(this.state.sawing);
-
-
-    
-
-          {rowsDisc.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.metod}
-              </TableCell>
-              <TableCell align="right">{discBlasting.map(this.renderAverage)}</TableCell>
-              <TableCell align="right">{row.total}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-
-
-  }*/
+ 
   renderAverage = ({sideID,avgTime}) => <div key={sideID}>{avgTime}</div>
   renderTotal = ({sideID,time}) => <div key={sideID}>{time}</div>
   
@@ -153,13 +122,10 @@ import Paper from '@material-ui/core/Paper';
       var {discBlasting} = this.state;
       var {blockSawing} = this.state;
       var {blockBlasting} = this.state;
-      //var {allBlasting} = this.state;
-      //var {allSawing} = this.state;
       var sawingTemp = this.methodTime(sawing);
       var blastingTemp = this.methodTime(blasting);
      
       chartData.datasets[0].data = [sawingTemp,blastingTemp]; 
-      //chartData.datasets[0].data = [sawingTemp]; 
 
    
         return(

@@ -196,4 +196,4 @@ class TimerBlock extends Component {
   }
 }
 export default TimerBlock;
-export {timeSide1, timeSide2, timeBottom};
+export {timeSide1, timeSide2, timeSide3,timeBottom};

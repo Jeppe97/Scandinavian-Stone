@@ -6,6 +6,7 @@ var name = "";
 var password = "";
 var infoFromDatabase;
 var quarryID = 1;
+var quarryChoice="";
 
 export class Login extends Component {
 
@@ -113,6 +114,7 @@ export class Login extends Component {
    //if there is some info in the array
     if(infoFromDatabase.length){
        quarryID = infoFromDatabase[0].quarryID;
+       quarryChoice= infoFromDatabase[0].quarryName;
        this.newPageUser();
     
     }
@@ -184,4 +186,4 @@ export class Login extends Component {
 }
 
 export default Login;
-export {quarryID};
+export {quarryID,quarryChoice};

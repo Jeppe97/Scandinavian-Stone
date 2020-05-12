@@ -1,6 +1,9 @@
 import React,{Component} from "react";
 import { Link } from "react-router-dom";
 import AdminDropdownMenuPlace from "./AdminDropdownMenuPlace"
+
+var quarryChoice = "";
+
 export default class AdminQuarryButton extends Component  {
    constructor(props)
    {
@@ -21,7 +24,8 @@ export default class AdminQuarryButton extends Component  {
    }
     render(){
 
-    
+    quarryChoice = this.props.quarry;
+
     return (
        <div>
            {console.log(this.props.path + " " +this.props.quarry +  " hejsan")}
@@ -40,3 +44,4 @@ export default class AdminQuarryButton extends Component  {
 
 }
 }
+export {quarryChoice}

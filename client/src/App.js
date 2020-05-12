@@ -25,6 +25,7 @@ import TimerSkiva from "./components/TimerSkiva";
 import Block from "./components/Block";
 import DSB2 from "./components/DSB2";
 import DSB4 from "./components/DSB4";
+import UserStatistics from "./components/UserStatistics";
 
 function App() {
   return (
@@ -55,7 +56,9 @@ function App() {
           <ProtectedRoute exact path="/workmethods/primaryBlock/dimensions" component={DimensionsBlock} />
           <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions/bS2" component={bS2} />
           <ProtectedRoute exact path="/workmethods/primarySkiva/dimensions/DSB2" component={DSB2} />
-          <ProtectedRoute exact path="/statistics" component={Statistics} />
+        
+          <ProtectedRoute exact path="/userStatistics" component={UserStatistics} />
+
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
       </Router>

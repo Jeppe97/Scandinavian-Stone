@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./styles/navbar.scss"
-import {timeSide1, timeSide2, timeBottom} from "./TimerBlock";
+import {timeSide1, timeSide2, timeSide3,timeBottom} from "./TimerBlock";
 import { methods,length,depth} from "./DimensionsBlock"
 import {quarryID} from "./login/Login";
 
@@ -120,7 +120,7 @@ addSide2(){
 }
 addSide3(){
   if(blockID.length){
-  fetch(`/insertsideblock?blockID=${blockID[0].id}&length=${length[2]}&height=${depth[2]}&time=${0}&method=${methods[2]}&sideNr=${3}`)
+  fetch(`/insertsideblock?blockID=${blockID[0].id}&length=${length[2]}&height=${depth[2]}&time=${timeSide3}&method=${methods[2]}&sideNr=${3}`)
    
   .then(this.addSideBottom)
   .catch(err => console.error(err))

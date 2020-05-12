@@ -12,7 +12,7 @@ export const MainMenu = props => {
       <Link to="/workmethods" className="btn1">
         <button>RÄKNA</button>
       </Link>
-      <Link to="/statistics" className="btn1">
+      <Link to="/userStatistics" className="btn1">
         <button>STATISTIK</button>
       </Link>
       <a className="btn1">
