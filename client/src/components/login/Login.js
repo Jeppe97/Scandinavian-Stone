@@ -184,6 +184,5 @@ export class Login extends Component {
     );
   }
 }
-
 export default Login;
 export {quarryID,quarryChoice};
