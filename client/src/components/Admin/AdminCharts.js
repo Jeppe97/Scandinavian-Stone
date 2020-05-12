@@ -8,21 +8,23 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import {quarryChoice} from "./AdminQuarryButton";
 
-function createData(metod, average, total) {
-    return { metod, average, total};
-  }
-  const rows = [
-        createData('borrning och sågning', 15.9, 3010),
-        createData('borrning och Sprängning', 26.2, 3250),
-      ];
   class AdminCharts extends Component  {
    constructor(props)
    {
        super(props);
        this.state =  {
            chartData: props.chartData,
-           loading: true
+           loading: true,
+           sawing : [],
+           blasting :[],
+           primarySawing:[],
+           primaryBlasting:[],
+           discSawing:[],
+           discBlasting:[],
+           blockSawing:[],
+           blockBlasting:[]
            }
    }
    
@@ -32,11 +34,100 @@ function createData(metod, average, total) {
         legendPosition: "right"
     }
 
-    
+    componentDidMount(){
+      this.getDataSawing();
+      this.getDataBlasting();
+      this.getPrimarySawing();
+      this.getPrimaryBlasting();
+      this.getDiscSawing();
+      this.getDiscBlasting();
+      this.getBlockSawing();
+      this.getBlockBlasting();
+   
+  }
+
+    getDataSawing =()=>{
+      fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Sawing'}`)
+      .then(res => res.json())
+      .then(sawing => this.setState({ sawing },() => console.log(' sawing', sawing)))
+   
+    }
 
     
+  getDataBlasting(){
+      fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Blasting'}`)
+      .then(res => res.json())
+      .then(blasting => this.setState({ blasting }, () => console.log(' blasting', blasting)))
+      
+  }
+ 
+  getPrimarySawing(){
+    fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Sawing'}`)
+    .then(res => res.json())
+    .then(primarySawing => this.setState({ primarySawing }))
+    
+  }
+  getPrimaryBlasting(){
+    fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Blasting'}`)
+    .then(res => res.json())
+    .then(primaryBlasting => this.setState({ primaryBlasting }))
+    
+  }
+  getDiscSawing(){
+    fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Sawing'}`)
+    .then(res => res.json())
+    .then(discSawing => this.setState({ discSawing }))
+    
+  }
+  getDiscBlasting(){
+    fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Blasting'}`)
+    .then(res => res.json())
+    .then(discBlasting => this.setState({ discBlasting }))
+    
+  }
+  getBlockSawing(){
+    fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Sawing'}`)
+    .then(res => res.json())
+    .then(blockSawing => this.setState({ blockSawing }))
+    
+  }
+  getBlockBlasting(){
+    fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Blasting'}`)
+    .then(res => res.json())
+    .then(blockBlasting => this.setState({ blockBlasting }))
+    
+  }
+
+  methodTime(method){
+      var time = method.reduce(function(prev, cur) {
+          return prev + cur.time;
+        }, 0);
+      return (time);
+  }
+  
+  
+ 
+  renderAverage = ({sideID,avgTime}) => <div key={sideID}>{avgTime}</div>
+  renderTotal = ({sideID,time}) => <div key={sideID}>{time}</div>
+  
+
     render()
     {
+      var {chartData} = this.state;
+      var {sawing} = this.state;
+      var {blasting} = this.state;
+      var {primarySawing} = this.state;
+      var {primaryBlasting} = this.state;
+      var {discSawing} = this.state;
+      var {discBlasting} = this.state;
+      var {blockSawing} = this.state;
+      var {blockBlasting} = this.state;
+      var sawingTemp = this.methodTime(sawing);
+      var blastingTemp = this.methodTime(blasting);
+     
+      chartData.datasets[0].data = [sawingTemp,blastingTemp]; 
+
+   
         return(
             <div className="chart">
                 <TableContainer component={Paper}>
@@ -49,16 +140,21 @@ function createData(metod, average, total) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          <TableRow key="1">
               <TableCell component="th" scope="row">
-                {row.metod}
+              Borrning och Sågning
               </TableCell>
-              <TableCell align="right">{row.average}</TableCell>
-              <TableCell align="right">{row.total}</TableCell>
+              <TableCell align="right">{primarySawing.map(this.renderTotal)}</TableCell>
+              <TableCell align="right">{primarySawing.map(this.renderAverage)}</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
+            <TableRow key="2">
+            <TableCell component="th" scope="row">
+            Borrning och Sprängning
+              </TableCell>
+              <TableCell align="right">{primaryBlasting.map(this.renderTotal)}</TableCell>
+              <TableCell align="right">{primaryBlasting.map(this.renderAverage)}</TableCell>
+            </TableRow>
+          </TableBody>
       </Table>
       <Table  aria-label="simple table">
         <TableHead>
@@ -69,16 +165,22 @@ function createData(metod, average, total) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          <TableRow key="2">
               <TableCell component="th" scope="row">
-                {row.metod}
+              Borrning och Sågning
               </TableCell>
-              <TableCell align="right">{row.average}</TableCell>
-              <TableCell align="right">{row.total}</TableCell>
+              <TableCell align="right">{discSawing.map(this.renderTotal)}</TableCell>
+              <TableCell align="right">{discSawing.map(this.renderAverage)}</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
+            <TableRow key="3">
+            <TableCell component="th" scope="row">
+            Borrning och Sprängning
+              </TableCell>
+              <TableCell align="right">{discBlasting.map(this.renderTotal)}</TableCell>
+              <TableCell align="right">{discBlasting.map(this.renderAverage)}</TableCell>
+            </TableRow>
+          </TableBody>
+
       </Table>
       <Table  aria-label="simple table">
         <TableHead>
@@ -89,20 +191,25 @@ function createData(metod, average, total) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          <TableRow key="5">
               <TableCell component="th" scope="row">
-                {row.metod}
+              Borrning och Sågning
               </TableCell>
-              <TableCell align="right">{row.average}</TableCell>
-              <TableCell align="right">{row.total}</TableCell>
+              <TableCell align="right">{blockSawing.map(this.renderTotal)}</TableCell>
+              <TableCell align="right">{blockSawing.map(this.renderAverage)}</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
+            <TableRow key="6">
+            <TableCell component="th" scope="row">
+            Borrning och Sprängning
+              </TableCell>
+              <TableCell align="right">{blockBlasting.map(this.renderTotal)}</TableCell>
+              <TableCell align="right">{blockBlasting.map(this.renderAverage)}</TableCell>
+            </TableRow>
+          </TableBody>
       </Table>
     </TableContainer>
                 <Line
-                data={this.state.chartData}
+                data={chartData}
                 
                 options={{
                     title: { 
@@ -118,7 +225,7 @@ function createData(metod, average, total) {
 
                 </Line>
                 <Pie
-                data={this.state.chartData}
+                data={chartData}
                 
                 options={{
                     title: { 
@@ -134,7 +241,7 @@ function createData(metod, average, total) {
 
                 </Pie>
                 <Bar
-                data={this.state.chartData}
+                data={chartData}
                 
                 options={{
                     title: { 

@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import "./styles/DimensionsSkiva.scss";
 import "./styles/navbar.scss"
 
+var height = [0,0,0];
+var length = [0,0,0];
+var methods = ["","",""];
+
 export class DimensionsSkiva extends Component {
     constructor() {
         super();
     
         this.state = {
-         Höjd1: "",
+          Höjd1: "",
           Höjd2: "",
           Höjd3: "",
   
@@ -32,23 +36,28 @@ export class DimensionsSkiva extends Component {
     
       this.handleClick0 = this.handleClick0.bind(this);
       this.handleClick1 = this.handleClick1.bind(this);
+
+      this.saveInfo=this.saveInfo.bind(this);
     }
     handleChange0(event) {
       this.setState({
         Höjd1: event.target.value
       });
+      return(this.state);
     }
     
     handleChange1(event) {
       this.setState({
         Höjd2: event.target.value
       });
+      return(this.state);
     }
     
     handleChange2(event) {
       this.setState({
         Höjd3: event.target.value
       });
+      return(this.state);
     }
     
     
@@ -57,6 +66,7 @@ export class DimensionsSkiva extends Component {
       this.setState({
         Längd1: event.target.value
       });
+      return(this.state);
     }
     
     handleChange4(event) {
@@ -69,6 +79,7 @@ export class DimensionsSkiva extends Component {
       this.setState({
         Längd3: event.target.value
       });
+      return(this.state);
     }
   
     
@@ -86,6 +97,17 @@ export class DimensionsSkiva extends Component {
     
     }
 
+    saveInfo(){
+      height[0]=this.state.Höjd1;
+      height[1]=this.state.Höjd2;
+      height[2]=this.state.Höjd3;
+    
+      length[0]=this.state.Längd1;
+      length[1]=this.state.Längd2;
+      length[2]=this.state.Längd3;
+    
+    }
+    
 
     componentDidMount() {
         const drillblow1 = document.getElementById('drillblow1');
@@ -98,30 +120,36 @@ export class DimensionsSkiva extends Component {
 
 
         drillblow1.addEventListener('click', () => {
-            drillblow1.classList.add("selected-button");
-            drillsaw1.classList.remove("selected-button");
-        });
-        drillsaw1.addEventListener('click', () => {
-            drillblow1.classList.remove("selected-button");
-            drillsaw1.classList.add("selected-button");
-        });
-        drillblow2.addEventListener('click', () => {
-            drillblow2.classList.add("selected-button");
-            drillsaw2.classList.remove("selected-button");
-        });
-        drillsaw2.addEventListener('click', () => {
-            drillsaw2.classList.add("selected-button");
-            drillblow2.classList.remove("selected-button");
-        });
+          drillblow1.classList.add("selected-button");
+          drillsaw1.classList.remove("selected-button");
+          methods.splice(0, 1, 'Blasting');
+      });
+      drillsaw1.addEventListener('click', () => {
+          drillblow1.classList.remove("selected-button");
+          drillsaw1.classList.add("selected-button");
+          methods.splice(0, 1, 'Sawing');
+      });
+      drillblow2.addEventListener('click', () => {
+          drillblow2.classList.add("selected-button");
+          drillsaw2.classList.remove("selected-button");
+          methods.splice(1, 1, 'Blasting');
+      });
+      drillsaw2.addEventListener('click', () => {
+          drillsaw2.classList.add("selected-button");
+          drillblow2.classList.remove("selected-button");
+          methods.splice(1, 1, 'Sawing');
+      });
 
-        drillblow3.addEventListener('click', () => {
-            drillblow3.classList.add("selected-button");
-            drillsaw3.classList.remove("selected-button");
-        });
-        drillsaw3.addEventListener('click', () => {
-            drillsaw3.classList.add("selected-button");
-            drillblow3.classList.remove("selected-button");
-        });
+      drillblow3.addEventListener('click', () => {
+          drillblow3.classList.add("selected-button");
+          drillsaw3.classList.remove("selected-button");
+          methods.splice(2, 1, 'Blasting');
+      });
+      drillsaw3.addEventListener('click', () => {
+          drillsaw3.classList.add("selected-button");
+          drillblow3.classList.remove("selected-button");
+          methods.splice(2, 1, 'Sawing');
+      });
 
     }
     render() {
@@ -187,7 +215,7 @@ export class DimensionsSkiva extends Component {
 
 
                     <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/DSB2">
-                      <button className="nextbtn">Nästa</button>
+                      <button className="nextbtn" onClick={this.saveInfo}>Nästa</button>
 
                     </Link>
                 </div>
@@ -196,3 +224,4 @@ export class DimensionsSkiva extends Component {
     }
 }
 export default DimensionsSkiva;
+export {height,length,methods};

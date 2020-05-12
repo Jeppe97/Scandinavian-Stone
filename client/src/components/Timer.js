@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./styles/navbar.scss"
 import "./styles/timer.scss"
 
+var timeSide1=0;
+var timeSide2=0;
+var timeSide3=0;
+var timeBottom=0;
 
 class Timer extends Component {
   constructor() {
@@ -23,10 +27,21 @@ class Timer extends Component {
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     this.handleReset2 = this.handleReset2.bind(this);
-    this.handlReset3 = this.handleReset3.bind(this);
+    this.handleReset3 = this.handleReset3.bind(this);
+
+    this.saveTime = this.saveTime.bind(this);
   }
   refreshPage() {
     window.location.assign("/");
+  }
+
+  saveTime(){
+
+    timeSide1=(Math.round((this.state.runningTime0 / 1000) % 60));
+    timeSide2=(Math.round((this.state.runningTime1 / 1000) % 60));
+    timeSide3=(Math.round((this.state.runningTime2 / 1000) % 60));
+    timeBottom=(Math.round((this.state.runningTime3 / 1000) % 60));
+    console.log(timeSide1 + " " + timeSide2 + " " + timeSide3 + " " + timeBottom);
   }
 
   handleClick0 = () => {
@@ -180,8 +195,8 @@ class Timer extends Component {
         <button className="timerbtn reset" id="reset" onClick={this.handleReset3}>
           Nollställ
         </button>
-        <Link to="/workmethods/dimensions/DSB4" className="btn1 savebtn">
-          <button>Spara</button>
+        <Link to="/workmethods/" className="btn1 savebtn">
+          <button onClick={this.saveTime}>Spara</button>
         </Link>
         <Link to="/workmethods" className="btn1 cancelbtn">
           <button>Avbryt</button>
@@ -192,3 +207,4 @@ class Timer extends Component {
   }
 }
 export default Timer;
+export {timeSide1, timeSide2, timeSide3, timeBottom};

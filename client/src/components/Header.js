@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles/Header.scss";
-import { doc, check } from "prettier";
+//import { doc, check } from "prettier";
 
 class Header extends Component {
   constructor() {

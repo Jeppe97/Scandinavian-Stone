@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Chart from "./AdminCharts"
+import Chart from "./Statistics";
 
 
-export default class AdminStatistics extends Component {
+export default class UserStatistics extends Component {
     constructor(){
         super();
         this.state = {
@@ -46,7 +46,7 @@ export default class AdminStatistics extends Component {
         <div className="MainMenu">
           
             <Chart chartData={this.state.chartData}></Chart>
-          <Link to="/AdminMainmenu" className="btn1" >
+          <Link to="/mainmenu" className="btn1" >
             <button>Tillbaka</button>
           </Link>
           
