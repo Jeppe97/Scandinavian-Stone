@@ -16,7 +16,7 @@ class Header extends Component {
   componentDidMount() {
     const stopButton = document.getElementById("reset");
     const header = document.getElementById("header");
-    const confirmButton = document.getElementById("start");
+    
     const root = document.getElementById("root");
     
     var box = document.createElement("div");
@@ -115,9 +115,6 @@ class Header extends Component {
       root.appendChild(box);
 
       
-    });
-    confirmButton.addEventListener("click", () => {
-      header.removeChild(box);
     });
 
    
