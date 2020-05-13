@@ -43,7 +43,7 @@ export default class UserStatistics extends Component {
     render() {
     return (
       <div>
-        <div className="MainMenu">
+        <div className="MainMenuStats">
           
             <Chart chartData={this.state.chartData}></Chart>
           <Link to="/mainmenu" className="btn1" >
