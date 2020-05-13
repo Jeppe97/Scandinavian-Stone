@@ -43,14 +43,16 @@ export default class AdminStatistics extends Component {
     render() {
     return (
       <div>
-        <div className="MainMenu">
+        <h1 className="statName">Statistik</h1>
+        <div className="MainMenuStats">
           
             <Chart chartData={this.state.chartData}></Chart>
-          <Link to="/AdminMainmenu" className="btn1" >
+            <Link to="/AdminMainmenu" className="btn1" >
             <button>Tillbaka</button>
           </Link>
           
         </div>
+        
       </div>
     );
   }

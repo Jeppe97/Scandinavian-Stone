@@ -47,6 +47,14 @@
 
 /*iPad Air 2 adjusted content*/
 @media screen and (max-width: 800px) {
+  
+  .statName {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+    font-size: 3em;
+  }
+  
   .MainMenu {
     grid-auto-rows: minmax(200px, auto);
     //font-size: 0.7em;
@@ -62,7 +70,24 @@
       font-size: 0.8em;
 
     }
-  
-  
   }
+
+  .MainMenuStats {
+    display: grid;
+    padding-right: 1em;
+    padding-left: 1em;
+    max-width: 700px;
+    margin: auto;
+
+    .btn1 {
+      width: 100%;
+      grid-column: 1/3;
+      text-align: center;
+      font-size: 6em;
+    }
+
+
+  }
+
+
 }
