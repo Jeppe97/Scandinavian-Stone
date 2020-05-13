@@ -43,6 +43,7 @@ export default class UserStatistics extends Component {
     render() {
     return (
       <div>
+          <h1 className="statName">Statistik</h1>
         <div className="MainMenuStats">
           
             <Chart chartData={this.state.chartData}></Chart>
