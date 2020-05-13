@@ -6,6 +6,7 @@ import "./styles/navbar.scss"
 import {depth,length,methods} from "./Dimensions"
 import {timeSide1, timeSide2, timeSide3, timeBottom} from "./Timer";
 import {quarryID} from "./login/Login";
+import {mainTime} from "./Header";
 
 var primaryID=0;
 
@@ -192,7 +193,7 @@ export class DSB4 extends Component {
     }
     
     addPrimary(){
-      fetch(`/insertprimary?quarryID=${quarryID}&mainTime=${0}`)
+      fetch(`/insertprimary?quarryID=${quarryID}&mainTime=${mainTime}`)
       .then(response => response.json())
       .then(function(response){
        primaryID = response;
@@ -204,6 +205,7 @@ export class DSB4 extends Component {
   
 addSide1(){
   if(primaryID.length){
+    console.log(timeSide1 + " side 1");
     fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[0]}&height=${depth[0]}&time=${timeSide1}&method=${methods[0]}&sideNr=${1}&nr=${this.state.AntalHål0}&length2=${this.state.LängdPåHål0}&type=${this.state.SprängSort0}&amount=${this.state.MängdSprängDeg0}`)
    .then(this.addSide2)
    .catch(err => console.error(err))
@@ -212,6 +214,8 @@ addSide1(){
 
 addSide2(){
   if(primaryID.length){
+    console.log(timeSide1 + " side 2");
+
   fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[1]}&height=${depth[1]}&time=${timeSide2}&method=${methods[1]}&sideNr=${2}&nr=${this.state.AntalHål1}&length2=${this.state.LängdPåHål1}&type=${this.state.SprängSort1}&amount=${this.state.MängdSprängDeg1}`)
   .then(this.addSide3)
   .catch(err => console.error(err))
@@ -350,7 +354,7 @@ addSideBottom(){
               onChange={this.handleChange15}
             />
                     </form>
-                    <Link className="nextbtn" to="/workmethods/primary">
+                    <Link className="nextbtn" to="/workmethods/">
                     <button  className="nextbtn" onClick={this.addPrimary} >Spara</button>
                     </Link>
                 </div>

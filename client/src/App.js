@@ -3,7 +3,6 @@ import "./App.scss";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WorkMethods from "./components/WorkMethods";
-import Statistics from "./components/Statistics";
 import MainMenu from "./components/MainMenu";
 import Login from "./components/login/Login";
 import Dimensions from "./components/Dimensions";

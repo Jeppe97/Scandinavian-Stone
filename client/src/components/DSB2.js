@@ -6,6 +6,7 @@ import "./styles/navbar.scss"
 import {timeSide1, timeSide2, timeBottom} from "./TimerSkiva";
 import { height,length,methods} from "./DimensionsDisc";
 import {quarryID} from "./login/Login";
+import {mainTime} from "./Header";
 
 var discID=0;
 
@@ -159,7 +160,7 @@ export class DSB2 extends Component {
   }
 
   addDisc(){
-    fetch(`/insertdisc?quarryID=${quarryID}&mainTime=${0}`)
+    fetch(`/insertdisc?quarryID=${quarryID}&mainTime=${mainTime}`)
     .catch(err => console.error(err)) 
     .then(response => response.json())
     .then(function(response){
@@ -283,7 +284,7 @@ addSideBottom(){
             />
           </form>
           <div className="btn-field">
-          <Link to="/workmethods/primarySkiva" className="btn1 save">
+          <Link to="/workmethods" className="btn1 save">
               <button onClick={this.addDisc}>Spara</button>
             </Link>
             <Link to="/workmethods" className="btn1 cancel">

@@ -8,6 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import {quarryChoice} from "./login/Login";
 
   class Statistics extends Component  {
    constructor(props)
@@ -45,57 +46,57 @@ import Paper from '@material-ui/core/Paper';
    
   }
 
-  //   getDataSawing =()=>{
-  //     fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Sawing'}`)
-  //     .then(res => res.json())
-  //     .then(sawing => this.setState({ sawing },() => console.log(' sawing', sawing)))
+     getDataSawing (){
+       fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Sawing'}`)
+       .then(res => res.json())
+       .then(sawing => this.setState({ sawing },() => console.log(' sawing', sawing)))
    
-  //   }
+     }
 
     
-  // getDataBlasting(){
-  //     fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Blasting'}`)
-  //     .then(res => res.json())
-  //     .then(blasting => this.setState({ blasting }, () => console.log(' blasting', blasting)))
+   getDataBlasting(){
+       fetch(`/gettimes?quarryName=${quarryChoice}&method=${'Blasting'}`)
+       .then(res => res.json())
+       .then(blasting => this.setState({ blasting }, () => console.log(' blasting', blasting)))
       
-  // }
+   }
  
-  // getPrimarySawing(){
-  //   fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Sawing'}`)
-  //   .then(res => res.json())
-  //   .then(primarySawing => this.setState({ primarySawing }))
+   getPrimarySawing(){
+     fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Sawing'}`)
+     .then(res => res.json())
+     .then(primarySawing => this.setState({ primarySawing }))
     
-  // }
-  // getPrimaryBlasting(){
-  //   fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Blasting'}`)
-  //   .then(res => res.json())
-  //   .then(primaryBlasting => this.setState({ primaryBlasting }))
+   }
+   getPrimaryBlasting(){
+     fetch(`/gettimesprimary?quarryName=${quarryChoice}&method=${'Blasting'}`)
+     .then(res => res.json())
+     .then(primaryBlasting => this.setState({ primaryBlasting }))
     
-  // }
-  // getDiscSawing(){
-  //   fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Sawing'}`)
-  //   .then(res => res.json())
-  //   .then(discSawing => this.setState({ discSawing }))
+   }
+   getDiscSawing(){
+     fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Sawing'}`)
+     .then(res => res.json())
+     .then(discSawing => this.setState({ discSawing }))
     
-  // }
-  // getDiscBlasting(){
-  //   fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Blasting'}`)
-  //   .then(res => res.json())
-  //   .then(discBlasting => this.setState({ discBlasting }))
+   }
+   getDiscBlasting(){
+     fetch(`/gettimesdisc?quarryName=${quarryChoice}&method=${'Blasting'}`)
+     .then(res => res.json())
+     .then(discBlasting => this.setState({ discBlasting }))
     
-  // }
-  // getBlockSawing(){
-  //   fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Sawing'}`)
-  //   .then(res => res.json())
-  //   .then(blockSawing => this.setState({ blockSawing }))
+   }
+   getBlockSawing(){
+     fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Sawing'}`)
+     .then(res => res.json())
+     .then(blockSawing => this.setState({ blockSawing }))
     
-  // }
-  // getBlockBlasting(){
-  //   fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Blasting'}`)
-  //   .then(res => res.json())
-  //   .then(blockBlasting => this.setState({ blockBlasting }))
+   }
+   getBlockBlasting(){
+     fetch(`/gettimesblock?quarryName=${quarryChoice}&method=${'Blasting'}`)
+     .then(res => res.json())
+     .then(blockBlasting => this.setState({ blockBlasting }))
     
-  // }
+   }
 
   methodTime(method){
       var time = method.reduce(function(prev, cur) {

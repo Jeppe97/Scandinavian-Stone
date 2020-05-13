@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles/Header.scss";
-//import { doc, check } from "prettier";
+
+var mainTime =0;
 
 class Header extends Component {
   constructor() {
@@ -25,7 +26,6 @@ class Header extends Component {
     var cBox1 = document.createElement("input");
     var cBox2 = document.createElement("input");
     var cBox3 = document.createElement("input");
-
 
 
     var windowWidth = window.innerWidth;
@@ -53,7 +53,7 @@ class Header extends Component {
 
     //Positions the popup in the center of the screen ALWAYS.
     
-        
+
     textfield1.id = "reason";
 
     checkbox1.innerText="Spara";
@@ -66,8 +66,6 @@ class Header extends Component {
 
     reasonHeader.textContent = "Andledning till stopp:";
 
-
-    
     textfield1.setAttribute("type", "text");
     cBox1.setAttribute("type", "checkbox");
     cBox2.setAttribute("type", "checkbox");
@@ -86,10 +84,13 @@ class Header extends Component {
     form1.appendChild(reasonLabel);
     form1.appendChild(textfield1);
     
-
-
+   
     checkbox1.addEventListener("click", function() {
+
+      form1.removeChild(checkbox1);
+      box.removeChild(form1);
       root.removeChild(box);
+     
     })
 
     stopButton.addEventListener("click", () => {
@@ -111,10 +112,8 @@ class Header extends Component {
 
       form1.appendChild(checkbox1);
       box.appendChild(form1);
-
       root.appendChild(box);
 
-      
     });
 
    
@@ -123,11 +122,15 @@ class Header extends Component {
     this.setState(state => {
       if (state.status) {
         clearInterval(this.timer);
+        mainTime=(Math.round((this.state.runningTime / 1000) % 60));
+        console.log(mainTime + " main time");
       } else {
         const startTime = Date.now() - this.state.runningTime;
         this.timer = setInterval(() => {
           this.setState({ runningTime: Date.now() - startTime });
         });
+        mainTime=(Math.round((this.state.runningTime / 1000) % 60));
+        console.log(mainTime + " main time");
       }
       return { status: !state.status };
     });
@@ -135,12 +138,14 @@ class Header extends Component {
   handleReset = () => {
     clearInterval(this.timer);
     this.setState({ runningTime: 0, status: false });
+    mainTime=0;
   };
   componentWillUnmount() {
     clearInterval(this.timer);
   }
   render() {
     const { status, runningTime } = this.state;
+
     return (
        <div className="Header" id="header">
         <p className="watchText">Huvudtimer:</p>
@@ -160,3 +165,4 @@ class Header extends Component {
 }
 
 export default Header;
+export {mainTime};

@@ -5,6 +5,8 @@ import "./styles/navbar.scss"
 import {timeSide1, timeSide2, timeSide3,timeBottom} from "./TimerBlock";
 import { methods,length,depth} from "./DimensionsBlock"
 import {quarryID} from "./login/Login";
+import {mainTime} from "./Header";
+
 
 var blockID=0;
 
@@ -81,7 +83,7 @@ class Block extends Component {
   //adds a new block
   addBlock(){
     console.log("adding a block");
-    fetch(`/insertblock?quarryID=${quarryID}&mainTime=${0}}`)
+    fetch(`/insertblock?quarryID=${quarryID}&mainTime=${mainTime}}`)
     .then(response => response.json())
     .then(function(response){
     blockID = response

@@ -153,7 +153,7 @@ class TimerSkiva extends Component {
             <button className="timerbtn reset" id="reset" onClick={this.handleReset2}>
               Nollställ
             </button>
-          <Link className="btn1 savebtn" to="/workmethods">
+          <Link className="btn1 savebtn" to="/workmethods/primarySkiva/dimensions">
           <button onClick={this.saveTime}>Spara</button>
         </Link>
         <Link to="/workmethods" className="btn1 cancelbtn">
