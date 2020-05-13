@@ -275,7 +275,7 @@ saveInfo(){
               </button>
             </Link>
           </form>
-          <Link className="nextbtn" to="/workmethods/primaryBlock">
+          <Link className="nextbtn" to="/workmethods/block">
             <button className="nextbtn" onClick={this.saveInfo}>
               Nästa
             </button>
