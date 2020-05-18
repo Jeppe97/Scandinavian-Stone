@@ -1,3 +1,5 @@
+/*Authorisation class for loggin */
+
 class Auth {
   constructor() {
     this.authenticated = false;

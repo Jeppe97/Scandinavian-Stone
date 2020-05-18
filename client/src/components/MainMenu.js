@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./styles/MainMenu.scss";
 import auth from "./login/auth";
 import "./styles/navbar.scss"
+/*This class is the main menu for the user
+The user chan choose the options "Räkna", "Statistik" and "Logga ut"
+When clicking on a button the user will be sent to the corresponding page ( using Link )*/
 
 export const MainMenu = props => {
   return (
@@ -16,6 +19,8 @@ export const MainMenu = props => {
         <button>STATISTIK</button>
       </Link>
       <a className="btn1">
+        
+        {/*Checks for authorization, is not implemented*/}
         <button
           onClick={() => {
             auth.logout(() => {

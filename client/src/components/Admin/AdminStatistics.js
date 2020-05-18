@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Chart from "./AdminCharts"
-
+/*The statistics page for the admin, creates a chart for the AdminCharts.js file to use*/
 
 export default class AdminStatistics extends Component {
     constructor(){

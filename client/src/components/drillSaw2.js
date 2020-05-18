@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import Slider from "./Slider";
 import { Link } from "react-router-dom";
 
@@ -47,3 +47,4 @@ export class bS2 extends Component {
   }
 }
 export default bS2;
+*/

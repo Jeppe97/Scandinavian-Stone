@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "../styles/Login.scss";
 import auth from "./auth";
 import { FormControlLabel } from "@material-ui/core";
+/*Class for inlogg. First page of the aplication. Can loggin to admin or user
+The name and password used for logging in is controlled against the database */
+
+//Variables
 var name = "";
 var password = "";
 var infoFromDatabase;
@@ -48,14 +52,14 @@ export class Login extends Component {
       container.classList.remove("right-panel-active");
     });
   }
-
+//Handles the name imput
   handleChange1(event){
     this.setState({
       name: event.target.value
     });
     return(this.state);
   }
-
+//Handles the password imput 
   handleChange2(event){
     this.setState({
       password: event.target.value
@@ -65,15 +69,12 @@ export class Login extends Component {
 
   handleChange3(event){
     name = event;
-    console.log("test name " + name);
-
   }
   handleChange4(event){
     password = event;
-    console.log("test paswd " + password);
-    
 
   }
+  //Sends name and password used for admin, returns 
   controlAdmin(){
     fetch(`/logginadmin?name=${name}&password=${password}`)
     .then(res => res.json())
@@ -94,13 +95,13 @@ export class Login extends Component {
       alert("Not a valid e-mail address or password");
      }
   }
-  //go to admin page
+  //loggin, go to main menu for admin 
   newPageAdmin() {
     auth.login(() => {
       this.props.history.push("/AdminMainmenu");
     });
   }
-//get quarry id if name and password is right
+//gets the quarry id and quarry name if name and password is right
   controlUser(){
     fetch(`/logginuser?name=${name}&password=${password}`)
     .then(res => res.json())
@@ -114,7 +115,7 @@ export class Login extends Component {
   }
 
   checkUser(){
-   //if there is some info in the array
+   //if there is some info in the array, no info= wrong name or password
     if(infoFromDatabase.length){
        quarryID = infoFromDatabase[0].quarryID;
        quarryChoice = infoFromDatabase[0].quarryName;
@@ -125,7 +126,7 @@ export class Login extends Component {
       alert("Not a valid e-mail address");
     }
   }
-  //go to main menu
+  //loggin, go to main menu for user
   newPageUser() {
     auth.login(() => {
       this.props.history.push("/mainmenu");

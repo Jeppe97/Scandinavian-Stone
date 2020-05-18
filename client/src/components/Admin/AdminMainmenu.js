@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../login/auth";
 
-{/*Denna komponent är huvudmenyn för administratöranvändarna. När du har loggat in som en adminanvändare så visas denna komponent som består av tre knappar*/ }
+/*Component for admin main menu. This component is displayed when logged into the admin page. It consist of three buttons */
 
 export const AdminMainMenu = props => {
   return (
@@ -15,7 +15,7 @@ export const AdminMainMenu = props => {
       </Link>
       <a className="admin-button">
         <button
-          onClick={() => { {/*Denna knapp kallar på en funktion som loggar ut användaren*/}
+          onClick={() => { {/*This button calls a function that logs out the admin*/}
             auth.logout(() => {
               props.history.push("/");
             });

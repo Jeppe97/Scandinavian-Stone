@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./styles/Header.scss";
 
+/*This class handles the main timer, a timer displayed at the top of the page. Allways visable*/
+
+//Variable to store the main time
 var mainTime =0;
 
 class Header extends Component {
@@ -11,18 +14,22 @@ class Header extends Component {
       status: false,
       runningTime: 0
     };
+    //Handles when pressing the start/paus button
     this.handleClick = this.handleClick.bind(this);
+    //Resets the timer
     this.handleReset = this.handleReset.bind(this);
   }
+
   componentDidMount() {
     const stopButton = document.getElementById("reset");
     const header = document.getElementById("header");
     
     const root = document.getElementById("root");
-    
+    //the box that contains the choices
     var box = document.createElement("div");
     var form1 = document.createElement("form");
     var textfield1 = document.createElement("input");
+    //check boxes the user can choose 
     var cBox1 = document.createElement("input");
     var cBox2 = document.createElement("input");
     var cBox3 = document.createElement("input");
@@ -37,7 +44,7 @@ class Header extends Component {
     var reasonLabelCBox2 = document.createElement("label");
     var reasonLabelCBox3 = document.createElement("label");
 
-
+//Checkboxes 
     var checkbox1 = document.createElement("button");
     var checkbox2 = document.createElement("button");
     var checkbox3 = document.createElement("button");
@@ -118,28 +125,29 @@ class Header extends Component {
 
    
   }
+  //Handles when the button is pressed, stops or starts the timer. Saves the time in a variable
   handleClick = () => {
     this.setState(state => {
       if (state.status) {
         clearInterval(this.timer);
         mainTime=(Math.round((this.state.runningTime / 1000) % 60));
-        console.log(mainTime + " main time");
       } else {
         const startTime = Date.now() - this.state.runningTime;
         this.timer = setInterval(() => {
           this.setState({ runningTime: Date.now() - startTime });
         });
         mainTime=(Math.round((this.state.runningTime / 1000) % 60));
-        console.log(mainTime + " main time");
       }
       return { status: !state.status };
     });
   };
+  //Resets the main timer
   handleReset = () => {
     clearInterval(this.timer);
     this.setState({ runningTime: 0, status: false });
     mainTime=0;
   };
+  //Cleare time when building this class
   componentWillUnmount() {
     clearInterval(this.timer);
   }

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./styles/timer.scss";
 import "./styles/navbar.scss"
+/*This class handles the four timers for a block. The user will measuer the time it takes to process each side*/
 
+//Stores the times for each side on the block so it can be exported
 var timeSide1=0;
 var timeSide2=0;
 var timeSide3=0;
@@ -11,7 +13,7 @@ var timeBottom=0;
 class TimerBlock extends Component {
   constructor() {
     super();
-
+//The times for the timers 
     this.state = {
       status: false,
       runningTime0: 0,
@@ -19,25 +21,24 @@ class TimerBlock extends Component {
       runningTime2: 0,
       runningTime3: 0
     };
-
+//Handles when the user clicks in a timer
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
     this.handleClick3 = this.handleClick3.bind(this);
 
-
+//Resets the timers when the user clicks on reset 
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     this.handleReset2 = this.handleReset2.bind(this);
     this.handleReset3 = this.handleReset3.bind(this);
 
-    
+    //Saves the times in variables 
     this.saveTime = this.saveTime.bind(this);
   }
 
-
+//Stores the times in variables, devides the times by / 1000 and %60 since the timer uses milliseconds
   saveTime(){
-
     timeSide1=(Math.round((this.state.runningTime0 / 1000) % 60));
     timeSide2=(Math.round((this.state.runningTime1 / 1000) % 60));
     timeSide3=(Math.round((this.state.runningTime2 / 1000) % 60));
@@ -45,7 +46,7 @@ class TimerBlock extends Component {
     console.log(timeSide1 + " " + timeSide2 + " " + timeSide3 + " " + timeBottom);
   }
 
-
+//Starts or pause the first timer depending on the state. If the timer is paused it will start, or if its started it will be paused
   handleClick0 = () => {
     this.setState(state => {
       if (state.status0) {
@@ -59,7 +60,7 @@ class TimerBlock extends Component {
       return { status0: !state.status0 };
     });
   };
-
+//Starts or pauses the second timer 
   handleClick1 = () => {
     this.setState(state => {
       if (state.status1) {
@@ -73,6 +74,7 @@ class TimerBlock extends Component {
       return { status1: !state.status1 };
     });
   };
+  //Starts or pauses the third timer
   handleClick2 = () => {
     this.setState(state => {
       if (state.status2) {
@@ -86,6 +88,7 @@ class TimerBlock extends Component {
       return { status2: !state.status2 };
     });
   };
+  //Starts or pauses the bottom timer
   handleClick3 = () => {
     this.setState(state => {
       if (state.status3) {
@@ -100,11 +103,11 @@ class TimerBlock extends Component {
     });
   };
 
+/*Restes the timers (visualy on the page and the state value)*/
   handleReset0 = () => {
     clearInterval(this.timer0);
     this.setState({ runningTime0: 0, status0: false });
   };
-
   handleReset1 = () => {
     clearInterval(this.timer1);
     this.setState({ runningTime1: 0, status1: false });
@@ -118,6 +121,7 @@ class TimerBlock extends Component {
     this.setState({ runningTime3: 0, status3: false });
   };
 
+/*Clears the time when the page is loaded */
   componentWillUnmount0() {
     clearInterval(this.timer0);
   }
@@ -137,18 +141,24 @@ class TimerBlock extends Component {
       <div>
 
         <div className="container-form-timer">
+
+          {/*The timer for the first side*/}
             <p className="watchText">Sida 1:</p>
             <div className="counter">
               {(Math.round(runningTime0) / 1000 / 60) << 0}:
               {Math.round((runningTime0 / 1000) % 60)}
             </div>
+
+            {/*When the button "Start/Pause" is clicked it starts/pauses depending on the current state */}
             <button className="timerbtn start" id="start" onClick={this.handleClick0}>
               {status0 ? "Paus" : "Start"}
             </button>
+            {/*When the button "Reset" is clicked it resets the first timer */}
             <button className="timerbtn reset" id="reset" onClick={this.handleReset0}>
             Nollställ
             </button>
 
+          {/*The timer for the second side side*/}
             <p className="watchText">Sida 2:</p>
             <div className="counter">
               {(Math.round(runningTime1) / 1000 / 60) << 0}:
@@ -161,6 +171,7 @@ class TimerBlock extends Component {
             Nollställ
             </button>
 
+          {/*The timer for the third side side*/}
             <p className="watchText">Sida 3:</p>
             <div className="counter">
               {(Math.round(runningTime2) / 1000 / 60) << 0}:
@@ -173,6 +184,7 @@ class TimerBlock extends Component {
             Nollställ
             </button>
 
+          {/*The timer for the bottom side*/}
             <p className="watchText">Botten:</p>
             <div className="counter">
               {(Math.round(runningTime3) / 1000 / 60) << 0}:
@@ -184,9 +196,13 @@ class TimerBlock extends Component {
             <button className="timerbtn reset" id="reset" onClick={this.handleReset3}>
               Nollställ
             </button>
+
+            {/*When the clicking on the "Save" button, the times will be saved and the user will be sent to the DimesnionsBlock page*/}
             <Link to="/workmethods/primaryBlock/dimensions" className="btn1 savebtn">
               <button onClick={this.saveTime}>Spara</button>
             </Link>
+
+            {/*When the clicking on the "Avbrut" button, the user will be sent to the workmethod page*/}
             <Link to="/workmethods" className="btn1 cancelbtn">
               <button>Avbryt</button>
             </Link>

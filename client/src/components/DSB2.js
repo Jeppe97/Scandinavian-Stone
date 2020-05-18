@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Slider from "./Slider";
 import { Link } from "react-router-dom";
 import "./styles/DimensionsDSB2.scss";
 import "./styles/navbar.scss"
@@ -8,6 +7,11 @@ import { height,length,methods} from "./DimensionsDisc";
 import {quarryID} from "./login/Login";
 import {mainTime} from "./Header";
 
+/*This class handles the page where the user can enter blasting values: "antal hål, längd på hål, sprängsort, mängd sprängmedel 
+for each side of a disc.
+This class sends the values of a disc to server.js that sends it to the database*/
+
+//variable to save the disc ID from the database
 var discID=0;
 
 
@@ -15,22 +19,20 @@ export class DSB2 extends Component {
   
   constructor() {
     super();
-
+//State values for the imputs
     this.state = {
     AntalHål0:"",
     AntalHål1:"",
     AntalHål2:"",
-  
+
 
     LängdPåHål0:"",
     LängdPåHål1:"",
     LängdPåHål2:"",
  
-
     SprängSort0:"",
     SprängSort1:"",
     SprängSort2:"",
-
 
     MängdSprängDeg0:"",
     MängdSprängDeg1:"",
@@ -59,16 +61,17 @@ export class DSB2 extends Component {
     this.handleChange10 = this.handleChange10.bind(this);
     this.handleChange11 = this.handleChange11.bind(this);
 
-    
+    //Sends info to the database
     this.addSide1 = this.addSide1.bind(this);
     this.addSide2 = this.addSide2.bind(this);
     this.addSideBottom = this.addSideBottom.bind(this);
     this.addDisc = this.addDisc.bind(this);
 
 
-    
-    
+  
   }
+  /*These methods handle the imput from a text field, it sets the input value for the corresponding state value*/
+  //Sets the number of holes for the three sides of a disc
   handleChange0(event) {
     this.setState({
       AntalHål0: event.target.value
@@ -90,8 +93,7 @@ export class DSB2 extends Component {
     return(this.state);
   }
 
-
-
+//Sets the length of the holes for the three sides on a disc
   handleChange3(event) {
     this.setState({
       LängdPåHål0: event.target.value
@@ -113,7 +115,7 @@ export class DSB2 extends Component {
     return(this.state);
   }
 
-
+//Sets the desintegrants for the three sides of a disc
    handleChange6(event) {
     this.setState({
       SprängSort0: event.target.value
@@ -136,7 +138,7 @@ export class DSB2 extends Component {
     return(this.state);
   }
 
-
+//Sets the amount of the disintegrants
   handleChange9(event) {
     this.setState({
       MängdSprängDeg0: event.target.value
@@ -158,6 +160,9 @@ export class DSB2 extends Component {
     });
     return(this.state);
   }
+ /*Adds a new disc in the database, it sends the values quarryID and main time for the disc and 
+    recives the last disc ID that was inserted and then calls the method "addSide1"
+    The defenition of the fetch method can be found in server.js*/
 
   addDisc(){
     fetch(`/insertdisc?quarryID=${quarryID}&mainTime=${mainTime}`)
@@ -168,7 +173,10 @@ export class DSB2 extends Component {
      })
    .then(this.addSide1)
 }
-
+/*Sends the values for the first side of a disc. The discID is added so the database knows which discID the side belongs to.
+Adds a new side to the database 
+Calls the method for adding a second side.
+*/
 addSide1(){
   if(discID.length){
     fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[0]}&height=${height[0]}&time=${timeSide1}&method=${methods[0]}&sideNr=${1}&nr=${this.state.AntalHål0}&length2=${this.state.LängdPåHål0}&type=${this.state.SprängSort0}&amount=${this.state.MängdSprängDeg0}`)
@@ -176,7 +184,8 @@ addSide1(){
    .catch(err => console.error(err))
   }
 }
-
+/*Adds the values for the second side of a disc.
+Calls mehod addSideBottom*/
 addSide2(){
   if(discID.length){
   fetch(`/insertsidedisc?discID=${discID[0].id}&length1=${length[1]}&height=${height[1]}&time=${timeSide2}&method=${methods[1]}&sideNr=${2}&nr=${this.state.AntalHål1}&length2=${this.state.LängdPåHål1}&type=${this.state.SprängSort1}&amount=${this.state.MängdSprängDeg1}`)
@@ -205,32 +214,35 @@ addSideBottom(){
       <div>
      
         <div className="wrapperDim" id="wrapper">
+            {/*Imput values for side 1 (text fields)*/}
           <form className="dimension-form 1">
             <h1 className="sides">Sida 1:</h1>
+            {/*The user enters the value of "Antal hål" (first side)in a text field, "handleChange0 adds that value to the state*/}
             <input
               type="text"
               placeholder="Antal Hål"
               onChange={this.handleChange0}
             />
+             {/*Adds length for the holes (first side)*/}
             <input
               type="text"
               placeholder="Längd på Hål"
               onChange={this.handleChange3}
             />
-          
+           {/*Adds disintegrants (first side)*/}
             <input
               type="text"
               placeholder="Sprängmedel"
               onChange={this.handleChange6}
             />
-       
+        {/*Adds amount of disintegrants (first side) */}
        <input
               type="text"
               placeholder="Mängd Sprängdeg"
               onChange={this.handleChange9}
             />
           </form>
-
+  {/*Add the values for side 2*/}
           <form className="dimension-form 2">
             <h1 className="sides">Sida 2:</h1>
             <input
@@ -257,7 +269,7 @@ addSideBottom(){
             />
           </form>
 
-
+  {/*Add values for bottom */}
           <form className="dimension-form 2">
             <h1 className="sides">Botten:</h1>
             <input
@@ -283,10 +295,13 @@ addSideBottom(){
               onChange={this.handleChange11}
             />
           </form>
+             {/*Clicking on "Spara" executes the method "addDisc" that adds a new disc to the database
+                The link sends the user to the workmethods menu */}
           <div className="btn-field">
           <Link to="/workmethods" className="btn1 save">
               <button onClick={this.addDisc}>Spara</button>
             </Link>
+            {/*Cancle the process */}
             <Link to="/workmethods" className="btn1 cancel">
               <button >Avbryt</button>
             </Link>

@@ -28,7 +28,6 @@ export default class AdminQuarryButton extends Component  {
 
     return (
        <div>
-           {console.log(this.props.path + " " +this.props.quarry +  " hejsan")}
            <AdminDropdownMenuPlace path={this.props.path}/>
            <Link to="/Admin-statistics">
            <h1>{this.props.displayQuarry + " " +this.props.quarry}</h1>

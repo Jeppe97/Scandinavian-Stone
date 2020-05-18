@@ -4,6 +4,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import "../styles/admin.scss";
 import "../styles/MainMenu.scss";
 
+/*Class for the drop down menu in admin statistics, handles the place */
+
 export default class AdminDropdownMenuPlace extends React.Component {
   constructor(props)
   {
@@ -23,6 +25,7 @@ export default class AdminDropdownMenuPlace extends React.Component {
     quarry: "N/A"
   }
 
+/*Handles the choices in the drop down menu */
   handleOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -84,6 +87,7 @@ export default class AdminDropdownMenuPlace extends React.Component {
         >
           Välj Plats
         </button>
+        {/*The options for the places in a quarry, onCklick handles the choice*/}
         <Menu
           id="place-menu"
           anchorEl={anchorEl}
@@ -105,7 +109,7 @@ export default class AdminDropdownMenuPlace extends React.Component {
           <MenuItem onClick={this.HandleSix} >6</MenuItem>
           <MenuItem onClick={this.HandleSeven} >7</MenuItem>
         </Menu>
-        
+        {/*Displayes the selected place*/}
         <h1>{this.props.displayPlace + " " +this.state.place}</h1>
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Slider from './Slider';
 import { Link } from "react-router-dom";
 import "./styles/DSB.scss";
 import "./styles/navbar.scss"
@@ -8,13 +7,18 @@ import {timeSide1, timeSide2, timeSide3, timeBottom} from "./Timer";
 import {quarryID} from "./login/Login";
 import {mainTime} from "./Header";
 
+/*This class handles the page where the user can enter blasting values: "antal hål, längd på hål, sprängsort, mängd sprängmedel 
+for each side of a primary stone.
+This class sends the values of a primary stone to server.js that sends it to the database*/
+
+//variable to save the primary ID from the database
 var primaryID=0;
 
 export class DSB4 extends Component {
 
     constructor() {
         super();
-    
+    //State values for the imputs 
         this.state = {
         AntalHål0:"",
         AntalHål1:"",
@@ -40,7 +44,7 @@ export class DSB4 extends Component {
         };
     
         this.state = { isToggleOn: true };
-    
+        
         this.handleChange0 = this.handleChange0.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
@@ -63,7 +67,7 @@ export class DSB4 extends Component {
         this.handleChange14 = this.handleChange14.bind(this);
         this.handleChange15 = this.handleChange15.bind(this);
 
-                
+        //Sends info to the database      
         this.addSide1 = this.addSide1.bind(this);
         this.addSide2 = this.addSide2.bind(this);
         this.addSide3 = this.addSide3.bind(this);
@@ -72,6 +76,8 @@ export class DSB4 extends Component {
         
         
       }
+      /*These methods handle the imput from a text field, it sets the input value for the corresponding state value*/
+      //Sets the number of holes for the four sides of a primary stone 
       handleChange0(event) {
         this.setState({
           AntalHål0: event.target.value
@@ -101,7 +107,7 @@ export class DSB4 extends Component {
         return(this.state);
       }
 
-
+//Sets the length of the holes for the four sides of a primary stone 
       handleChange4(event) {
         this.setState({
           LängdPåHål0: event.target.value
@@ -130,7 +136,7 @@ export class DSB4 extends Component {
         return(this.state);
       }
 
-
+//Sets the desintegrants for the four sides of a primary stone 
        handleChange8(event) {
         this.setState({
           SprängSort0: event.target.value
@@ -158,7 +164,7 @@ export class DSB4 extends Component {
         });
         return(this.state);
       }
-
+//Sets the amount of the disintegrants
       handleChange12(event) {
         this.setState({
           MängdSprängDeg0: event.target.value
@@ -191,7 +197,10 @@ export class DSB4 extends Component {
     refreshPage() {
         window.location.assign("/");
     }
-    
+    /*Adds a new primary stone in the database, it sends the values quarryID and main time for the primary stone and 
+    recives the last primary ID that was inserted and then calls the method "addSide1"
+    The defenition of the fetch method can be found in server.js*/
+
     addPrimary(){
       fetch(`/insertprimary?quarryID=${quarryID}&mainTime=${mainTime}`)
       .then(response => response.json())
@@ -202,7 +211,10 @@ export class DSB4 extends Component {
       .catch(err => console.error(err)) 
     
   }
-  
+/*Sends the values for the first side of a primary stone. The primaryID is added so the database knows which primary stone the side belongs to.
+Adds a new side to the database 
+Calls the method for adding a second side.
+*/
 addSide1(){
   if(primaryID.length){
     console.log(timeSide1 + " side 1");
@@ -211,7 +223,8 @@ addSide1(){
    .catch(err => console.error(err))
   }
 }
-
+/*Sends the values for the second side of a primary stone.
+Adds mehod addSide3*/
 addSide2(){
   if(primaryID.length){
     console.log(timeSide1 + " side 2");
@@ -222,7 +235,8 @@ addSide2(){
   }
   
 }
-  
+/*Sends the values for the third side on a primary stone.
+Calls method addSideBottom*/
 addSide3(){
   if(primaryID.length){
   fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[2]}&height=${depth[2]}&time=${timeSide3}&method=${methods[2]}&sideNr=${3}&nr=${this.state.AntalHål2}&length2=${this.state.LängdPåHål2}&type=${this.state.SprängSort2}&amount=${this.state.MängdSprängDeg2}`)
@@ -231,6 +245,7 @@ addSide3(){
   }
   
 }
+/*Sends the values for the bottom on a primary stone*/
 addSideBottom(){
   if(primaryID.length){
   fetch(`/insertsideprimary?primaryID=${primaryID[0].id}&length1=${length[3]}&height=${depth[3]}&time=${timeBottom}&method=${methods[3]}&sideNr=${4}&nr=${this.state.AntalHål3}&length2=${this.state.LängdPåHål3}&type=${this.state.SprängSort3}&amount=${this.state.MängdSprängDeg3}`)
@@ -245,26 +260,29 @@ addSideBottom(){
             <div>
               
                 <div className="wrapperDSB" id="wrapper">
+                  {/*Imput values for side 1*/}
                     <form className="dimension-form 1">
                         <h1 className="sides">Sida 1:</h1>
-                        <input
+                          {/*The user enters the value of "Antal hål" (first side)in a text field, "handleChange0 adds that value to the state*/}
+                      <input
               type="text"
               placeholder="Antal Hål"
               onChange={this.handleChange0}
             />
+             {/*Adds length for the holes (first side)*/}
             <input
               type="text"
               placeholder="Längd på Hål"
               onChange={this.handleChange4}
             />
-          
+           {/*Adds disintegrants (first side)*/}
             <input
               type="text"
               placeholder="Sprängmedel"
               onChange={this.handleChange8}
             />
-       
-       <input
+            {/*Adds amount of disintegrants (first side) */}
+           <input
               type="text"
               placeholder="Mängd Sprängmedel"
               onChange={this.handleChange12}
@@ -275,7 +293,7 @@ addSideBottom(){
 
 
                     <form className="dimension-form 2">
-                        
+                         {/*Add the values for side 2*/}
                         <h1 className="sides">Sida 2:</h1>
                         <input
               type="text"
@@ -303,7 +321,7 @@ addSideBottom(){
 
 
                     <form className="dimension-form 3">
-                        
+                         {/*Add values for side 3 */}
                         <h1 className="sides">Sida 3:</h1>
                         <input
               type="text"
@@ -328,7 +346,7 @@ addSideBottom(){
               onChange={this.handleChange14}
             />
                     </form>
-
+                     {/*Add values for bottom*/}
                     <form className="dimension-form 4">
                         <h1 className="sides">Botten: </h1>
                         <input
@@ -354,6 +372,8 @@ addSideBottom(){
               onChange={this.handleChange15}
             />
                     </form>
+                     {/*Clicking on "Spara" executes the method "addPrimary" that adds a new primary stone to the database
+                     The link sends the user to the workmethods menu */}
                     <Link className="nextbtn" to="/workmethods/">
                     <button  className="nextbtn" onClick={this.addPrimary} >Spara</button>
                     </Link>

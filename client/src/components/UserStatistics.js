@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Chart from "./Statistics";
 
+/*The statistics page for the user, creates a chart for the Statistics.js file to use*/
 
 export default class UserStatistics extends Component {
+    
     constructor(){
         super();
         this.state = {
@@ -14,9 +16,8 @@ export default class UserStatistics extends Component {
     componentWillMount(){
         this.getChartData();
     }
-    
+    //Default chart data 
     getChartData(){
-        //ajax calls here
         this.setState({
             chartData: {
                 labels: ['Borrning och Sågning', 'Borrning och Sprängning'],

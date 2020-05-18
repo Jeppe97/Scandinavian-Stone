@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/MainMenu.scss";
 
+/*Class for modifying data in the database (not implemented) */
+
 export class AdminModifyData extends Component {
     render() {
         return (

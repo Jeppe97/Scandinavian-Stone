@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+/*Page for removing data in the database (not implemented) */
 export class AdminModifyData extends Component {
 
   constructor() {
@@ -16,6 +17,7 @@ export class AdminModifyData extends Component {
 
   }
   handleChange0(event) {
+    //set the state to the imput (ID number)
     this.setState({
       ID: event.target.value
     });
@@ -27,6 +29,7 @@ export class AdminModifyData extends Component {
         <div className="wrapperSides" id="wrapper">
           <form className="dimension-form 1">
             <h1 className="sides">Mata in ID nummret på inmatningen du vill ta bort:</h1>
+            {/*Imput for the id nummer you want to delete */}
             <input
               type="text"
               placeholder="ID"

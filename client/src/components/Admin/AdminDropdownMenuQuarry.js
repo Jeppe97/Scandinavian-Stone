@@ -4,6 +4,9 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import "../styles/admin.scss";
 import AdminQuarryButton from "./AdminQuarryButton"
+
+/*Class that handles the drop down menu when selecting a quarry */
+
 export default class AdminDropdownMenuQuarry extends React.Component {
   state = {
     anchorEl: null,
@@ -35,7 +38,7 @@ export default class AdminDropdownMenuQuarry extends React.Component {
         >
           Välj Stenbrott
         </button>
-        
+        {/*Drop down menu with the choices */}
         <Menu
           id="industries-menu"
           anchorEl={anchorEl}
