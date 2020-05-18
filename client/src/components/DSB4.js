@@ -9,7 +9,7 @@ import {mainTime} from "./Header";
 
 /*This class handles the page where the user can enter blasting values: "antal hål, längd på hål, sprängsort, mängd sprängmedel 
 for each side of a primary stone.
-This class sends the values of a primary stone to server.js that sends it to the database*/
+This class sends the values of a primary stone to the database*/
 
 //variable to save the primary ID from the database
 var primaryID=0;
@@ -288,8 +288,6 @@ addSideBottom(){
               onChange={this.handleChange12}
             />
                     </form>
-
-
 
 
                     <form className="dimension-form 2">

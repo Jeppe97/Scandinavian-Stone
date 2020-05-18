@@ -7,7 +7,7 @@ import { methods,length,depth} from "./DimensionsBlock"
 import {quarryID} from "./login/Login";
 import {mainTime} from "./Header";
 /*This class displays and handles the Volym, vikt, kvalite and pris for a block 
-This class sends the values of a block to server.js that sends it to the database*/
+This class sends the values of a block to the database*/
 
 //variable to save the disc ID from the database
 var blockID=0;
@@ -101,7 +101,7 @@ class Block extends Component {
   .catch(err => console.error(err))
 
 }
-//sends the measure for a block (Vikt, volym, kvalite and price )
+//sends the measure for a block (Vikt, volym, kvalite and price ) to the database
 addMeasure(){
   if(blockID.length){
     console.log("adding measure");
@@ -138,7 +138,7 @@ addSide3(){
   }
   
 }
-//adds info about the last side of a block
+//sends info about the last side of a block
 addSideBottom(){
   if(blockID.length){
   fetch(`/insertsideblock?blockID=${blockID[0].id}&length=${length[3]}&height=${depth[3]}&time=${timeBottom}&method=${methods[3]}&sideNr=${4}`)

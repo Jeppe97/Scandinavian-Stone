@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/MainMenu.scss";
-/*Component for admin modefy data menu. This component is displayed when selecting modify data. It consist of three buttons */
+
+/*Component for admin choice: modify data. This component is displayed when selecting modify data. It consist of three buttons */
 
 export const AdminModifyData = props => {
   return (

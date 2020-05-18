@@ -21,7 +21,7 @@ class TimerBlock extends Component {
       runningTime2: 0,
       runningTime3: 0
     };
-//Handles when the user clicks in a timer
+//Handles when the user clicks on a timer
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
@@ -46,7 +46,7 @@ class TimerBlock extends Component {
     console.log(timeSide1 + " " + timeSide2 + " " + timeSide3 + " " + timeBottom);
   }
 
-//Starts or pause the first timer depending on the state. If the timer is paused it will start, or if its started it will be paused
+//Starts or pause the first timer depending on the state. If the timer is paused it will start, if the timer is started it will be paused
   handleClick0 = () => {
     this.setState(state => {
       if (state.status0) {
@@ -60,7 +60,7 @@ class TimerBlock extends Component {
       return { status0: !state.status0 };
     });
   };
-//Starts or pauses the second timer 
+//Starts or pause the second timer 
   handleClick1 = () => {
     this.setState(state => {
       if (state.status1) {
@@ -74,7 +74,7 @@ class TimerBlock extends Component {
       return { status1: !state.status1 };
     });
   };
-  //Starts or pauses the third timer
+  //Starts or pause the third timer
   handleClick2 = () => {
     this.setState(state => {
       if (state.status2) {
@@ -88,7 +88,7 @@ class TimerBlock extends Component {
       return { status2: !state.status2 };
     });
   };
-  //Starts or pauses the bottom timer
+  //Starts or pause the bottom timer
   handleClick3 = () => {
     this.setState(state => {
       if (state.status3) {
@@ -103,7 +103,7 @@ class TimerBlock extends Component {
     });
   };
 
-/*Restes the timers (visualy on the page and the state value)*/
+/*Restes the timers */
   handleReset0 = () => {
     clearInterval(this.timer0);
     this.setState({ runningTime0: 0, status0: false });

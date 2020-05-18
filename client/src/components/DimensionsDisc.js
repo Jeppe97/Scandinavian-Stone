@@ -177,7 +177,7 @@ export class DimensionsSkiva extends Component {
               placeholder="Längd"
               onChange={this.handleChange3}
             />            
-             {/*Button click (side 1) method choice , the button handles the click */}
+             {/*Button click (side 1) method choice, the button handles the click */}
                         <Link className="btn1" to="/workmethods/primarySkiva/dimensions">
                             <button className="drillblow" id="drillblow1">Borrning + Sprängning</button>
                             <button className="drillsaw" id="drillsaw1">Borrning + Sågning</button>
@@ -221,7 +221,7 @@ export class DimensionsSkiva extends Component {
                         </Link>
                     </form>
 
-                   {/*Link to next page, saveInfo saves the values in arrays*/}
+                   {/*Link to next page, "saveInfo" saves the values in arrays*/}
                     <Link className="nextbtn" to="/workmethods/primarySkiva/dimensions/DSB2">
                       <button className="nextbtn" onClick={this.saveInfo}>Nästa</button>
 

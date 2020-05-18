@@ -26,7 +26,8 @@ import DSB2 from "./components/DSB2";
 import DSB4 from "./components/DSB4";
 import UserStatistics from "./components/UserStatistics";
 
-/* the path and the right content, when using a link for a page the right page(content) will be displayed*/
+/*Contains the paths/link and the page, the path linkes to a specific page (content)*/
+
 function App() {
   return (
     <div className="app-container">

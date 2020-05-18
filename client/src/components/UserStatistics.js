@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Chart from "./Statistics";
 
-/*The statistics page for the user, creates a chart for the Statistics.js file to use*/
+/*The statistics page for the user, creates a chart for the Statistics.js file */
 
 export default class UserStatistics extends Component {
     

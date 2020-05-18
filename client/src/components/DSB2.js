@@ -9,7 +9,7 @@ import {mainTime} from "./Header";
 
 /*This class handles the page where the user can enter blasting values: "antal hål, längd på hål, sprängsort, mängd sprängmedel 
 for each side of a disc.
-This class sends the values of a disc to server.js that sends it to the database*/
+This class sends the values of a disc to the database*/
 
 //variable to save the disc ID from the database
 var discID=0;

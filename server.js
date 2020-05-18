@@ -3,7 +3,7 @@ const app = express();
 const mysql = require('mysql');
 /*This file contains the database connection and handles the calls to the database */
 
-//The connection to the database, project is the name of the local database
+//The connection to the database, "project" is the name of the local database
 var db = mysql.createConnection({
     host:'localhost',
     user:'root',
@@ -115,7 +115,7 @@ app.get('/insertdisc', (req, res) => {
     });
 });
 
-//insert the side of a block
+//insert the side values of a block
 app.get('/insertsideblock', (req, res) => {
     const {blockID,length,height,time,method,sideNr} = req.query;
     let sql = `CALL insertSideBlock('${blockID}','${length}','${height}','${time}','${method}','${sideNr}')`;

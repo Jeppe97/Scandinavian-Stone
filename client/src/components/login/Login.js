@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../styles/Login.scss";
 import auth from "./auth";
 import { FormControlLabel } from "@material-ui/core";
-/*Class for inlogg. First page of the aplication. Can loggin to admin or user
+/*Login class. First page of the aplication. Can sign in to admin or user
 The name and password used for logging in is controlled against the database */
 
 //Variables
@@ -21,18 +21,21 @@ export class Login extends Component {
       password:""
       
     }
-
+//Handle imput
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
     this.handleChange4 = this.handleChange4.bind(this);
 
+//Gets information from tha database
     this.controlUser=this.controlUser.bind(this);
     this.controlAdmin=this.controlAdmin.bind(this);
 
+//If name and password is valid = Sends the user to the next page
     this.newPageAdmin=this.newPageAdmin.bind(this);
     this.newPageUser=this.newPageUser.bind(this);
 
+//Verifies if the database retruned a quarry ID
     this.checkAdmin=this.checkAdmin.bind(this);
     this.checkUser=this.checkUser.bind(this);
 
@@ -74,7 +77,7 @@ export class Login extends Component {
     password = event;
 
   }
-  //Sends name and password used for admin, returns 
+  //Sends name and password used for admin to the database, recives a qaurry ID if the name and password was correct
   controlAdmin(){
     fetch(`/logginadmin?name=${name}&password=${password}`)
     .then(res => res.json())
@@ -101,7 +104,7 @@ export class Login extends Component {
       this.props.history.push("/AdminMainmenu");
     });
   }
-//gets the quarry id and quarry name if name and password is right
+  //Sends name and password for the user to the database, recives a qaurry ID and quarryName if the name and password was correct
   controlUser(){
     fetch(`/logginuser?name=${name}&password=${password}`)
     .then(res => res.json())

@@ -48,7 +48,7 @@ export default class DimensionsBlock extends Component {
   //Saves information to variables that is exported 
   this.saveInfo = this.saveInfo.bind(this);
 }
-  /*Handles the imput for the depth of the four sides of a block  */
+  /*Handles the imput depth for the four sides of a block  */
 handleChange0(event) {
   this.setState({
     Djup1: event.target.value
@@ -77,7 +77,7 @@ handleChange6(event) {
   return(this.state);
 }
 
-  /*Handles the imput for the length of the four sides of a block  */
+  /*Handles the imput for length of the four sides of a block  */
 handleChange3(event) {
   this.setState({
     Längd1: event.target.value

@@ -16,7 +16,6 @@ export default class AdminStatistics extends Component {
     }
     
     getChartData(){
-        //ajax calls here
         this.setState({
             chartData: {
                 labels: ['Borrning och Sågning', 'Borrning och Sprängning'],

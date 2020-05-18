@@ -3,7 +3,7 @@ import "./styles/timer.scss";
 import React, {Component} from 'react';
 /*This class handles the three timers for a disc. The user will measuer the time it takes to process each side*/
 
-//Stores the times for the sides on a disc in these variables 
+//Variables for the times that is exported
 var timeSide1 = 0;
 var timeSide2 = 0;
 var timeBottom = 0;
@@ -26,14 +26,14 @@ class TimerSkiva extends Component {
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     
-    //Resets the timer to zero
+    //Resets the timer 
     this.handleReset0 = this.handleReset0.bind(this);
     this.handleReset1 = this.handleReset1.bind(this);
     this.handleReset2 = this.handleReset2.bind(this);
 
     this.saveTime = this.saveTime.bind(this);
   }
-//Stores the time in variables, devides the times by / 1000 and %60 since the timer uses milliseconds
+//Stores the times in variables, devides the times by / 1000 and %60 since the timer uses milliseconds
   saveTime(){
     
     timeSide1=(Math.round((this.state.runningTime0 / 1000) % 60));
@@ -42,7 +42,7 @@ class TimerSkiva extends Component {
     console.log(timeSide1 + " " + timeSide2 + " " + timeBottom);
 
   }
-//Starts or pause the first timer depending on the state. If the timer is paused it will start, or if its started it will be paused
+//Starts or pause the first timer depending on the state. If the timer is paused it will start, or if the timer is started it will be paused
   handleClick0 = () => {
     this.setState(state => {
       if (state.status0) {
@@ -86,7 +86,7 @@ class TimerSkiva extends Component {
   };
 
   
-/*Restes the timers (visualy on the page and the state value)*/
+/*Restes the timers */
   handleReset0 = () => {
     clearInterval(this.timer0);
     this.setState({ runningTime0: 0, status0: false });

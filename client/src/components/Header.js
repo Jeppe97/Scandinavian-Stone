@@ -29,7 +29,7 @@ class Header extends Component {
     var box = document.createElement("div");
     var form1 = document.createElement("form");
     var textfield1 = document.createElement("input");
-    //check boxes the user can choose 
+    //check boxes 
     var cBox1 = document.createElement("input");
     var cBox2 = document.createElement("input");
     var cBox3 = document.createElement("input");

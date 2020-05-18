@@ -50,7 +50,7 @@ class Timer extends Component {
     console.log(timeSide1 + " " + timeSide2 + " " + timeSide3 + " " + timeBottom);
   }
 
-//Starts or pause the first timer depending on the state. If the timer is paused it will start, or if its started it will be paused
+//Starts or pause the first timer depending on the state. If the timer is paused it will start, or if the timer is started it will be paused
   handleClick0 = () => {
     this.setState(state => {
       if (state.status0) {
@@ -107,7 +107,7 @@ class Timer extends Component {
     });
   };
 
-/*Restes the timers (visualy on the page and the state value)*/
+/*Restes the timers*/
   handleReset0 = () => {
     clearInterval(this.timer0);
     this.setState({ runningTime0: 0, status0: false });

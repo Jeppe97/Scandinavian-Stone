@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../login/auth";
 
-/*Component for admin main menu. This component is displayed when logged into the admin page. It consist of three buttons */
+/*Component for admin: main menu. This component is displayed when logged into the admin page. It consist of three buttons */
 
 export const AdminMainMenu = props => {
   return (
